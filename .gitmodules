@@ -1,3 +1,0 @@
-[submodule "home/retoran/.config/nvim"]
-	path = home/retoran/.config/nvim
-	url = https://github.com/RetoranPetra/nvim.git
