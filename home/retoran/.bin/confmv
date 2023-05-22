@@ -1,0 +1,66 @@
+#!/bin/bash
+
+yell() { echo "$0: $*" >&2; }
+die() { yell "$*"; exit 111; }
+try() { "$@" || die "cannot $*";}
+
+#Read in filepath.
+myHome=/home/retoran
+workDir=$(pwd)
+
+if [[ $1 = /* ]]; then
+  filepath=$1
+else
+  filepath=$workDir/$1
+fi
+filepath=$(readlink -m "$filepath")
+
+if [[ -d "$filepath" ]]; then
+  echo "Is folder!"
+  folder=1
+else
+  echo "Isn't folder!"
+  folder=0
+fi
+
+echo "fp: $filepath"
+#Endof filepath stuff.
+
+if [[ $2 == "" ]]; then
+  echo "d/s needed, dot/sys"
+  exit 111
+fi
+if [[ $2 == "d" ]]; then
+  confRoot=$myHome/.dotConf
+elif [[ $2 == "s" ]]; then
+  confRoot=$myHome/.sysConf
+else
+  echo "d/s needed, dot/sys"
+fi
+#Object's end path
+destObj=$confRoot$filepath
+#Destination of object
+dest=$(echo $destObj | rev | cut -d'/' -f2- | rev)
+echo "dest: $dest"
+
+echo "Commands:"
+echo "rsync -arv --mkpath --remove-source-files $filepath $dest"
+echo "ln -s $destObj $filepath"
+
+echo "Are these ok? y/n"
+read yn
+if [ $yn = y ]; then
+  echo "Executing..."
+else
+  echo "EXIT!"
+  exit 111
+fi
+
+#Remove source files won't destroy directory, needed so that our link goes in the right place.
+if [[ $folder == 1 ]]; then
+  try sudo rsync -ar --mkpath --remove-source-files $filepath $dest
+  try sudo rmdir $filepath
+else
+  try sudo rsync -ar --mkpath --remove-source-files $filepath $destObj
+fi
+try sudo ln -s $destObj $filepath
