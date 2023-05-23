@@ -1,3 +1,6 @@
 [submodule "home/retoran/.config/nvim"]
 	path = home/retoran/.config/nvim
 	url = https://github.com/RetoranPetra/nvim.git
+[submodule "home/retoran/.oh-my-zsh"]
+	path = home/retoran/.oh-my-zsh
+	url = https://github.com/ohmyzsh/ohmyzsh.git

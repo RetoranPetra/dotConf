@@ -91,7 +91,7 @@ export EDITOR=nvim
 export PATH=$PATH:~/.bin
 
 #Wayland setup
-source ~/.env/*
+for f in ~/.env/*; do source $f; done
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
