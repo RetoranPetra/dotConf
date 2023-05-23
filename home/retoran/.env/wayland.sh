@@ -3,12 +3,12 @@
 #Clutter
 export CLUTTER_BACKEND=wayland
 #QT
-#export QT_QPA_PLATFORM="wayland;xcb"
-export QT_QPA_PLATFORM=wayland
+export QT_QPA_PLATFORM="wayland;xcb"
+#export QT_QPA_PLATFORM=wayland
 export QT_QPA_PLATFORMTHEME=qt5ct
 #SDL
-#export SDL_VIDEODRIVER="wayland,x11"
-export SDL_VIDEODRIVER=wayland
+export SDL_VIDEODRIVER="wayland,x11"
+#export SDL_VIDEODRIVER=wayland
 export GDK_BACKEND=wayland
 #XDG
 export XDG_SESSION_TYPE=wayland
