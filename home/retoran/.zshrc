@@ -93,6 +93,9 @@ export PATH=$PATH:~/.bin
 #Wayland setup
 for f in ~/.env/*; do source $f; done
 
+#Launch hyprland
+source ~/.scripts/hyprLaunch.sh
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
