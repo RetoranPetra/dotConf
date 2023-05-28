@@ -1,3 +1,3 @@
 #!/bin/bash
-rivalcfg --sensitivity 2400 --default-lighting off
+rivalcfg --sensitivity 1600 --default-lighting off
 

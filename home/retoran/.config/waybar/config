@@ -10,18 +10,9 @@
 
     "modules-left":[  "idle_inhibitor", "pulseaudio", "cpu", "memory", "temperature"],
     "modules-center": [ "custom/launcher", "custom/media","wlr/taskbar", "custom/power"],
-    "modules-right":["custom/layout", "custom/updater", "custom/snip", "backlight", "keyboard-state","network", "tray",  "clock"],
+    "modules-right":["custom/layout", "custom/updater", "custom/snip", "backlight", "network", "tray",  "clock"],
     // Modules configuration
 
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": " {name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
-    },
      "wlr/taskbar": {
         "format": "{icon}",
         "icon-size": 20,

@@ -90,9 +90,8 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR=nvim
 export PATH=$PATH:~/.bin
 
-#Wayland setup
+#user environment variables
 for f in ~/.env/*; do source $f; done
-
 #Launch hyprland
 source ~/.scripts/hyprLaunch.sh
 
