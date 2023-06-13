@@ -93,7 +93,7 @@ export PATH=$PATH:~/.bin
 #user environment variables
 for f in ~/.env/*; do source $f; done
 #Launch hyprland
-source ~/.scripts/hyprLaunch.sh
+#source ~/.scripts/hyprLaunch.sh
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -106,3 +106,6 @@ source ~/.scripts/hyprLaunch.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Created by `pipx` on 2023-06-12 10:35:06
+export PATH="$PATH:/home/retoran/.local/bin"
