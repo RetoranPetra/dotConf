@@ -12,18 +12,18 @@ export SDL_VIDEODRIVER="wayland,x11"
 export GDK_BACKEND=wayland
 #XDG
 export XDG_SESSION_TYPE=wayland
-
-#Nvidia compatibility
-export LIBVA_DRIVER_NAME=nvidia
-export GBM_BACKEND=nvidia-drm
-export WLR_NO_HARDWARE_CURSORS=1
-export QT_AUTO_SCREEN_SCALE_FACTOR=1
-export __GL_GSYNC_ALLOWED=1
-export __GLX_VENDOR_LIBRARY_NAME=nvidia
-#New vars, may not be good.
-export WLR_RENDERER=vulkan
-export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
-export XWAYLAND_NO_GLAMOR=1
 # Firefox wayland environment variable
 export MOZ_ENABLE_WAYLAND=1
 export MOZ_USE_XINPUT2=1
+
+#Nvidia compatibility
+#export LIBVA_DRIVER_NAME=nvidia
+#export GBM_BACKEND=nvidia-drm
+#export WLR_NO_HARDWARE_CURSORS=1
+#export QT_AUTO_SCREEN_SCALE_FACTOR=1
+#export __GL_GSYNC_ALLOWED=1
+#export __GLX_VENDOR_LIBRARY_NAME=nvidia
+#New vars, may not be good.
+#export WLR_RENDERER=vulkan
+#export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+#export XWAYLAND_NO_GLAMOR=1
