@@ -15,6 +15,8 @@ export XDG_SESSION_TYPE=wayland
 # Firefox wayland environment variable
 export MOZ_ENABLE_WAYLAND=1
 export MOZ_USE_XINPUT2=1
+# Need to specify vdpau driver or it'll try to use the old nvidia one.
+export LIBVA_DRIVER_NAME=radeonsi
 
 #Nvidia compatibility
 #export LIBVA_DRIVER_NAME=nvidia

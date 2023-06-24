@@ -94,7 +94,7 @@ export PATH=$PATH:~/.bin
 for f in ~/.env/*; do source $f; done
 #Launch hyprland
 #source ~/.scripts/hyprLaunch.sh
-
+source ~/.scripts/sway/swayLaunch.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 

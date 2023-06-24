@@ -12,13 +12,18 @@ set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu wofi --show drun | xargs swaymsg exec --
+set $menu rofi -show drun | xargs swaymsg exec --
+
+#Told to do this by wiki, doesn't work
+#exec_always xrandr --output DP-1 --primary
+
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
 ### Monitor Setup
+output DP-3 disable
 output DP-1 mode 2560x1440@180Hz pos 0 0 scale 1
 output DP-1 adaptive_sync on
 output HDMI-A-1 mode 1920x1080@60Hz pos 2560 720 scale 1.5
@@ -28,6 +33,7 @@ input type:keyboard {
   xkb_numlock enabled
   }
 exec bash ~/.scripts/sway/swayStart.sh
+exec_always bash ~/.scripts/sway/dp-2.sh
 
 ### Input configuration
 #
@@ -55,7 +61,15 @@ exec bash ~/.scripts/sway/swayStart.sh
 
     # Start your launcher
     bindsym $mod+r exec $menu
+    # Process manager
+    bindsym Shift+Control+Escape exec ksysguard
 
+    # Screenshot
+    bindsym Print exec grim -g "$(slurp)" | wl-copy
+    # Mediakeys
+    bindsym XF86AudioPlay exec playerctl play-pause
+    bindsym XF86AudioPrev exec playerctl previous
+    bindsym XF86AudioNext exec playerctl next
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
@@ -137,10 +151,10 @@ exec bash ~/.scripts/sway/swayStart.sh
     bindsym $mod+f fullscreen
 
     # Toggle the current focus between tiling and floating mode
-    bindsym $mod+Shift+space floating toggle
+    bindsym $mod+space floating toggle
 
     # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
+    #bindsym $mod+space focus mode_toggle
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
