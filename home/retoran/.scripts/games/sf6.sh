@@ -1,2 +1,3 @@
 #!/bin/bash
-hyprctl keyword monitor DP-1,2560x1440@120,0x0,1
+swaymsg output DP-1 mode 2560x1440@120Hz
+source ~/.scripts/sway/disableSecondary.sh

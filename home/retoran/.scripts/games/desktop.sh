@@ -1,2 +1,2 @@
 #!/bin/bash
-hyprctl keyword monitor DP-1,2560x1440@165,0x0,1
+swaymsg output DP-1 mode 2560x1440@180Hz

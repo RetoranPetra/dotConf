@@ -14,6 +14,8 @@ set $term alacritty
 # on the original workspace that the command was run on.
 set $menu rofi -show drun | xargs swaymsg exec --
 
+xwayland enable 
+
 #Told to do this by wiki, doesn't work
 #exec_always xrandr --output DP-1 --primary
 
@@ -27,7 +29,7 @@ output DP-3 disable
 output DP-1 mode 2560x1440@180Hz pos 0 0 scale 1
 output DP-1 adaptive_sync on
 output HDMI-A-1 mode 1920x1080@60Hz pos 2560 720 scale 1.5
-output DP-2 mode 2560x1440@120Hz pos -2560 0 scale 1
+output DP-2 mode 2560x1440@120Hz pos 0 1440 scale 1
 input type:keyboard {
   xkb_layout gb
   xkb_numlock enabled
@@ -63,6 +65,10 @@ exec_always bash ~/.scripts/sway/dp-2.sh
     bindsym $mod+r exec $menu
     # Process manager
     bindsym Shift+Control+Escape exec ksysguard
+
+    # Enable/Disable secondary monitors
+    bindsym $mod+n exec bash ~/.scripts/sway/enableSecondary.sh
+    bindsym $mod+Shift+n exec bash ~/.scripts/sway/disableSecondary.sh
 
     # Screenshot
     bindsym Print exec grim -g "$(slurp)" | wl-copy
