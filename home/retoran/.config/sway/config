@@ -72,10 +72,6 @@ exec_always bash ~/.scripts/sway/dp-2.sh
 
     # Screenshot
     bindsym Print exec grim -g "$(slurp)" | wl-copy
-    # Mediakeys
-    bindsym XF86AudioPlay exec playerctl play-pause
-    bindsym XF86AudioPrev exec playerctl previous
-    bindsym XF86AudioNext exec playerctl next
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
@@ -208,4 +204,5 @@ mode "resize" {
 # Using waybar
 exec waybar
 
-include /etc/sway/config.d/*
+include /etc/sway/config.d
+include ~/.config/sway/config.d/*
