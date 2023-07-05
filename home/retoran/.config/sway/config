@@ -1,3 +1,4 @@
+# vim: filetype=swayconfig
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -13,6 +14,8 @@ set $term alacritty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 set $menu rofi -show drun | xargs swaymsg exec --
+
+font pango:"Iosevka Nerd Font" 9
 
 xwayland enable 
 
