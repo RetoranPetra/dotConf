@@ -94,10 +94,9 @@ export PATH=$PATH:~/.bin
 for f in ~/.env/*; do source $f; done
 #Launch hyprland
 #source ~/.scripts/hyprLaunch.sh
-source ~/.scripts/sway/swayLaunch.sh
+#source ~/.scripts/sway/swayLaunch.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -109,3 +108,5 @@ source ~/.scripts/sway/swayLaunch.sh
 
 # Created by `pipx` on 2023-06-12 10:35:06
 export PATH="$PATH:/home/retoran/.local/bin"
+
+desk sway

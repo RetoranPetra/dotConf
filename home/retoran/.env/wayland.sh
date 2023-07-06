@@ -3,21 +3,21 @@
 #Clutter
 export CLUTTER_BACKEND=wayland
 #QT
-export QT_QPA_PLATFORM="wayland;xcb"
-#export QT_QPA_PLATFORM=wayland
+#export QT_QPA_PLATFORM="wayland;xcb"
+export QT_QPA_PLATFORM=wayland
 export QT_QPA_PLATFORMTHEME=qt5ct
 #SDL
-export SDL_VIDEODRIVER="wayland,x11"
-#export SDL_VIDEODRIVER=wayland
+#export SDL_VIDEODRIVER="wayland,x11"
+export SDL_VIDEODRIVER=wayland
 export GDK_BACKEND=wayland
 #XDG
 export XDG_SESSION_TYPE=wayland
 # Firefox wayland environment variable
 export MOZ_ENABLE_WAYLAND=1
-export MOZ_USE_XINPUT2=1
+#export MOZ_USE_XINPUT2=1
 # Need to specify vdpau driver or it'll try to use the old nvidia one.
 export LIBVA_DRIVER_NAME=radeonsi
-
+export VDPAU_DRIVER=radeonsi
 #Nvidia compatibility
 #export LIBVA_DRIVER_NAME=nvidia
 #export GBM_BACKEND=nvidia-drm

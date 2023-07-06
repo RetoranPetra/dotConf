@@ -144,7 +144,8 @@ LookAndFeelPackage=org.kde.breezedark.desktop
 ShowDeleteCommand=false
 
 [KScreen]
-ScreenScaleFactors=DP-1=1;HDMI-A-1=1;
+ScreenScaleFactors=DP-1=1;DP-2=1;DP-3=1;HDMI-A-1=1;
+XwaylandClientsScale=false
 
 [PreviewSettings]
 MaximumRemoteSize=0
