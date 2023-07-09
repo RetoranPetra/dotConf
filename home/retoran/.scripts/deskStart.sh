@@ -1,5 +1,6 @@
 #!/bin/bash
-steam &
+#steam &
+thunar --daemon &
 youtube-music &
 webcord &
 dex -a &
