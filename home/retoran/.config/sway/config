@@ -31,8 +31,6 @@ input type:keyboard {
   xkb_layout gb
   xkb_numlock enabled
   }
-exec bash ~/.scripts/sway/swayStart.sh
-exec waybar
 
 include /etc/sway/config.d
 include ~/.config/sway/config.d/*

@@ -1,5 +1,5 @@
-#!/bin/bash
+#!/bin/zsh
 if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-  for f in ~/.env/*; do source $f; done
+  source "$HOME/.env/wayland.zsh"
 	exec sway
 fi

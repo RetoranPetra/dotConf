@@ -1,8 +1,8 @@
 #!/bin/bash
 if [[ $1 == "hypr" ]]; then
-  exec ~/.scripts/hypr/hyprLaunch.sh
+  exec ~/.scripts/hypr/hyprLaunch.zsh
 elif [[ $1 == "sway" ]]; then
-  exec ~/.scripts/sway/swayLaunch.sh
+  exec ~/.scripts/sway/swayLaunch.zsh
 elif [[ $1 == "plasma" ]]; then
   exec startplasma-wayland
 else

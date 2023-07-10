@@ -1,4 +1,2 @@
-#!/bin/sh
-
+#!/bin/zsh
 export _JAVA_AWT_WM_NONREPARENTING=1
-

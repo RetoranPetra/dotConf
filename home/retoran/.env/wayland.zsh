@@ -1,5 +1,5 @@
-#!/bin/sh
-
+#!/bin/zsh
+source /home/retoran/.env/javanoparent.zsh
 #Clutter
 export CLUTTER_BACKEND=wayland
 #QT
