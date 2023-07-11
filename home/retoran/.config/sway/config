@@ -26,6 +26,7 @@ focus_follows_mouse yes
 mouse_warping none
 
 xwayland enable 
+exec source ~/.scripts/sway/desktop-portal.zsh
 
 input type:keyboard {
   xkb_layout gb

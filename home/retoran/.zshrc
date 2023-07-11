@@ -78,4 +78,4 @@ source $ZSH/oh-my-zsh.sh
 # User environment variables
 for f in ~/.env/terminal/*; do source $f; done
 
-desk sway
+source desk sway
