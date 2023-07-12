@@ -26,12 +26,11 @@ focus_follows_mouse yes
 mouse_warping none
 
 xwayland enable 
-exec source ~/.scripts/sway/desktop-portal.zsh
-
+exec "source $HOME/.scripts/sway/desktop-portal.zsh"
 input type:keyboard {
   xkb_layout gb
   xkb_numlock enabled
   }
 
-include /etc/sway/config.d
+include /etc/sway/config.d/*
 include ~/.config/sway/config.d/*

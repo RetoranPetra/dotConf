@@ -1,8 +1,8 @@
 #!/bin/zsh
 if [[ $1 == "hypr" ]]; then
-  source ~/.scripts/hypr/hyprLaunch.zsh
+  source "$HOME/.scripts/hypr/hyprLaunch.zsh"
 elif [[ $1 == "sway" ]]; then
-  source ~/.scripts/sway/swayLaunch.zsh
+  source "$HOME/.scripts/sway/swayLaunch.zsh"
 elif [[ $1 == "plasma" ]]; then
   startplasma-wayland
 else
