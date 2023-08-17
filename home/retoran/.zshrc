@@ -74,4 +74,4 @@ plugins=(git z)
 
 source $ZSH/oh-my-zsh.sh
 
-source desk sway
+source desk

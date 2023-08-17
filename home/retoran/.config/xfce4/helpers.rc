@@ -1,1 +1,3 @@
 TerminalEmulator=alacritty
+WebBrowser=firefox
+FileManager=thunar
