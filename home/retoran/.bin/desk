@@ -1,18 +1,16 @@
 #!/bin/zsh
-if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+#if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+if [ -z "${WAYLAND_DISPLAY}" ]; then
   echo "No desktops detected, going ahead!"
-else
-  return
-fi
-TTY=$(ps -p $$ -o tty=)
-
-if [[ $TTY == "tty3" ]]; then
-  source "$HOME/.scripts/hypr/hyprLaunch.zsh"
-elif [[ $TTY == "tty1" ]]; then
-  source "$HOME/.scripts/sway/swayLaunch.zsh"
-elif [[ $TTY == "tty2" ]]; then
-  startplasma-wayland
-else
-  echo "None selected!"
-  echo $TTY
+  TTY=$(ps -p $$ -o tty=)
+  if [[ $TTY == "tty1" ]]; then
+    echo "Starting Sway"
+    exec "$HOME/.scripts/sway/swayLaunch.zsh"
+  elif [[ $TTY == "tty2" ]]; then
+    echo "Starting Plasma"
+    exec startplasma-wayland
+  else
+    echo "None selected!"
+    echo $TTY
+  fi
 fi
