@@ -30,6 +30,7 @@ exec "source $HOME/.scripts/sway/desktop-portal.zsh"
 input type:keyboard {
   xkb_layout gb
   xkb_numlock enabled
+  xkb_options caps:escape
 }
 
 include /etc/sway/config.d/*
