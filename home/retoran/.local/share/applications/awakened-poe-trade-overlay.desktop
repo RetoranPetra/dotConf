@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=awakened-poe-trade-overlay
+Exec=/usr/bin/awakened-poe-trade --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto
+Icon=/usr/share/pixmaps/awakened-poe-trade.ico
+Type=Application
