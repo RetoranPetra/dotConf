@@ -1,0 +1,6 @@
+#!/bin/zsh
+echo "Calling nvim mason upgrade."
+nvim --headless -c "autocmd User MasonUpgradeComplete sleep 100m | qall" -c 'MasonUpgrade'
+echo "Calling paru"
+paru
+echo "Finished!"

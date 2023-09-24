@@ -150,6 +150,9 @@ XwaylandClientsScale=false
 [PreviewSettings]
 MaximumRemoteSize=0
 
+[Shortcuts]
+AddBookmark=
+
 [WM]
 activeBackground=49,54,59
 activeBlend=252,252,252
