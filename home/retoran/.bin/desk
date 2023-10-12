@@ -9,6 +9,9 @@ if [ -z "${WAYLAND_DISPLAY}" ]; then
   elif [[ $TTY == "tty2" ]]; then
     echo "Starting Plasma"
     exec startplasma-wayland
+  elif [[ $TTY == "tty3" ]]; then
+    echo "Starting Hyprland"
+    exec "$HOME/.scripts/hypr/hyprLaunch.zsh"
   else
     echo "None selected!"
     echo $TTY

@@ -1,8 +1,10 @@
 #!/bin/zsh
-piactl connect
+killall -e xdg-desktop-portal-wlr
 waybar &
 hyprpaper &
+wl-paste -t text --watch clipman store --no-persist &
 mako &
-./usr/lib/polkit-kde-authentication-agent-1 &
-bazsh ~/.scripts/mount.sh &
-bazsh ~/.scripts/deskStart.sh
+source ~/.scripts/myDex.zsh &
+thunar --daemon &
+source "/home/retoran/.scripts/aerox9.zsh" &
+source "/home/retoran/.scripts/mount.zsh" &
