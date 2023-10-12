@@ -1,3 +1,4 @@
 plugins = [
   # Split monitor workspaces
+  "Duckonaut/split-monitor-workspaces",
 ]

@@ -3,15 +3,15 @@
 if [ -z "${WAYLAND_DISPLAY}" ]; then
   echo "No desktops detected, going ahead!"
   TTY=$(ps -p $$ -o tty=)
-  if [[ $TTY == "tty1" ]]; then
+  if [[ $TTY == "tty3" ]]; then
     echo "Starting Sway"
     exec "$HOME/.scripts/sway/swayLaunch.zsh"
   elif [[ $TTY == "tty2" ]]; then
     echo "Starting Plasma"
     exec startplasma-wayland
-  elif [[ $TTY == "tty3" ]]; then
+  elif [[ $TTY == "tty1" ]]; then
     echo "Starting Hyprland"
-    exec "$HOME/.scripts/hypr/hyprLaunch.zsh"
+    source "$HOME/.scripts/hypr/hyprLaunch.zsh"
   else
     echo "None selected!"
     echo $TTY
