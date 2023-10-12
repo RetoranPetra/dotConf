@@ -1,6 +1,6 @@
 #!/bin/zsh
 killall -e xdg-desktop-portal-wlr
-waybar &
+waybar -c "/home/retoran/.config/hypr/waybar/config" &
 hyprpaper &
 wl-paste -t text --watch clipman store --no-persist &
 mako &
