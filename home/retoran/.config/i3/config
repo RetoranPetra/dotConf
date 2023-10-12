@@ -28,7 +28,6 @@ focus_follows_mouse yes
 # Moves mouse to the newly created window
 mouse_warping none
 
-xwayland enable 
 exec "source $HOME/.scripts/sway/desktop-portal.zsh"
 input type:keyboard {
   xkb_layout gb
@@ -36,5 +35,4 @@ input type:keyboard {
   xkb_options caps:escape
 }
 
-include /etc/sway/config.d/*
-include ~/.config/sway/config.d/*
+include ~/.config/i3/config.d/*

@@ -8,9 +8,11 @@ export QT_QPA_PLATFORM="wayland;xcb"
 #export QT_QPA_PLATFORM=wayland
 export QT_QPA_PLATFORMTHEME=qt5ct
 #SDL
-export SDL_VIDEODRIVER="wayland,x11"
-#export SDL_VIDEODRIVER=wayland
-export GDK_BACKEND=wayland
+#Enforcing SDL to be wayland causes issues. Don't unless the game likes it.
+#export SDL_VIDEODRIVER="wayland,x11"
+
+#Don't need this, defaults to wayland by default. Enforcing may cause problems.
+#export GDK_BACKEND=wayland
 #XDG
 export XDG_SESSION_TYPE=wayland
 # Firefox wayland environment variable
@@ -19,6 +21,9 @@ export MOZ_ENABLE_WAYLAND=1
 # Need to specify vdpau driver or it'll try to use the old nvidia one.
 export LIBVA_DRIVER_NAME=radeonsi
 export VDPAU_DRIVER=radeonsi
+export __EGL_VENDOR_LIBRARY_FILENAMES=/usr/share/glvnd/egl_vendor.d/50_mesa.json
+
+
 #Nvidia compatibility
 #export LIBVA_DRIVER_NAME=nvidia
 #export GBM_BACKEND=nvidia-drm
