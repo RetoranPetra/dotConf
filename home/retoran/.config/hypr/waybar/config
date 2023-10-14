@@ -26,7 +26,8 @@
     "tray": {
         // "icon-size": 21,
         "spacing": 10,
-        "reverse-direction": true
+        "reverse-direction": true,
+        "show-passive-items": true,
     },
     "clock": {
         "format-alt": "{:%Y-%m-%d}"
