@@ -1,8 +1,8 @@
 #!/bin/zsh
 echo "Calling nvim mason upgrade."
 nvim --headless -c "autocmd User MasonUpgradeComplete sleep 100m | qall" -c 'MasonUpgrade'
-echo "Calling hyprload update. (Will not work outside of hyprland)"
-hyprctl dispatch hyprload update
+echo "Calling waydroid upgrade"
+waydroid upgrade
 echo "Calling paru"
 paru
 echo "Finished!"
