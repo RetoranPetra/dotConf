@@ -3,6 +3,8 @@
 EnumerateWithTriggerKeys=True
 # Temporally switch between first and current Input Method
 AltTriggerKeys=
+# Enumerate Input Method Backward
+EnumerateBackwardKeys=
 # Skip first input method while enumerating
 EnumerateSkipFirst=False
 # Enumerate Input Method Group Forward
@@ -30,9 +32,6 @@ TogglePreedit=
 
 [Hotkey/EnumerateForwardKeys]
 0=Control+space
-
-[Hotkey/EnumerateBackwardKeys]
-0=Control+Shift+space
 
 [Behavior]
 # Active By Default
