@@ -1,0 +1,2 @@
+#!/bin/zsh
+export CMAKE_BUILD_PARALLEL_LEVEL=24
