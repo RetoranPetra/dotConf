@@ -119,7 +119,7 @@
   #multiplier: 3
   font:
     normal:
-      family: IosevkaTerm Nerd Font
+      family: IosevkaTerm NF
       style: Regular
     size: 13.0
 # Font configuration
