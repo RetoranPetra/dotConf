@@ -8,3 +8,5 @@ source ~/.scripts/myDex.zsh &
 thunar --daemon &
 source "/home/retoran/.scripts/aerox9.zsh" &
 source "/home/retoran/.scripts/mount.zsh" &
+# Tell systemd we're a graphical session so that related services run.
+source systemctl --user start hyprland-session.target &
