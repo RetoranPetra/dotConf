@@ -1,6 +1,6 @@
 {
     "notifyAboutUpdates": true,
-    "autoUpdate": false,
+    "autoUpdate": true,
     "autoUpdateNotification": true,
     "useQuickCss": true,
     "themeLinks": [],
@@ -37,7 +37,7 @@
             "enabled": false
         },
         "MessageEventsAPI": {
-            "enabled": false
+            "enabled": true
         },
         "MessagePopoverAPI": {
             "enabled": false
@@ -98,7 +98,7 @@
             "enabled": false
         },
         "ClearURLs": {
-            "enabled": false
+            "enabled": true
         },
         "ColorSighted": {
             "enabled": false
@@ -152,10 +152,10 @@
             "enabled": false
         },
         "GameActivityToggle": {
-            "enabled": false
+            "enabled": true
         },
         "GifPaste": {
-            "enabled": false
+            "enabled": true
         },
         "GreetStickerPicker": {
             "enabled": false
@@ -170,7 +170,7 @@
             "enabled": false
         },
         "ImageZoom": {
-            "enabled": false
+            "enabled": true
         },
         "InvisibleChat": {
             "enabled": false
@@ -254,13 +254,19 @@
             "enabled": false
         },
         "OnePingPerDM": {
-            "enabled": true
+            "enabled": true,
+            "channelToAffect": "both_dms",
+            "allowMentions": false,
+            "allowEveryone": false
         },
         "oneko": {
             "enabled": false
         },
         "OpenInApp": {
-            "enabled": false
+            "enabled": true,
+            "spotify": true,
+            "steam": true,
+            "epic": true
         },
         "Party mode 🎉": {
             "enabled": false
@@ -278,7 +284,9 @@
             "enabled": false
         },
         "PinDMs": {
-            "enabled": false
+            "enabled": true,
+            "pinOrder": 0,
+            "pinnedDMs": "1017826571047948289,1012485334136795136,242732034395602944,707269241803374623,979175012969889823,235784385926791168,973560939687321660"
         },
         "PlainFolderIcon": {
             "enabled": false
@@ -296,7 +304,7 @@
             "enabled": false
         },
         "QuickReply": {
-            "enabled": false
+            "enabled": true
         },
         "ReactErrorDecoder": {
             "enabled": false
@@ -322,7 +330,7 @@
             "enabled": false
         },
         "SearchReply": {
-            "enabled": false
+            "enabled": true
         },
         "SecretRingToneEnabler": {
             "enabled": false
@@ -337,7 +345,11 @@
             "enabled": false
         },
         "ShikiCodeblocks": {
-            "enabled": false
+            "enabled": false,
+            "theme": "https://raw.githubusercontent.com/shikijs/shiki/0b28ad8ccfbf2615f2d9d38ea8255416b8ac3043/packages/shiki/themes/dark-plus.json",
+            "tryHljs": "SECONDARY",
+            "useDevIcon": "GREYSCALE",
+            "bgOpacity": 100
         },
         "ShowAllMessageButtons": {
             "enabled": false
@@ -389,10 +401,14 @@
         },
         "TypingIndicator": {
             "enabled": true,
-            "includeMutedChannels": false
+            "includeMutedChannels": false,
+            "includeCurrentChannel": true
         },
         "TypingTweaks": {
-            "enabled": false
+            "enabled": true,
+            "alternativeFormatting": true,
+            "showRoleColors": true,
+            "showAvatars": true
         },
         "Unindent": {
             "enabled": false
@@ -472,6 +488,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1702422769446
+        "settingsSyncVersion": 1702939890455
     }
 }

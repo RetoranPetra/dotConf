@@ -3,8 +3,8 @@
     "discordBranch": "stable",
     "firstLaunch": false,
     "arRPC": "on",
-    "splashColor": "rgba(255, 255, 255, 0.6)",
-    "splashBackground": "rgb(22, 25, 33)",
+    "splashColor": "rgb(177, 186, 230)",
+    "splashBackground": "rgb(26, 27, 38)",
     "windowBounds": {
         "x": 4006,
         "y": 30,
