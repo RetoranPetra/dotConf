@@ -114,7 +114,7 @@ Comment[ur_PK]=قابلِ فصل ڈرائیوز اور میڈیا کی ادار�
 Comment[zh_CN]=可移动驱动器和介质的配置管理
 Comment[zh_HK]=管理移除式裝置與媒體
 Comment[zh_TW]=管理移除式裝置與媒體
-Exec=thunar-volman-settings
+Exec=env GDK_BACKEND=x11 thunar-volman-settings
 Icon=org.xfce.volman
 Terminal=false
 StartupNotify=true

@@ -232,7 +232,7 @@ Keywords[tr]=toplu;yeniden adlandırıcı;yeniden adlandırma;thunar;dosyalar;kl
 Keywords[uk]=вʼязка;перейменувальник;перейменування;thunar;файли;теки;каталог;каталоги;
 Keywords[zh_CN]=bulk;renamer;renaming;thunar;files;folders;directory;directories;批量;重命名;重命名;thunar;文件;文件夹;目录;
 Keywords[zh_TW]=bulk;renamer;renaming;thunar;files;folders;directory;directories;
-Exec=thunar --bulk-rename %F
+Exec=env GDK_BACKEND=x11 thunar --bulk-rename %F
 Icon=org.xfce.thunar
 Terminal=false
 StartupNotify=true

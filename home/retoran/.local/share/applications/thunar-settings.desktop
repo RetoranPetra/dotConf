@@ -149,7 +149,7 @@ Keywords[tr]=thunar;ayarlar;tercihler;yeğlemeler;yapılandır;küçük resimler
 Keywords[uk]=thunar;налаштування;властивості;налаштувати;ескізи;розмір файлу;формат дати;панель скорочень;вигляд деревом;вкладки;
 Keywords[zh_CN]=thunar;settings;preferences;configure;thumbnails;file size;date format;shortcuts pane;tree view;tabs;设置;首选项;配置;缩略图;文件大小;日期格式;快捷方式栏 ;树状视图;标签;
 Keywords[zh_TW]=thunar;settings;preferences;configure;thumbnails;file size;date format;shortcuts pane;tree view;tabs;
-Exec=thunar-settings
+Exec=env GDK_BACKEND=x11 thunar-settings
 Icon=org.xfce.thunar
 Terminal=false
 Type=Application
