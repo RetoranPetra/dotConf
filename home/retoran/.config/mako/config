@@ -1,0 +1,7 @@
+sort=+priority
+font=IosevkaTerm NF 10
+default-timeout=7000
+anchor=bottom-center
+border-color=#00ff99ee
+background-color=#0D0F1C
+text-color=#acb4c2
