@@ -1,0 +1,10 @@
+#!/bin/sh
+f() {
+	$@ $(fzf)
+}
+fd() {
+	$@ $(dirname $(fzf))
+}
+fcd() {
+	fd cd $@
+}
