@@ -1,0 +1,8 @@
+#!/bin/zsh
+echo "Calling waydroid upgrade"
+sudo waydroid upgrade
+echo "Calling rustup update"
+rustup update
+echo "Calling paru"
+paru
+echo "Finished!"
