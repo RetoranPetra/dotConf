@@ -5,13 +5,13 @@ if [ -z "${WAYLAND_DISPLAY}" ]; then
   TTY=$(ps -p $$ -o tty=)
   if [[ $TTY == "tty3" ]]; then
     echo "Starting Sway"
-    exec "$HOME/.scripts/sway/swayLaunch.zsh"
+    exec ~/.scripts/sway/swayLaunch.zsh
   elif [[ $TTY == "tty2" ]]; then
     echo "Starting Plasma"
     exec startplasma-wayland
   elif [[ $TTY == "tty1" ]]; then
     echo "Starting Hyprland"
-    source "$HOME/.scripts/hypr/hyprLaunch.zsh"
+    source ~/.scripts/hypr/hyprLaunch.zsh
   else
     echo "None selected!"
     echo $TTY
