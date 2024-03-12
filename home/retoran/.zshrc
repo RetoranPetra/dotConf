@@ -27,7 +27,8 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 
 # Notifications for long running commands
-antigen bundle bgnotify
+# Calls sway on hyprland, is VERY annoying.
+#antigen bundle bgnotify
 
 # Added copy commands
 antigen bundle copypath # Copies file path
@@ -46,7 +47,7 @@ antigen bundle gitignore
 
 # git-prompt
 # Not integrating with theme.
-#antigen bundle git-prompt
+antigen bundle git-prompt
 
 # Language completion/themes
 
@@ -58,11 +59,11 @@ antigen bundle rust
 antigen bundle dotnet
 
 # Fastfile, may be useful. Need to set fastfile prefix if going to use.
-#antigen bundle fastfile
+antigen bundle fastfile
 
 
 # May be useful, dotenv. Loads .env file when you cd into the root dir.
-#antigen bundle dotenv
+antigen bundle dotenv
 
 # Vi-mode, not quite intuitive.
 # Need to configure it further before enabling
