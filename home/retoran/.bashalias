@@ -8,3 +8,12 @@ fzd() {
 fzcd() {
 	fd cd $@
 }
+
+# Machine specific things
+update() {
+	paru
+	go get -u all
+	rustup update
+	pipx upgrade-all
+	sudo waydroid upgrade
+}
