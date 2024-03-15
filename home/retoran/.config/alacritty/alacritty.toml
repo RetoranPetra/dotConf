@@ -49,7 +49,7 @@ blinking = "on"
 shape = "Underline"
 
 [font]
-size = 13.0
+size = 12.0
 
 [font.normal]
 family = "IosevkaTerm NF"
@@ -59,4 +59,4 @@ style = "Regular"
 program = "/bin/zsh"
 
 [window]
-opacity = 0.8
+opacity = 0.95
