@@ -13,6 +13,17 @@ tmux-detatch() {
 	tmux send-keys "${@:2}" C-m
 }
 
+# Specific java versions
+java17() {
+	export PATH="/lib/jvm/java-17-openjdk/bin:$PATH"
+}
+java11() {
+	export PATH="/lib/jvm/java-11-openjdk/bin:$PATH"
+}
+java8() {
+	export PATH="/lib/jvm/java-8-openjdk/bin:$PATH"
+}
+
 # Machine specific things
 update() {
 	paru
