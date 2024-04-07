@@ -47,7 +47,7 @@ antigen bundle gitignore
 
 # git-prompt
 # Not integrating with theme.
-antigen bundle git-prompt
+#antigen bundle git-prompt
 
 # Language completion/themes
 
@@ -76,6 +76,11 @@ antigen bundle dotenv
 #source ~/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/zsh-interactive-cd/zsh-interactive-cd.plugin.zsh
 
 antigen theme af-magic
+#antigen theme eastwood
+
+# External themes need to be installed properly.
+#antigen theme hadenlabs/zsh-starship
+#antigen theme sindresorhus/pure
 
 antigen apply
 
