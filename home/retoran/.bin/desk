@@ -1,7 +1,6 @@
 #!/bin/zsh
 #if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
 if [ -z "${WAYLAND_DISPLAY}" ]; then
-  echo "No desktops detected, going ahead!"
   TTY=$(ps -p $$ -o tty=)
   if [[ $TTY == "tty3" ]]; then
     echo "Starting Sway"
@@ -12,8 +11,5 @@ if [ -z "${WAYLAND_DISPLAY}" ]; then
   elif [[ $TTY == "tty1" ]]; then
     echo "Starting Hyprland"
     tmux-detatch hyprland "source ~/.config/hypr/scripts/hyprLaunch.zsh"
-  else
-    echo "None selected!"
-    echo $TTY
   fi
 fi
