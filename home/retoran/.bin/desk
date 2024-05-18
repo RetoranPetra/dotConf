@@ -4,12 +4,12 @@ if [ -z "${WAYLAND_DISPLAY}" ]; then
   TTY=$(ps -p $$ -o tty=)
   if [[ $TTY == "tty3" ]]; then
     echo "Starting Sway"
-    tmux-detatch sway "source ~/.scripts/sway/swayLaunch.zsh"
+    source ~/.scripts/sway/swayLaunch.zsh
   elif [[ $TTY == "tty2" ]]; then
     echo "Starting Plasma"
-    tmux-detatch plasma "source startplasma-wayland"
+    source startplasma-wayland
   elif [[ $TTY == "tty1" ]]; then
     echo "Starting Hyprland"
-    tmux-detatch hyprland "source ~/.config/hypr/scripts/hyprLaunch.zsh"
+    source ~/.config/hypr/scripts/hyprLaunch.zsh
   fi
 fi
