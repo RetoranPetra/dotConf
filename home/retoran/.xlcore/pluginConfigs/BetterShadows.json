@@ -3675,6 +3675,24 @@
                   }
                 }
               },
+              "Shaft E2": {
+                "$type": "BetterShadows.ConfigTreeNode, BetterShadows",
+                "Name": "Shaft E2",
+                "Default": true,
+                "Preset": "070b9a2e-abc1-4811-a777-d54f14b31f71",
+                "Children": {
+                  "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[BetterShadows.ConfigTreeNode, BetterShadows]], System.Private.CoreLib",
+                  "The Cold Throne": {
+                    "$type": "BetterShadows.ConfigTreeNode, BetterShadows",
+                    "Name": "The Cold Throne",
+                    "Default": true,
+                    "Preset": "070b9a2e-abc1-4811-a777-d54f14b31f71",
+                    "Children": {
+                      "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[BetterShadows.ConfigTreeNode, BetterShadows]], System.Private.CoreLib"
+                    }
+                  }
+                }
+              },
               "Sorrel Haven": {
                 "$type": "BetterShadows.ConfigTreeNode, BetterShadows",
                 "Name": "Sorrel Haven",
@@ -4188,6 +4206,15 @@
                   "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[BetterShadows.ConfigTreeNode, BetterShadows]], System.Private.CoreLib"
                 }
               }
+            }
+          },
+          "Twin Adder Barracks": {
+            "$type": "BetterShadows.ConfigTreeNode, BetterShadows",
+            "Name": "Twin Adder Barracks",
+            "Default": true,
+            "Preset": "070b9a2e-abc1-4811-a777-d54f14b31f71",
+            "Children": {
+              "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[BetterShadows.ConfigTreeNode, BetterShadows]], System.Private.CoreLib"
             }
           }
         }
