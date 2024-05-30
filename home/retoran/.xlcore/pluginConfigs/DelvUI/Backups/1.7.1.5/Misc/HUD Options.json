@@ -1,0 +1,107 @@
+{
+  "$type": "DelvUI.Interface.GeneralElements.HUDOptionsConfig, DelvUI",
+  "UseGlobalHudShift": false,
+  "HudOffset": {
+    "$type": "System.Numerics.Vector2, System.Private.CoreLib",
+    "X": 0.0,
+    "Y": 0.0
+  },
+  "DimConfigWindow": false,
+  "AutomaticPreviewDisabling": true,
+  "OverrideDalamudStyle": true,
+  "MouseoverEnabled": true,
+  "MouseoverAutomaticMode": true,
+  "HideDefaultJobGauges": false,
+  "HideDefaultCastbar": false,
+  "HideDefaultPulltimer": false,
+  "CastBarOriginalPositions": [
+    {
+      "$type": "System.Numerics.Vector2, System.Private.CoreLib",
+      "X": 1122.0,
+      "Y": 792.0
+    },
+    {
+      "$type": "System.Numerics.Vector2, System.Private.CoreLib",
+      "X": 0.0,
+      "Y": 0.0
+    },
+    {
+      "$type": "System.Numerics.Vector2, System.Private.CoreLib",
+      "X": 0.0,
+      "Y": 0.0
+    },
+    {
+      "$type": "System.Numerics.Vector2, System.Private.CoreLib",
+      "X": 0.0,
+      "Y": 0.0
+    }
+  ],
+  "PulltimerOriginalPositions": [
+    {
+      "$type": "System.Numerics.Vector2, System.Private.CoreLib",
+      "X": 0.0,
+      "Y": 0.0
+    },
+    {
+      "$type": "System.Numerics.Vector2, System.Private.CoreLib",
+      "X": 0.0,
+      "Y": 0.0
+    },
+    {
+      "$type": "System.Numerics.Vector2, System.Private.CoreLib",
+      "X": 0.0,
+      "Y": 0.0
+    },
+    {
+      "$type": "System.Numerics.Vector2, System.Private.CoreLib",
+      "X": 0.0,
+      "Y": 0.0
+    }
+  ],
+  "JobGaugeOriginalPositions": [
+    {
+      "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[System.Numerics.Vector2, System.Private.CoreLib]], System.Private.CoreLib",
+      "JobHudACN": {
+        "$type": "System.Numerics.Vector2, System.Private.CoreLib",
+        "X": 0.0,
+        "Y": 0.0
+      },
+      "JobHudSMN0": {
+        "$type": "System.Numerics.Vector2, System.Private.CoreLib",
+        "X": 1729.0,
+        "Y": 1173.0
+      },
+      "JobHudSMN1": {
+        "$type": "System.Numerics.Vector2, System.Private.CoreLib",
+        "X": 1739.0,
+        "Y": 1025.0
+      },
+      "JobHudMNK": {
+        "$type": "System.Numerics.Vector2, System.Private.CoreLib",
+        "X": 0.0,
+        "Y": 0.0
+      },
+      "JobHudMNK1": {
+        "$type": "System.Numerics.Vector2, System.Private.CoreLib",
+        "X": 1757.0,
+        "Y": 1010.0
+      },
+      "JobHudMNK0": {
+        "$type": "System.Numerics.Vector2, System.Private.CoreLib",
+        "X": 1834.0,
+        "Y": 432.0
+      }
+    },
+    {
+      "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[System.Numerics.Vector2, System.Private.CoreLib]], System.Private.CoreLib"
+    },
+    {
+      "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[System.Numerics.Vector2, System.Private.CoreLib]], System.Private.CoreLib"
+    },
+    {
+      "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[System.Numerics.Vector2, System.Private.CoreLib]], System.Private.CoreLib"
+    }
+  ],
+  "Enabled": true,
+  "Version": "1.7.1.5"
+}

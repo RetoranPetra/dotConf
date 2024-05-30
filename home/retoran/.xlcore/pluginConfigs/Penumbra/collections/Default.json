@@ -1,0 +1,90 @@
+﻿{
+  "Version": 1,
+  "Name": "Default",
+  "Settings": {
+    "Face Defined": {
+      "Settings": {
+        "Hyur Midlander": 0,
+        "Hyur Highlander": 0,
+        "Elezen": 0,
+        "Miqote": 0,
+        "Lalafell": 0,
+        "Roegadyn": 0,
+        "AuRa": 0,
+        "Hrothgar": 0,
+        "Viera": 0,
+        "User Permissions": 1,
+        "Credits": 1,
+        "Final Note": 1
+      },
+      "Priority": 0,
+      "Enabled": true
+    },
+    "Hair Defined": {
+      "Settings": {
+        "Hyur - Midlander": 3,
+        "Hyur - Highlander": 3,
+        "Miqote": 3,
+        "Au Ra": 3,
+        "Elezen": 3,
+        "Lalafell": 3,
+        "Roegadyn": 3,
+        "Shadowbringers": 3,
+        "Endwalker": 1,
+        "Better Eyelashes, Eyebrows, and Beards": 131071,
+        "Extras": 31,
+        "Author Notes": 0,
+        "Veena Viera Fixes": 0
+      },
+      "Priority": 0,
+      "Enabled": true
+    },
+    "Hrothgar & Viera Hats": {
+      "Settings": {},
+      "Priority": 0,
+      "Enabled": true
+    },
+    "Improved Au Ra Tail 1.1 - Black&White": {
+      "Settings": {
+        "Male Au Ra": 85,
+        "Female Au Ra": 85
+      },
+      "Priority": 0,
+      "Enabled": true
+    },
+    "Improved Au Ra Tail 1.1 - Vanilla": {
+      "Settings": {
+        "Male Au Ra": 85,
+        "Female Au Ra": 85
+      },
+      "Priority": 0,
+      "Enabled": false
+    },
+    "Material 4K-UI v6.3.1 (Complete)": {
+      "Settings": {},
+      "Priority": 0,
+      "Enabled": true
+    },
+    "NPC Defined": {
+      "Settings": {
+        "A Realm Reborn": 65535,
+        "Heavensward": 255,
+        "Stormblood": 8191,
+        "Shadowbringers": 1023,
+        "EVENT": 1,
+        "Endwalker Patch": 1,
+        "Misc. NPC": 1,
+        "Patch 6.3-6.4": 1,
+        "The rest of Midlander": 3
+      },
+      "Priority": -1,
+      "Enabled": true
+    },
+    "Veena Hotfix": {
+      "Settings": {},
+      "Priority": 0,
+      "Enabled": true
+    }
+  },
+  "Inheritance": []
+}

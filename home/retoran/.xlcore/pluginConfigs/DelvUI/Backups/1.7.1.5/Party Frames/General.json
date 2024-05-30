@@ -1,0 +1,40 @@
+{
+  "$type": "DelvUI.Interface.Party.PartyFramesConfig, DelvUI",
+  "Preview": false,
+  "Rows": 4,
+  "Columns": 2,
+  "BarsAnchor": 4,
+  "FillRowsFirst": true,
+  "PlayerOrderOverrideEnabled": false,
+  "PlayerOrder": 1,
+  "ShowWhenSolo": false,
+  "ShowChocobo": true,
+  "VisibilityConfig": {
+    "$type": "DelvUI.Interface.VisibilityConfig, DelvUI",
+    "HideOutsideOfCombat": false,
+    "HideInCombat": false,
+    "HideInGoldSaucer": false,
+    "HideOnFullHP": false,
+    "HideInDuty": false,
+    "HideInIslandSanctuary": false,
+    "HideInPvP": false,
+    "ShowInDuty": false,
+    "ShowOnWeaponDrawn": false,
+    "ShowWhileCrafting": false,
+    "ShowWhileGathering": false,
+    "ShowInParty": false,
+    "ShowInIslandSanctuary": false,
+    "ShowInPvP": false,
+    "Enabled": false,
+    "Version": "1.7.1.5"
+  },
+  "Strata": null,
+  "Position": {
+    "$type": "System.Numerics.Vector2, System.Private.CoreLib",
+    "X": -1225.0,
+    "Y": -402.0
+  },
+  "Enabled": true,
+  "StrataLevel": 0,
+  "Version": "1.7.1.5"
+}

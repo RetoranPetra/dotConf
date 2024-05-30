@@ -1,0 +1,409 @@
+{
+  "CharacterData": {
+    "Name": "Retoran Petra",
+    "LocalContentID": 18014598550693619
+  },
+  "BlueMage": {
+    "Mimicry": {
+      "Value": false
+    },
+    "TankStance": {
+      "Value": false
+    },
+    "Enabled": {
+      "Value": false
+    },
+    "SoloMode": {
+      "Value": false
+    },
+    "Priority": {
+      "Value": 1
+    },
+    "DutiesOnly": {
+      "Value": false
+    },
+    "PartyFrameOverlay": {
+      "Value": true
+    },
+    "BannerOverlay": {
+      "Value": true
+    },
+    "DisableInSanctuary": {
+      "Value": true
+    }
+  },
+  "Dancer": {
+    "Enabled": {
+      "Value": false
+    },
+    "SoloMode": {
+      "Value": false
+    },
+    "Priority": {
+      "Value": 1
+    },
+    "DutiesOnly": {
+      "Value": false
+    },
+    "PartyFrameOverlay": {
+      "Value": true
+    },
+    "BannerOverlay": {
+      "Value": true
+    },
+    "DisableInSanctuary": {
+      "Value": true
+    }
+  },
+  "Tank": {
+    "DisableInAllianceRaid": {
+      "Value": true
+    },
+    "CheckAllianceStances": {
+      "Value": false
+    },
+    "Enabled": {
+      "Value": true
+    },
+    "SoloMode": {
+      "Value": false
+    },
+    "Priority": {
+      "Value": 1
+    },
+    "DutiesOnly": {
+      "Value": false
+    },
+    "PartyFrameOverlay": {
+      "Value": true
+    },
+    "BannerOverlay": {
+      "Value": true
+    },
+    "DisableInSanctuary": {
+      "Value": true
+    }
+  },
+  "Food": {
+    "FoodEarlyWarningTime": {
+      "Value": 600
+    },
+    "SavageDuties": {
+      "Value": false
+    },
+    "UltimateDuties": {
+      "Value": false
+    },
+    "ExtremeUnreal": {
+      "Value": false
+    },
+    "DisableInCombat": {
+      "Value": true
+    },
+    "CriterionDuties": {
+      "Value": false
+    },
+    "EnableZoneFilter": {
+      "Value": false
+    },
+    "Enabled": {
+      "Value": false
+    },
+    "SoloMode": {
+      "Value": false
+    },
+    "Priority": {
+      "Value": 1
+    },
+    "DutiesOnly": {
+      "Value": false
+    },
+    "PartyFrameOverlay": {
+      "Value": true
+    },
+    "BannerOverlay": {
+      "Value": true
+    },
+    "DisableInSanctuary": {
+      "Value": true
+    }
+  },
+  "FreeCompany": {
+    "ScanMode": {
+      "Value": 0
+    },
+    "BuffCount": {
+      "Value": 1
+    },
+    "BuffList": [
+      0,
+      0
+    ],
+    "Enabled": {
+      "Value": false
+    },
+    "SoloMode": {
+      "Value": false
+    },
+    "Priority": {
+      "Value": 1
+    },
+    "DutiesOnly": {
+      "Value": false
+    },
+    "PartyFrameOverlay": {
+      "Value": true
+    },
+    "BannerOverlay": {
+      "Value": true
+    },
+    "DisableInSanctuary": {
+      "Value": true
+    }
+  },
+  "Sage": {
+    "Enabled": {
+      "Value": true
+    },
+    "SoloMode": {
+      "Value": false
+    },
+    "Priority": {
+      "Value": 1
+    },
+    "DutiesOnly": {
+      "Value": false
+    },
+    "PartyFrameOverlay": {
+      "Value": true
+    },
+    "BannerOverlay": {
+      "Value": true
+    },
+    "DisableInSanctuary": {
+      "Value": true
+    }
+  },
+  "Scholar": {
+    "Enabled": {
+      "Value": true
+    },
+    "SoloMode": {
+      "Value": false
+    },
+    "Priority": {
+      "Value": 1
+    },
+    "DutiesOnly": {
+      "Value": false
+    },
+    "PartyFrameOverlay": {
+      "Value": true
+    },
+    "BannerOverlay": {
+      "Value": true
+    },
+    "DisableInSanctuary": {
+      "Value": true
+    }
+  },
+  "Summoner": {
+    "Enabled": {
+      "Value": true
+    },
+    "SoloMode": {
+      "Value": false
+    },
+    "Priority": {
+      "Value": 1
+    },
+    "DutiesOnly": {
+      "Value": true
+    },
+    "PartyFrameOverlay": {
+      "Value": true
+    },
+    "BannerOverlay": {
+      "Value": true
+    },
+    "DisableInSanctuary": {
+      "Value": true
+    }
+  },
+  "SpiritBond": {
+    "SpiritBondEarlyWarningTime": {
+      "Value": 600
+    },
+    "SavageDuties": {
+      "Value": false
+    },
+    "UltimateDuties": {
+      "Value": false
+    },
+    "ExtremeUnreal": {
+      "Value": false
+    },
+    "DisableInCombat": {
+      "Value": false
+    },
+    "CriterionDuties": {
+      "Value": false
+    },
+    "EnableZoneFilter": {
+      "Value": false
+    },
+    "Enabled": {
+      "Value": false
+    },
+    "SoloMode": {
+      "Value": false
+    },
+    "Priority": {
+      "Value": 1
+    },
+    "DutiesOnly": {
+      "Value": false
+    },
+    "PartyFrameOverlay": {
+      "Value": true
+    },
+    "BannerOverlay": {
+      "Value": true
+    },
+    "DisableInSanctuary": {
+      "Value": true
+    }
+  },
+  "Cutscene": {
+    "Enabled": {
+      "Value": false
+    },
+    "SoloMode": {
+      "Value": false
+    },
+    "Priority": {
+      "Value": 1
+    },
+    "DutiesOnly": {
+      "Value": false
+    },
+    "PartyFrameOverlay": {
+      "Value": true
+    },
+    "BannerOverlay": {
+      "Value": true
+    },
+    "DisableInSanctuary": {
+      "Value": true
+    }
+  },
+  "Chocobo": {
+    "EarlyWarningTime": {
+      "Value": 60
+    },
+    "EnableEarlyWarning": {
+      "Value": true
+    },
+    "Enabled": {
+      "Value": true
+    },
+    "SoloMode": {
+      "Value": false
+    },
+    "Priority": {
+      "Value": 1
+    },
+    "DutiesOnly": {
+      "Value": false
+    },
+    "PartyFrameOverlay": {
+      "Value": true
+    },
+    "BannerOverlay": {
+      "Value": true
+    },
+    "DisableInSanctuary": {
+      "Value": true
+    }
+  },
+  "PartyOverlay": {
+    "WarningText": {
+      "Value": true
+    },
+    "PlayerName": {
+      "Value": true
+    },
+    "JobIcon": {
+      "Value": true
+    },
+    "FlashingEffects": {
+      "Value": true
+    },
+    "WarningTextColor": {
+      "Value": {
+        "X": 0.8,
+        "Y": 0.2,
+        "Z": 0.2,
+        "W": 1.0
+      }
+    },
+    "WarningOutlineColor": {
+      "Value": {
+        "X": 1.0,
+        "Y": 0.0,
+        "Z": 0.0,
+        "W": 1.0
+      }
+    },
+    "PreviewMode": {
+      "Value": false
+    },
+    "SoloMode": {
+      "Value": false
+    }
+  },
+  "BannerOverlay": {
+    "Scale": {
+      "Value": 1.0
+    },
+    "WarningCount": {
+      "Value": 8
+    },
+    "Mode": {
+      "Value": 1
+    },
+    "SampleMode": {
+      "Value": false
+    },
+    "WarningShield": {
+      "Value": true
+    },
+    "WarningText": {
+      "Value": true
+    },
+    "Icon": {
+      "Value": true
+    },
+    "PlayerNames": {
+      "Value": true
+    },
+    "IconText": {
+      "Value": true
+    },
+    "BorderThickness": {
+      "Value": 1.0
+    },
+    "SoloMode": {
+      "Value": false
+    }
+  },
+  "Blacklist": {
+    "Enabled": {
+      "Value": false
+    },
+    "BlacklistedZoneSettings": {
+      "Value": []
+    }
+  },
+  "Version": 5
+}
