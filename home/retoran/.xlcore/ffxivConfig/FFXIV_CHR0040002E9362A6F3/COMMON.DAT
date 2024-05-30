@@ -32,8 +32,8 @@ EventCameraAutoControl	1
 CameraLookBlinkType	0
 IdleEmoteTime	5
 IdleEmoteRandomType	0
-CutsceneSkipIsShip	0
-CutsceneSkipIsContents	0
+CutsceneSkipIsShip	1
+CutsceneSkipIsContents	1
 CutsceneSkipIsHousing	0
 PetTargetOffInCombat	1
 GroundTargetFPSPosX	50000
@@ -74,7 +74,7 @@ ActiveLS_L	0
 HotbarLock	1
 HotbarDispRecastTime	1
 HotbarCrossContentsActionEnableInput	1
-HotbarDispRecastTimeDispType	0
+HotbarDispRecastTimeDispType	1
 ExHotbarChangeHotbar1	0
 HotbarCommon01	0
 HotbarCommon02	0
