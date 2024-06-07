@@ -8,6 +8,18 @@ fzd() {
 fzcd() {
 	fd cd $@
 }
+open() {
+	if [ $# -eq 0 ]; then
+		VAL=$(fzf)
+		if ! [[ -z val ]]; then
+			handlr open $VAL
+		fi
+	fi
+	for f in $@; do
+		# TODO: Should check if default handlr is nvim for multiple and open them all at once.
+		handlr open $f
+	done
+}
 tmux-detatch() {
 	tmux new-session -d -s $1
 	tmux send-keys "${@:2}" C-m
