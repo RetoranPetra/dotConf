@@ -849,6 +849,15 @@
                   }
                 }
               },
+              "The Roost": {
+                "$type": "BetterShadows.ConfigTreeNode, BetterShadows",
+                "Name": "The Roost",
+                "Default": true,
+                "Preset": "070b9a2e-abc1-4811-a777-d54f14b31f71",
+                "Children": {
+                  "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[BetterShadows.ConfigTreeNode, BetterShadows]], System.Private.CoreLib"
+                }
+              },
               "Thicktwine": {
                 "$type": "BetterShadows.ConfigTreeNode, BetterShadows",
                 "Name": "Thicktwine",
@@ -1056,6 +1065,15 @@
                   }
                 }
               },
+              "Leatherworkers' Guild": {
+                "$type": "BetterShadows.ConfigTreeNode, BetterShadows",
+                "Name": "Leatherworkers' Guild",
+                "Default": true,
+                "Preset": "070b9a2e-abc1-4811-a777-d54f14b31f71",
+                "Children": {
+                  "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[BetterShadows.ConfigTreeNode, BetterShadows]], System.Private.CoreLib"
+                }
+              },
               "Limsa Lominsa Aetheryte Plaza": {
                 "$type": "BetterShadows.ConfigTreeNode, BetterShadows",
                 "Name": "Limsa Lominsa Aetheryte Plaza",
@@ -1236,6 +1254,15 @@
             "Preset": "070b9a2e-abc1-4811-a777-d54f14b31f71",
             "Children": {
               "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[BetterShadows.ConfigTreeNode, BetterShadows]], System.Private.CoreLib",
+              "Apkallu Falls": {
+                "$type": "BetterShadows.ConfigTreeNode, BetterShadows",
+                "Name": "Apkallu Falls",
+                "Default": true,
+                "Preset": "070b9a2e-abc1-4811-a777-d54f14b31f71",
+                "Children": {
+                  "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[BetterShadows.ConfigTreeNode, BetterShadows]], System.Private.CoreLib"
+                }
+              },
               "The Long Climb": {
                 "$type": "BetterShadows.ConfigTreeNode, BetterShadows",
                 "Name": "The Long Climb",
@@ -1414,6 +1441,15 @@
                       "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[BetterShadows.ConfigTreeNode, BetterShadows]], System.Private.CoreLib"
                     }
                   }
+                }
+              },
+              "Coral Tower": {
+                "$type": "BetterShadows.ConfigTreeNode, BetterShadows",
+                "Name": "Coral Tower",
+                "Default": true,
+                "Preset": "070b9a2e-abc1-4811-a777-d54f14b31f71",
+                "Children": {
+                  "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[BetterShadows.ConfigTreeNode, BetterShadows]], System.Private.CoreLib"
                 }
               },
               "Oakwood": {
@@ -1740,6 +1776,15 @@
             "Preset": "070b9a2e-abc1-4811-a777-d54f14b31f71",
             "Children": {
               "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[BetterShadows.ConfigTreeNode, BetterShadows]], System.Private.CoreLib",
+              "Coral Tower": {
+                "$type": "BetterShadows.ConfigTreeNode, BetterShadows",
+                "Name": "Coral Tower",
+                "Default": true,
+                "Preset": "070b9a2e-abc1-4811-a777-d54f14b31f71",
+                "Children": {
+                  "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[BetterShadows.ConfigTreeNode, BetterShadows]], System.Private.CoreLib"
+                }
+              },
               "Fogfens": {
                 "$type": "BetterShadows.ConfigTreeNode, BetterShadows",
                 "Name": "Fogfens",
@@ -2667,6 +2712,15 @@
                   }
                 }
               },
+              "The Roost": {
+                "$type": "BetterShadows.ConfigTreeNode, BetterShadows",
+                "Name": "The Roost",
+                "Default": true,
+                "Preset": "070b9a2e-abc1-4811-a777-d54f14b31f71",
+                "Children": {
+                  "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[BetterShadows.ConfigTreeNode, BetterShadows]], System.Private.CoreLib"
+                }
+              },
               "Zahar'ak": {
                 "$type": "BetterShadows.ConfigTreeNode, BetterShadows",
                 "Name": "Zahar'ak",
@@ -2682,7 +2736,16 @@
                 "Default": true,
                 "Preset": "070b9a2e-abc1-4811-a777-d54f14b31f71",
                 "Children": {
-                  "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[BetterShadows.ConfigTreeNode, BetterShadows]], System.Private.CoreLib"
+                  "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[BetterShadows.ConfigTreeNode, BetterShadows]], System.Private.CoreLib",
+                  "Zanr'ak Encampment": {
+                    "$type": "BetterShadows.ConfigTreeNode, BetterShadows",
+                    "Name": "Zanr'ak Encampment",
+                    "Default": true,
+                    "Preset": "070b9a2e-abc1-4811-a777-d54f14b31f71",
+                    "Children": {
+                      "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[BetterShadows.ConfigTreeNode, BetterShadows]], System.Private.CoreLib"
+                    }
+                  }
                 }
               }
             }
@@ -3153,6 +3216,24 @@
             "Preset": "070b9a2e-abc1-4811-a777-d54f14b31f71",
             "Children": {
               "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[BetterShadows.ConfigTreeNode, BetterShadows]], System.Private.CoreLib",
+              "Cape Westwind": {
+                "$type": "BetterShadows.ConfigTreeNode, BetterShadows",
+                "Name": "Cape Westwind",
+                "Default": true,
+                "Preset": "070b9a2e-abc1-4811-a777-d54f14b31f71",
+                "Children": {
+                  "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[BetterShadows.ConfigTreeNode, BetterShadows]], System.Private.CoreLib",
+                  "Imperial Outpost": {
+                    "$type": "BetterShadows.ConfigTreeNode, BetterShadows",
+                    "Name": "Imperial Outpost",
+                    "Default": true,
+                    "Preset": "070b9a2e-abc1-4811-a777-d54f14b31f71",
+                    "Children": {
+                      "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[BetterShadows.ConfigTreeNode, BetterShadows]], System.Private.CoreLib"
+                    }
+                  }
+                }
+              },
               "Horizon's Edge": {
                 "$type": "BetterShadows.ConfigTreeNode, BetterShadows",
                 "Name": "Horizon's Edge",
@@ -3576,6 +3657,15 @@
                   "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[BetterShadows.ConfigTreeNode, BetterShadows]], System.Private.CoreLib"
                 }
               },
+              "Goldsmiths' Guild": {
+                "$type": "BetterShadows.ConfigTreeNode, BetterShadows",
+                "Name": "Goldsmiths' Guild",
+                "Default": true,
+                "Preset": "070b9a2e-abc1-4811-a777-d54f14b31f71",
+                "Children": {
+                  "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[BetterShadows.ConfigTreeNode, BetterShadows]], System.Private.CoreLib"
+                }
+              },
               "Gridania Aetheryte Plaza": {
                 "$type": "BetterShadows.ConfigTreeNode, BetterShadows",
                 "Name": "Gridania Aetheryte Plaza",
@@ -3696,6 +3786,15 @@
               "Sorrel Haven": {
                 "$type": "BetterShadows.ConfigTreeNode, BetterShadows",
                 "Name": "Sorrel Haven",
+                "Default": true,
+                "Preset": "070b9a2e-abc1-4811-a777-d54f14b31f71",
+                "Children": {
+                  "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[BetterShadows.ConfigTreeNode, BetterShadows]], System.Private.CoreLib"
+                }
+              },
+              "The Footfalls": {
+                "$type": "BetterShadows.ConfigTreeNode, BetterShadows",
+                "Name": "The Footfalls",
                 "Default": true,
                 "Preset": "070b9a2e-abc1-4811-a777-d54f14b31f71",
                 "Children": {
@@ -3864,6 +3963,15 @@
                   "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[BetterShadows.ConfigTreeNode, BetterShadows]], System.Private.CoreLib"
                 }
               },
+              "Ebony Stalls": {
+                "$type": "BetterShadows.ConfigTreeNode, BetterShadows",
+                "Name": "Ebony Stalls",
+                "Default": true,
+                "Preset": "070b9a2e-abc1-4811-a777-d54f14b31f71",
+                "Children": {
+                  "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[BetterShadows.ConfigTreeNode, BetterShadows]], System.Private.CoreLib"
+                }
+              },
               "Greatloam Growery": {
                 "$type": "BetterShadows.ConfigTreeNode, BetterShadows",
                 "Name": "Greatloam Growery",
@@ -3930,6 +4038,15 @@
               "Shaded Bower": {
                 "$type": "BetterShadows.ConfigTreeNode, BetterShadows",
                 "Name": "Shaded Bower",
+                "Default": true,
+                "Preset": "070b9a2e-abc1-4811-a777-d54f14b31f71",
+                "Children": {
+                  "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[BetterShadows.ConfigTreeNode, BetterShadows]], System.Private.CoreLib"
+                }
+              },
+              "The Knot": {
+                "$type": "BetterShadows.ConfigTreeNode, BetterShadows",
+                "Name": "The Knot",
                 "Default": true,
                 "Preset": "070b9a2e-abc1-4811-a777-d54f14b31f71",
                 "Children": {
