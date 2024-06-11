@@ -2,6 +2,7 @@
 source /home/retoran/.env/javanoparent.zsh
 source /home/retoran/.env/fcitx5.zsh
 source /home/retoran/.env/grim.zsh
+source /home/retoran/.env/bluetooth.sh
 #Clutter
 export CLUTTER_BACKEND=wayland
 #QT
