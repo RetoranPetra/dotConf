@@ -136,7 +136,7 @@ ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
 [General]
-ColorSchemeHash=01662607e36cd33eacc7d7d7189f69c26b9a2cc8
+ColorSchemeHash=4a48bd34ba53d580d8594cb0216221e77518509f
 TerminalApplication=alacritty
 
 [KDE]
