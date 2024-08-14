@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=Fightcade Replay
+Exec=/home/retoran/Games/Fightcade/emulator/fcade.sh %U
+Terminal=false
+MimeType=x-scheme-handler/fcade

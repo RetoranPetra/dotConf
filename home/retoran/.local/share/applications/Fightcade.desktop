@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Exec=sh -e -c "exec ~/Games/Fightcade/Fightcade2.sh" %k
+Name=Fightcade
+Comment=Fightcade
+Categories=Game;Emulator;ArcadeGame
+Icon=/home/retoran/Games/Fightcade/fc2-electron/resources/app/icon.png
