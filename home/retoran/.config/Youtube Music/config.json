@@ -1,0 +1,225 @@
+{
+	"window-size": {
+		"width": 1280,
+		"height": 1416
+	},
+	"url": "https://music.youtube.com/watch?v=-Vue7nRp0EQ&list=RDTMAK5uy_kset8DisdE7LSD4TNjEVvrKRTmG7a56sY&index=0",
+	"options": {
+		"tray": true,
+		"appVisible": true,
+		"autoUpdates": true,
+		"hideMenu": true,
+		"startAtLogin": false,
+		"disableHardwareAcceleration": true,
+		"restartOnConfigChanges": false,
+		"trayClickPlayPause": false,
+		"autoResetAppCache": false,
+		"resumeOnStart": true,
+		"proxy": "",
+		"startingPage": "Default",
+		"likeButtons": "force",
+		"hideMenuWarned": true
+	},
+	"plugins": {
+		"navigation": {
+			"enabled": true
+		},
+		"adblocker": {
+			"enabled": true,
+			"cache": true,
+			"additionalBlockLists": []
+		},
+		"shortcuts": {
+			"enabled": false,
+			"overrideMediaKeys": false
+		},
+		"downloader": {
+			"enabled": false,
+			"selectedPreset": "Custom",
+			"customPresetSetting": {
+				"extension": "mp3",
+				"ffmpegArgs": []
+			}
+		},
+		"last-fm": {
+			"enabled": true,
+			"api_root": "http://ws.audioscrobbler.com/2.0/",
+			"api_key": "04d76faaac8726e60988e14c105d421a",
+			"secret": "a5d2a36fdf64819290f6982481eaffa2",
+			"token": "EHFJ-QhwNrv_MHpkFE0tYZqtyqOxnwFP",
+			"session_key": "ltkqVP9yo6LkrhsJA_RYBzkScJjN3yeJ"
+		},
+		"discord": {
+			"enabled": true,
+			"autoReconnect": true,
+			"activityTimoutEnabled": true,
+			"activityTimoutTime": 600000,
+			"hideDurationLeft": false,
+			"playOnYouTubeMusic": true,
+			"activityTimeoutEnabled": true,
+			"activityTimeoutTime": 600000
+		},
+		"notifications": {
+			"enabled": false,
+			"unpauseNotification": false,
+			"urgency": "normal",
+			"interactive": true,
+			"toastStyle": 1,
+			"refreshOnPlayPause": false,
+			"trayControls": true,
+			"hideButtonText": false
+		},
+		"precise-volume": {
+			"enabled": false,
+			"steps": 1,
+			"arrowsShortcut": true,
+			"globalShortcuts": {
+				"volumeUp": "",
+				"volumeDown": ""
+			}
+		},
+		"sponsorblock": {
+			"enabled": false,
+			"apiURL": "https://sponsor.ajay.app",
+			"categories": [
+				"sponsor",
+				"intro",
+				"outro",
+				"interaction",
+				"selfpromo",
+				"music_offtopic"
+			]
+		},
+		"video-toggle": {
+			"enabled": false,
+			"mode": "custom",
+			"forceHide": false
+		},
+		"picture-in-picture": {
+			"enabled": false,
+			"alwaysOnTop": true,
+			"savePosition": true,
+			"saveSize": false,
+			"hotkey": "P"
+		},
+		"captions-selector": {
+			"enabled": false,
+			"disableCaptions": false
+		},
+		"skip-silences": {
+			"onlySkipBeginning": false
+		},
+		"crossfade": {
+			"enabled": false,
+			"fadeInDuration": 1500,
+			"fadeOutDuration": 5000,
+			"secondsBeforeEnd": 10,
+			"fadeScaling": "linear"
+		},
+		"visualizer": {
+			"enabled": false,
+			"type": "butterchurn",
+			"butterchurn": {
+				"preset": "martin [shadow harlequins shape code] - fata morgana",
+				"renderingFrequencyInMs": 500,
+				"blendTimeInSeconds": 2.7
+			},
+			"vudio": {
+				"effect": "lighting",
+				"accuracy": 128,
+				"lighting": {
+					"maxHeight": 160,
+					"maxSize": 12,
+					"lineWidth": 1,
+					"color": "#49f3f7",
+					"shadowBlur": 2,
+					"shadowColor": "rgba(244,244,244,.5)",
+					"fadeSide": true,
+					"prettify": false,
+					"horizontalAlign": "center",
+					"verticalAlign": "middle",
+					"dottify": true
+				}
+			},
+			"wave": {
+				"animations": [
+					{
+						"type": "Cubes",
+						"config": {
+							"bottom": true,
+							"count": 30,
+							"cubeHeight": 5,
+							"fillColor": {
+								"gradient": [
+									"#FAD961",
+									"#F76B1C"
+								]
+							},
+							"lineColor": "rgba(0,0,0,0)",
+							"radius": 20
+						}
+					},
+					{
+						"type": "Cubes",
+						"config": {
+							"top": true,
+							"count": 12,
+							"cubeHeight": 5,
+							"fillColor": {
+								"gradient": [
+									"#FAD961",
+									"#F76B1C"
+								]
+							},
+							"lineColor": "rgba(0,0,0,0)",
+							"radius": 10
+						}
+					},
+					{
+						"type": "Circles",
+						"config": {
+							"lineColor": {
+								"gradient": [
+									"#FAD961",
+									"#FAD961",
+									"#F76B1C"
+								],
+								"rotate": 90
+							},
+							"lineWidth": 4,
+							"diameter": 20,
+							"count": 10,
+							"frequencyBand": "base"
+						}
+					}
+				]
+			}
+		},
+		"scrobbler": {
+			"enabled": false,
+			"scrobbleOtherMedia": true,
+			"scrobblers": {
+				"lastfm": {
+					"enabled": true,
+					"apiRoot": "https://ws.audioscrobbler.com/2.0/",
+					"apiKey": "04d76faaac8726e60988e14c105d421a",
+					"secret": "a5d2a36fdf64819290f6982481eaffa2"
+				},
+				"listenbrainz": {
+					"enabled": false,
+					"apiRoot": "https://api.listenbrainz.org/1/"
+				}
+			}
+		}
+	},
+	"__internal__": {
+		"migrations": {
+			"version": "3.5.1"
+		}
+	},
+	"window-maximized": true,
+	"window-position": {
+		"x": 0,
+		"y": 0
+	}
+}
