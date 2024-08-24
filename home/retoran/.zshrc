@@ -5,7 +5,15 @@ SAVEHIST=1000
 unsetopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
-#
+
+TTY=$(ps -p $$ -o tty=)
+
+if [[ $TTY == "tty"* ]]; then
+	# Ideally should only execute these on first shell of the session. Doesn't matter if not.
+	paru -Qqen > ~/.packageNative
+	paru -Qqem > ~/.packageForeign
+fi
+
 source ~/antigen.zsh
 
 antigen use oh-my-zsh
