@@ -1,74 +1,71 @@
-adobe-source-pro-fonts
-android-sdk-platform-tools
-ani-cli
-arrpc
-ast-grep
-awakened-poe-trade-git
-chatterino2-git
-chromium-snapshot-bin
-clarity-icon-theme
-clipman
-fortune-mod-futurama
-fvim
-game-devices-udev
-go-mtpfs-git
-godot-mono-bin
-grapejuice-git
-heroic-games-launcher-bin
-hw-probe
-hybrid-bar
-hyprshot
-hyprwayland-scanner-git
-iwgtk
-ladybird-git
-lib32-vulkan-tools
-mcrcon
-monodevelop-bin
-mpvpaper-git
-numix-icon-theme-git
-olympus
-opentabletdriver
-osu-lazer
-p3x-onenote
-paru
-path-of-building-community-git
-piavpn-bin
-prismlauncher-git
-protontricks
-protonup-qt
-python-pyclip
-pzl_minesweeper
-qdirstat
-razergenie
-rescrobbled-git
-resvg-qt
-rivalcfg
-rofi-lbonn-wayland-git
-secret-service
-selectdefaultapplication-git
-silo
-silo-google-keep
-silo-gsuite
-steam-tui
-streamlink-twitch-gui-bin
-teamviewer
-tty-solitaire-git
-tumbler-extra-thumbnailers
-unityhub
-update-grub
-vencord-desktop-git
-vintagestory
-viper-bin
-vrrtest-git
-waybar-git
-waydroid
-waydroid-script-git
-wine-ge-custom-bin
-winetricks-git
-xcursor-viewer-git
-xdg-desktop-portal-hyprland-git
-xdg-utils-handlr
-xivlauncher-git
-youtube
-youtube-music
-zoom
+adobe-source-pro-fonts 20201128-1
+android-sdk-platform-tools 35.0.1-1
+ani-cli 4.8-2
+arrpc 3.4.0-3
+ast-grep 0.26.1-1
+awakened-poe-trade-git 3.25.102.r0.gf252d56-1
+chatterino2-git 2.5.1.r118.g6e104bd-1
+chromium-snapshot-bin 129.0.6621.0.r1333901-1
+clarity-icon-theme 0.5.1-1
+clipman 1.6.4-1
+fortune-mod-futurama 0.2-4
+fvim 0.3.549_ee4316c-1
+game-devices-udev 0.23-0.1
+go-mtpfs-git 20200111-1
+godot-mono-bin 4.3-2
+grapejuice-git 7.20.12.r4.g208e822-1
+hw-probe 1.6.5-2
+hybrid-bar 0.4.9-1
+hyprshot 1.3.0-1
+hyprwayland-scanner-git 0.4.0.r4.ga048a6cb-1
+iwgtk 0.9-1
+ladybird-git r63380.c42679597a4-1
+lib32-vulkan-tools 1.3.285-1
+mcrcon 0.7.2-1
+monodevelop-bin 7.8.4.1_0xamarin6_ubuntu1804b1-4
+mpvpaper-git r107.0069bc2-1
+numix-icon-theme-git 24.04.22.r0.g8f4d6e3ea-1
+olympus 24.02.25.05-1
+opentabletdriver 0.6.4.0-4
+osu-lazer 2024.817.0-1
+p3x-onenote 2024.10.110-1
+paru 2.0.3-1
+path-of-building-community-git 2.48.2.r8227.62.517-1
+piavpn-bin 1:3.5.7-2
+prismlauncher-git 8.0.r1117.g23c69e7f9-1
+protontricks 1.11.1-1
+protonup-qt 2.10.2-1
+python-pyclip 0.7.0-5
+pzl_minesweeper 32.1-1
+qdirstat 1.9-2
+razergenie 1.1.0-1
+rescrobbled-git 0.7.1.r4.gd9837ad-1
+resvg-qt 0.20.0-1
+rivalcfg 4.13.0-1
+rofi-lbonn-wayland-git 1.7.5.wayland3.r26.gd88b475b-1
+secret-service 0.2.2-1
+selectdefaultapplication-git r22.c752df6-1
+silo 4.11.1-1
+silo-google-keep 0.4-1
+silo-gsuite 0.7-1
+steam-tui 0.3.0-5
+streamlink-twitch-gui-bin 2.5.2-1
+teamviewer 15.55.3-1
+tty-solitaire-git 1:1.3.1.r9.gef83b74-1
+tumbler-extra-thumbnailers 5.0-1
+unityhub 3.8.0-1
+update-grub 0.0.1-8
+vencord-desktop-git r360.75354ad-1
+viper-bin 3:1.12.1-1
+vrrtest-git r34.1532c62-1
+waybar-git r3622.f665d1da-1
+waydroid 1.4.3-1
+waydroid-script-git r177.1a2d3ad-1
+winetricks-git 20240105.r47.g72b934e1-1
+xcursor-viewer-git r19.6b8a95a-1
+xdg-desktop-portal-hyprland-git 1.3.1.r22.g91e48d6a-1
+xdg-utils-handlr 0.6.4-2
+xivlauncher-git 1:1.1.0.r6.g71a9b7b-6
+youtube 1.1.2-1
+youtube-music 3.5.1-1
+zoom 6.1.10-1

@@ -10,8 +10,8 @@ TTY=$(ps -p $$ -o tty=)
 
 if [[ $TTY == "tty"* ]]; then
 	# Ideally should only execute these on first shell of the session. Doesn't matter if not.
-	paru -Qqen > ~/.packageNative
-	paru -Qqem > ~/.packageForeign
+	paru -Qen > ~/.packageNative
+	paru -Qem > ~/.packageForeign
 fi
 
 source ~/antigen.zsh

@@ -1,265 +1,264 @@
-adobe-source-han-sans-cn-fonts
-adobe-source-han-sans-hk-fonts
-adobe-source-han-sans-jp-fonts
-adobe-source-han-sans-kr-fonts
-adobe-source-han-serif-cn-fonts
-adobe-source-han-serif-hk-fonts
-adobe-source-han-serif-jp-fonts
-adobe-source-han-serif-kr-fonts
-alacritty
-amd-ucode
-android-udev
-arch-install-scripts
-audacity
-base
-base-devel
-bc
-blender
-bless
-blueman
-bluez-utils
-breeze-gtk
-btop
-btrfs-progs
-ca-certificates
-chezmoi
-clang
-clblast
-cmake
-cmatrix
-corectrl
-deepin-icon-theme
-deluge
-deluge-gtk
-dex
-dhcping
-docker
-dolphin
-dunst
-easyeffects
-efibootmgr
-efitools
-elementary-icon-theme
-fcitx5
-fcitx5-configtool
-fcitx5-gtk
-fcitx5-mozc
-fcitx5-qt
-fd
-feh
-ffmpeg
-ffmpeg4.4
-ffmpegthumbnailer
-firefox
-fortune-mod
-freecad
-fzf
-gamemode
-gamescope
-git
-git-lfs
-github-cli
-glfw
-go
-gofumpt
-grim
-grub
-gtk-sharp-2
-gtk-sharp-3
-gtk2
-gvfs
-handlr-regex
-helvum
-hunspell-en_gb
-hyprcursor
-hyprland
-hyprlang
-hyprpaper
-hyprutils
-i2c-tools
-i3-wm
-inkscape
-inxi
-iwd
-jaq
-jdk11-openjdk
-jdk17-openjdk
-jdk8-openjdk
-joyutils
-krita
-kscreen
-lib32-gamemode
-lib32-gtk2
-lib32-libnm
-lib32-libudev0-shim
-lib32-libva
-lib32-libva-mesa-driver
-lib32-libvdpau
-lib32-libxslt
-lib32-mesa-vdpau
-lib32-mpg123
-lib32-openal
-lib32-pipewire
-lib32-pipewire-jack
-libreoffice-extension-texmaths
-libreoffice-still
-libretro-pcsx2
-libudev0-shim
-libva-mesa-driver
-libva-utils
-linux
-linux-firmware
-linux-headers
-linux-zen
-linux-zen-docs
-linux-zen-headers
-lutris
-lzip
-mako
-man-db
-mangohud
-maven
-mesa-vdpau
-meson
-mpv
-neofetch
-neovim
-nnn
-noto-fonts-emoji
-npm
-ntfs-3g
-ntp
-nuget
-nvtop
-nwg-look
-obs-studio
-obsidian
-obsidian-icon-theme
-openrazer-daemon
-openrgb
-openshot
-os-prober
-otf-font-awesome
-p7zip
-pavucontrol
-picom
-piper
-pipewire-alsa
-pipewire-audio
-pipewire-jack
-pipewire-pulse
-plasma-desktop
-plocate
-pnpm
-polkit-kde-agent
-pulsemixer
-python-minidump
-python-pipx
-python-pytorch-rocm
-python-pyusb
-python-pywal
-qopenvpn
-qpwgraph
-qt5-imageformats
-qt5-wayland
-qt5ct
-qt6-wayland
-qt6ct
-qtcreator
-quilt
-radeontop
-rclone
-ripgrep-all
-rocm-opencl-sdk
-rocm-smi-lib
-rsync
-ruby-rake
-rust-analyzer
-rustup
-sbctl
-sbsigntools
-scons
-slurp
-socat
-steam
-steam-native-runtime
-stow
-strace
-streamlink
-sudo
-sway
-swaybg
-swayidle
-swaylock
-syncthing
-thunar
-thunar-archive-plugin
-thunar-media-tags-plugin
-thunar-volman
-thunderbird
-tldr
-tmux
-torbrowser-launcher
-ttf-iosevka-nerd
-ttf-iosevkaterm-nerd
-tumbler
-typescript
-unzip
-usb_modeswitch
-v4l2loopback-dkms
-vdpauinfo
-virtualbox
-vlc
-vulkan-radeon
-vulkan-tools
-wev
-wine-staging
-wireguard-tools
-wl-clipboard
-wmenu
-xarchiver
-xclip
-xdg-desktop-portal-gtk
-xdg-desktop-portal-kde
-xdg-desktop-portal-wlr
-xdg-user-dirs
-xf86-video-amdgpu
-xf86-video-vesa
-xorg-bdftopcf
-xorg-docs
-xorg-font-util
-xorg-fonts-100dpi
-xorg-fonts-75dpi
-xorg-iceauth
-xorg-mkfontscale
-xorg-server
-xorg-server-devel
-xorg-server-xephyr
-xorg-server-xnest
-xorg-sessreg
-xorg-smproxy
-xorg-x11perf
-xorg-xbacklight
-xorg-xcmsdb
-xorg-xcursorgen
-xorg-xdriinfo
-xorg-xev
-xorg-xgamma
-xorg-xhost
-xorg-xinit
-xorg-xkbevd
-xorg-xkbprint
-xorg-xkbutils
-xorg-xkill
-xorg-xlsatoms
-xorg-xlsclients
-xorg-xpr
-xorg-xrefresh
-xorg-xvinfo
-xorg-xwd
-xorg-xwininfo
-xorg-xwud
-yad
-yazi
-yt-dlp
-zsh
+adobe-source-han-sans-cn-fonts 2.004-2
+adobe-source-han-sans-hk-fonts 2.004-2
+adobe-source-han-sans-jp-fonts 2.004-2
+adobe-source-han-sans-kr-fonts 2.004-2
+adobe-source-han-serif-cn-fonts 2.003-1
+adobe-source-han-serif-hk-fonts 2.003-1
+adobe-source-han-serif-jp-fonts 2.003-1
+adobe-source-han-serif-kr-fonts 2.003-1
+alacritty 0.13.2-2
+amd-ucode 20240809.59460076-1
+android-udev 20240625-1
+arch-install-scripts 28-2
+audacity 1:3.6.1-2
+base 3-2
+base-devel 1-1
+bc 1.07.1-5
+blender 17:4.2.1-1
+bless 0.6.3-1
+blueman 2.4.3-1
+bluez-utils 5.77-1
+breeze-gtk 6.1.4-1
+btop 1.3.2-1
+btrfs-progs 6.10.1-1
+ca-certificates 20240618-1
+chezmoi 2.52.1-1
+clang 18.1.8-2
+clblast 1.6.3-1
+cmake 3.30.2-1
+cmatrix 2.0-3
+corectrl 1.4.1-2
+deepin-icon-theme 2024.04.16-1
+deluge 1:2.1.1-6
+deluge-gtk 1:2.1.1-6
+dex 0.9.0-2
+dhcping 1.2-4
+docker 1:27.1.2-1
+dolphin 24.08.0-1
+dunst 1.11.0-1
+easyeffects 7.1.8-1
+efibootmgr 18-3
+efitools 1.9.2-5
+elementary-icon-theme 8.0.0-1
+fcitx5 5.1.10-1
+fcitx5-configtool 5.1.6-1
+fcitx5-gtk 5.1.3-1
+fcitx5-mozc 2.26.4632.102.g4d2e3bd-2
+fcitx5-qt 5.1.6-4
+fd 10.2.0-1
+feh 3.10.3-1
+ffmpeg 2:7.0.2-1
+ffmpeg4.4 4.4.4-6
+ffmpegthumbnailer 2.2.2-6
+firefox 129.0.2-1
+fortune-mod 3.20.0-2
+freecad 0.21.2-24
+fzf 0.54.3-1
+gamemode 1.8.1-2
+gamescope 3.14.29-1
+git 2.46.0-1
+git-lfs 3.5.1-1
+github-cli 2.55.0-1
+glfw 3.4-2
+go 2:1.23.0-1
+gofumpt 0.6.0-1
+grim 1.4.1-2
+grub 2:2.12-2
+gtk-sharp-2 2.12.45-4
+gtk-sharp-3 3.22.2-2
+gtk2 2.24.33-4
+gvfs 1.54.2-1
+handlr-regex 0.11.2-1
+helvum 0.5.1-1
+hunspell-en_gb 2020.12.07-5
+hyprcursor 0.1.9-1
+hyprland 0.42.0-1
+hyprlang 0.5.2-1
+hyprpaper 0.7.1-1
+hyprutils 0.2.1-1
+i2c-tools 4.3-6
+i3-wm 4.23-4
+inkscape 1.3.2-9
+inxi 3.3.35.1-1
+iwd 2.19-1
+jaq 1.6.0-1
+jdk11-openjdk 11.0.24.u8-1
+jdk17-openjdk 17.0.12.u7-1
+jdk8-openjdk 8.422.u05-1
+joyutils 1.8.1-2
+krita 5.2.3-1
+kscreen 6.1.4-1
+lib32-gamemode 1.8.1-1
+lib32-gtk2 2.24.33-2
+lib32-libnm 1.48.8-1
+lib32-libudev0-shim 2-1
+lib32-libva 2.22.0-1
+lib32-libva-mesa-driver 1:24.1.6-1
+lib32-libvdpau 1.5-2
+lib32-libxslt 1.1.42-1
+lib32-mesa-vdpau 1:24.1.6-1
+lib32-mpg123 1.32.7-1
+lib32-openal 1.23.1-1
+lib32-pipewire 1:1.2.3-1
+lib32-pipewire-jack 1:1.2.3-1
+libreoffice-extension-texmaths 0.52.2-1
+libreoffice-still 24.2.5-1
+libretro-pcsx2 17053-2
+libudev0-shim 2-1
+libva-mesa-driver 1:24.1.6-1
+libva-utils 2.22.0-1
+linux 6.10.6.arch1-1
+linux-firmware 20240809.59460076-1
+linux-headers 6.10.6.arch1-1
+linux-zen 6.10.6.zen1-1
+linux-zen-docs 6.10.6.zen1-1
+linux-zen-headers 6.10.6.zen1-1
+lzip 1.24.1-1
+mako 1.9.0-1
+man-db 2.12.1-1
+mangohud 0.7.2-1
+maven 3.9.8-1
+mesa-vdpau 1:24.1.6-1
+meson 1.5.1-1
+mpv 1:0.38.0-6
+neofetch 7.1.0-2
+neovim 0.10.1-3
+nnn 4.9-2
+noto-fonts-emoji 1:2.042-1
+npm 10.8.2-1
+ntfs-3g 2022.10.3-1
+ntp 4.2.8.p18-1
+nuget 6.5.0-2
+nvtop 3.1.0-1
+nwg-look 0.2.7-1
+obs-studio 30.2.1-1
+obsidian 1.6.7-1
+obsidian-icon-theme 4.15-3
+openrazer-daemon 3.8.0-1
+openrgb 0.9-4
+openshot 3.2.1-1
+os-prober 1.81-2
+otf-font-awesome 6.6.0-1
+p7zip 1:17.05-2
+pavucontrol 1:6.1-1
+picom 11.2-1
+piper 0.7-3
+pipewire-alsa 1:1.2.3-1
+pipewire-audio 1:1.2.3-1
+pipewire-jack 1:1.2.3-1
+pipewire-pulse 1:1.2.3-1
+plasma-desktop 6.1.4-1
+plocate 1.1.22-1
+pnpm 9.7.1-1
+polkit-kde-agent 6.1.4-1
+pulsemixer 1.5.1-6
+python-minidump 0.0.23-2
+python-pipx 1.6.0-1
+python-pytorch-rocm 2.3.1-5
+python-pyusb 1.2.1-5
+python-pywal 3.3.0-9
+qopenvpn 2.0.0-8
+qpwgraph 0.7.7-1
+qt5-imageformats 5.15.14+kde+r7-1
+qt5-wayland 5.15.14+kde+r59-1
+qt5ct 1.8-2
+qt6-wayland 6.7.2-4
+qt6ct 0.9-9
+qtcreator 14.0.1-1
+quilt 0.67-2
+radeontop 1.4-3
+rclone 1.67.0-1
+ripgrep-all 0.10.6-3
+rocm-opencl-sdk 6.0.2-1
+rocm-smi-lib 6.0.2-1
+rsync 3.3.0-2
+ruby-rake 13.0.6-3
+rust-analyzer 20240826-1
+rustup 1.27.1-1
+sbctl 0.15.4-1
+sbsigntools 0.9.5-2
+scons 4.8.0-1
+slurp 1.5.0-1
+socat 1.8.0.0-2
+steam 1.0.0.81-2
+steam-native-runtime 1.0.0.75-4
+stow 2.4.0-1
+strace 6.10-1
+streamlink 6.9.0-1
+sudo 1.9.15.p5-2
+sway 1:1.9-5
+swaybg 1.2.1-1
+swayidle 1.8.0-2
+swaylock 1.8.0-1
+syncthing 1.27.10-1
+thunar 4.18.11-1
+thunar-archive-plugin 0.5.2-1
+thunar-media-tags-plugin 0.4.0-2
+thunar-volman 4.18.0-2
+thunderbird 115.14.0-1
+tldr 3.3.0-1
+tmux 3.4-10
+torbrowser-launcher 0.3.7-2
+ttf-iosevka-nerd 3.2.1-2
+ttf-iosevkaterm-nerd 3.2.1-2
+tumbler 4.18.2-1
+typescript 5.5.4-1
+unzip 6.0-21
+usb_modeswitch 2.6.1-4
+v4l2loopback-dkms 0.13.2-1
+vdpauinfo 1.5-2
+virtualbox 7.0.20-1
+vlc 3.0.21-2
+vulkan-radeon 1:24.1.6-1
+vulkan-tools 1.3.269-1
+wev 1.0.0-13
+wine-staging 9.8-1
+wireguard-tools 1.0.20210914-2
+wl-clipboard 1:2.2.1-2
+wmenu 0.1.9-1
+xarchiver 0.5.4.23-1
+xclip 0.13-5
+xdg-desktop-portal-gtk 1.15.1-2
+xdg-desktop-portal-kde 6.1.4-1
+xdg-desktop-portal-wlr 0.7.1-1
+xdg-user-dirs 0.18-2
+xf86-video-amdgpu 23.0.0-2
+xf86-video-vesa 2.6.0-2
+xorg-bdftopcf 1.1.1-2
+xorg-docs 1.7.3-2
+xorg-font-util 1.4.1-2
+xorg-fonts-100dpi 1.0.4-3
+xorg-fonts-75dpi 1.0.4-2
+xorg-iceauth 1.0.10-1
+xorg-mkfontscale 1.2.3-1
+xorg-server 21.1.13-1
+xorg-server-devel 21.1.13-1
+xorg-server-xephyr 21.1.13-1
+xorg-server-xnest 21.1.13-1
+xorg-sessreg 1.1.3-2
+xorg-smproxy 1.0.7-2
+xorg-x11perf 1.7.0-1
+xorg-xbacklight 1.2.3-4
+xorg-xcmsdb 1.0.6-2
+xorg-xcursorgen 1.0.8-2
+xorg-xdriinfo 1.0.7-2
+xorg-xev 1.2.6-1
+xorg-xgamma 1.0.7-2
+xorg-xhost 1.0.9-2
+xorg-xinit 1.4.2-2
+xorg-xkbevd 1.1.5-2
+xorg-xkbprint 1.0.6-2
+xorg-xkbutils 1.0.6-1
+xorg-xkill 1.0.6-2
+xorg-xlsatoms 1.1.4-2
+xorg-xlsclients 1.1.5-2
+xorg-xpr 1.2.0-1
+xorg-xrefresh 1.1.0-1
+xorg-xvinfo 1.1.5-2
+xorg-xwd 1.0.9-2
+xorg-xwininfo 1.1.6-2
+xorg-xwud 1.0.6-2
+yad 14.1-1
+yazi 0.3.1-1
+yt-dlp 2024.08.06-1
+zsh 5.9-5
