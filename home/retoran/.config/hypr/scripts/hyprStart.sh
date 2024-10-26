@@ -2,12 +2,12 @@
 # https://klotzandrew.com/blog/parallel-bash-with-wait
 
 # Tell systemd we're a graphical session so that related services run.
-killall -e xdg-desktop-portal-wlr > /dev/null &
-source systemctl --user start hyprland-session.target > /dev/null &
+killall -e xdg-desktop-portal-wlr > /dev/null>&1 &
+systemctl --user start hyprland-session.target > /dev/null 2>&1
 
 # Start up our wanted programs
 hyprpaper > /dev/null 2>&1 &
-wl-paste -t text --watch clipman store --no-persist > /dev/null 2>&1 &
+copyq --start-server > /dev/null 2>&1 &
 waybar -c ~/.config/hypr/waybar/config > /dev/null 2>&1 &
 mako --output DP-1 > /dev/null 2>&1 &
 thunar --daemon > /dev/null 2>&1 &
