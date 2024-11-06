@@ -214,7 +214,7 @@
 	},
 	"__internal__": {
 		"migrations": {
-			"version": "3.5.1"
+			"version": "3.6.2"
 		}
 	},
 	"window-maximized": true,
