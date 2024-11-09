@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=Pulse Mixer
+Comment=Command line audio mixer
+Exec=alacritty --class floating -e pulsemixer
+Type=Application
+Categories=Mixer;Audio;AudioVideo;Settings;
+Icon=multimedia-volume-control
