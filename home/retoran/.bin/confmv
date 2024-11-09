@@ -58,9 +58,9 @@ fi
 
 #Remove source files won't destroy directory, needed so that our link goes in the right place.
 if [[ $folder == 1 ]]; then
-  try sudo rsync -ar --mkpath --remove-source-files $filepath $dest
-  try sudo rm -rd $filepath
+  try rsync -ar --mkpath --remove-source-files "$filepath" "$dest"
+  try rm -rd $filepath
 else
-  try sudo rsync -ar --mkpath --remove-source-files $filepath $destObj
+  try rsync -ar --mkpath --remove-source-files "$filepath" "$destObj"
 fi
-try sudo ln -s $destObj $filepath
+try ln -s "$destObj" "$filepath"
