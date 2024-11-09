@@ -1,0 +1,4 @@
+configuration {
+	modes: [ drun, window ];
+}
+@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
