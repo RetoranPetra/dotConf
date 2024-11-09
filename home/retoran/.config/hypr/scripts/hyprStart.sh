@@ -11,7 +11,6 @@ copyq --start-server > /dev/null 2>&1 &
 waybar -c ~/.config/hypr/waybar/config > /dev/null 2>&1 &
 mako --output DP-1 > /dev/null 2>&1 &
 thunar --daemon > /dev/null 2>&1 &
-zsh ~/.scripts/aerox9.zsh > /dev/null 2>&1 &
 zsh ~/.scripts/myDex.zsh > /dev/null 2>&1 &
 # Should be called somewhere else probably
 zsh ~/.scripts/mount.zsh > /dev/null 2>&1 &
