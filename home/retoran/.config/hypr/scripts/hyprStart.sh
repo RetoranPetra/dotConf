@@ -8,7 +8,6 @@ systemctl --user start hyprland-session.target > /dev/null 2>&1
 # Start up our wanted programs
 hyprpaper > /dev/null 2>&1 &
 copyq --start-server > /dev/null 2>&1 &
-waybar -c ~/.config/hypr/waybar/config > /dev/null 2>&1 &
 mako --output DP-1 > /dev/null 2>&1 &
 thunar --daemon > /dev/null 2>&1 &
 zsh ~/.scripts/myDex.zsh > /dev/null 2>&1 &
