@@ -1,31 +1,34 @@
-#!/bin/sh
+#!/bin/bash
 fz() {
-	$@ $(fzf)
+	"$@" "$(fzf)"
 }
 fzd() {
-	$@ $(dirname $(fzf))
+	"$@" "$(dirname "$(fzf)")"
 }
 fzcd() {
-	fd cd $@
+	fd cd "$@"
 }
 open() {
 	if [ $# -eq 0 ]; then
 		VAL=$(fzf)
-		if ! [[ -z val ]]; then
-			handlr open $VAL
+		if [[ -n $VAL ]]; then
+			handlr open "$VAL"
 		fi
 	fi
-	for f in $@; do
+	for f in "$@"; do
 		# TODO: Should check if default handlr is nvim for multiple and open them all at once.
-		handlr open $f
+		handlr open "$f"
 	done
 }
 tmux-detatch() {
-	tmux new-session -d -s $1
+	tmux new-session -d -s "$1"
 	tmux send-keys "${@:2}" C-m
 }
 
 # Specific java versions
+java21() {
+	export PATH="/lib/jvm/java-21-openjdk/bin:$PATH"
+}
 java17() {
 	export PATH="/lib/jvm/java-17-openjdk/bin:$PATH"
 }
@@ -39,7 +42,8 @@ java8() {
 # Machine specific things
 update() {
 	paru
-	go get -u all
+	#go get -u all
+	go install github.com/jesseduffield/lazygit@latest
 	rustup update
 	pipx upgrade-all
 	sudo waydroid upgrade
