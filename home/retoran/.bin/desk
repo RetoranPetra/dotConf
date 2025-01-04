@@ -2,13 +2,7 @@
 #if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
 if [ -z "${WAYLAND_DISPLAY}" ]; then
   TTY=$(ps -p $$ -o tty=)
-  if [[ $TTY == "tty3" ]]; then
-    echo "Starting Sway"
-    source ~/.scripts/sway/swayLaunch.zsh
-  elif [[ $TTY == "tty2" ]]; then
-    echo "Starting Plasma"
-    source startplasma-wayland
-  elif [[ $TTY == "tty1" ]]; then
+  if [[ $TTY == "tty1" ]]; then
     echo "Starting Hyprland"
     source ~/.config/hypr/scripts/hyprLaunch.zsh
   fi
