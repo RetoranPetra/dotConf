@@ -1,0 +1,8 @@
+[Unit]
+Description="Thunar file manager"
+
+[Service]
+ExecStart=/usr/bin/thunar --daemon
+
+[Install]
+WantedBy=graphical-session.target

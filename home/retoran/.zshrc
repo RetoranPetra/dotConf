@@ -8,9 +8,9 @@ bindkey -v
 
 TTY=$(ps -p $$ -o tty=)
 
-if [[ $TTY == "tty"* ]]; then
-	source ~/.scripts/mount.zsh
-fi
+#if [[ $TTY == "tty"* ]]; then
+#	source ~/.scripts/mount.zsh
+#fi
 
 source ~/antigen.zsh
 
@@ -92,9 +92,6 @@ antigen apply
 
 source ~/.bashalias
 
-source desk
-
-#if uwsm check may-start && uwsm "select"; then
-	#exec uwsm start default
-#fi
-#
+if uwsm check may-start; then
+	exec uwsm start hyprland.desktop
+fi

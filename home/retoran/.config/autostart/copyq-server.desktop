@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=CopyQServer
+Exec=copyq --start-server
+Type=Application

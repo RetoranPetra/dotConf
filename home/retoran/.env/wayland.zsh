@@ -24,6 +24,7 @@ export MOZ_ENABLE_WAYLAND=1
 export LIBVA_DRIVER_NAME=radeonsi
 export VDPAU_DRIVER=radeonsi
 export __EGL_VENDOR_LIBRARY_FILENAMES=/usr/share/glvnd/egl_vendor.d/50_mesa.json
+export WLR_DRM_DEVICES="/dev/dri/card1"
 
 
 #Nvidia compatibility
