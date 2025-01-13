@@ -9,9 +9,7 @@ bindkey -v
 TTY=$(ps -p $$ -o tty=)
 
 if [[ $TTY == "tty"* ]]; then
-	# Ideally should only execute these on first shell of the session. Doesn't matter if not.
-	paru -Qen > ~/.packageNative
-	paru -Qem > ~/.packageForeign
+	source ~/.scripts/mount.zsh
 fi
 
 source ~/antigen.zsh
@@ -95,4 +93,8 @@ antigen apply
 source ~/.bashalias
 
 source desk
+
+#if uwsm check may-start && uwsm "select"; then
+	#exec uwsm start default
+#fi
 #
