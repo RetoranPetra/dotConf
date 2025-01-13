@@ -46,5 +46,6 @@ update() {
 	go install github.com/jesseduffield/lazygit@latest
 	rustup update
 	pipx upgrade-all
-	sudo waydroid upgrade
+	# Don't want waydroid to upgrade automatically as it might mess up the arm emulation layer.
+	#sudo waydroid upgrade
 }
