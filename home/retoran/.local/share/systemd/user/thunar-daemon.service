@@ -1,5 +1,7 @@
 [Unit]
 Description="Thunar file manager"
+After=graphical-session.target
+BindsTo=graphical-session.target
 
 [Service]
 ExecStart=/usr/bin/thunar --daemon
