@@ -1,20 +1,18 @@
 [Added Associations]
-application/vnd.appimage=Alacritty.desktop;
 application/pdf=libreoffice-draw.desktop;firefox.desktop;
-text/plain=neovide.desktop;
+text/plain=nvim-alacritty.desktop;
 application/zip=xarchiver.desktop;
-application/x-zerosize=firefox.desktop;
 application/x-godot-scene=nvim.desktop;
+image/png=krita_png.desktop;
+application/gzip=blender.desktop;
 
 [Default Applications]
 x-scheme-handler/terminal=Alacritty.desktop;
 x-scheme-handler/msteams=teams.desktop
-application/vnd.appimage=Alacritty.desktop;
 application/x-blender=blender.desktop
 application/x-bittorrent=deluge.desktop
 application/x-xpinstall=firefox.desktop
 application/xhtml+xml=firefox.desktop
-application/json=firefox.desktop
 application/x-krita=org.kde.krita.desktop
 application/x-shellscript=nvim.desktop
 application/xml=nvim.desktop
@@ -71,7 +69,7 @@ image/x-sony-arw=feh.desktop
 text/tcl=nvim.desktop
 text/x-java=nvim.desktop
 text/x-c++src=nvim.desktop
-text/plain=nvim.desktop
+text/plain=nvim-alacritty.desktop
 text/x-tex=nvim.desktop
 text/x-chdr=nvim.desktop
 text/x-c++hdr=nvim.desktop
@@ -110,10 +108,12 @@ video/dv=mpv.desktop
 video/quicktime=mpv.desktop
 application/pdf=firefox.desktop
 application/zip=xarchiver.desktop
-application/x-zerosize=firefox.desktop
 x-scheme-handler/youtubemusic=YouTube Music.desktop
 application/x-godot-scene=nvim.desktop
 x-scheme-handler/vrmonitor=valve-vrmonitor.desktop
 x-scheme-handler/steamvr=valve-URI-steamvr.desktop
 inode/directory=thunar.desktop
 inode/mount-point=thunar.desktop
+application/gzip=blender.desktop
+
+[Removed Associations]
