@@ -4,8 +4,8 @@
     "useQuickCss": true,
     "themeLinks": [],
     "enabledThemes": [
-        "HorizontalServerList.theme.css",
-        "tokyo-night.theme.css"
+        "SkeuoCord.theme.css",
+        "HorizontalServerList.theme.css"
     ],
     "enableReactDevtools": false,
     "frameless": false,
@@ -578,6 +578,12 @@
         },
         "SupportHelper": {
             "enabled": true
+        },
+        "IrcColors": {
+            "enabled": false
+        },
+        "BadgeAPI": {
+            "enabled": true
         }
     },
     "notifications": {
@@ -590,6 +596,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1736717908536
+        "settingsSyncVersion": 1738226820708
     }
 }
