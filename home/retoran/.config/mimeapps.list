@@ -115,5 +115,7 @@ x-scheme-handler/steamvr=valve-URI-steamvr.desktop
 inode/directory=thunar.desktop
 inode/mount-point=thunar.desktop
 application/gzip=blender.desktop
+x-scheme-handler/discord=vesktop.desktop
+x-scheme-handler/jetbrains=jetbrains-toolbox.desktop
 
 [Removed Associations]
