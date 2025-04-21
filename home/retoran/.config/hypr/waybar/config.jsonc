@@ -4,23 +4,23 @@
     "height": 24, // Waybar height
     // "width": 1366, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["hyprland/workspaces","hyprland/submap"],
+    "modules-left": ["hyprland/workspaces", "hyprland/submap"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["hyprland/language","pulseaudio", "network", "cpu", "memory", "tray", "clock"],
+    "modules-right": ["pulseaudio", "custom/paru", "network", "cpu", "memory", "tray", "clock"],
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": false,
-        "format": "{icon}|{id}",
+        "format": "{icon}{id}",
         "format-icons": {
-            "1:web": "",
-            "2:code": "",
-            "3:term": "",
-            "4:work": "",
-            "5:music": "",
-            "6:docs": "",
-            "urgent": "",
-            "active": "",
-            "default": ""
+            "1:web": " ",
+            "2:code": " ",
+            "3:term": " ",
+            "4:work": " ",
+            "5:music": " ",
+            "6:docs": "󰈙 ",
+            "urgent": " ",
+            "active": " ",
+            "default": " "
         }
     },
     "tray": {
@@ -33,10 +33,10 @@
         "format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {
-        "format": "{usage}% "
+        "format": "{usage}%  "
     },
     "memory": {
-        "format": "{}% "
+        "format": "{}%  "
     },
     "battery": {
         "bat": "BAT0",
@@ -48,29 +48,38 @@
         "format": "{capacity}% {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": [" ", " ", " ", " ", " "]
     },
     "network": {
         // "interface": "wlp2s0", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-        "format-disconnected": "Disconnected ⚠",
-				"on-click": "iwmenu -m rofi"
+        "format-wifi": "{essid} ({signalStrength}%)  ",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr}  ",
+        "format-disconnected": "Disconnected ⚠ ",
+        "on-click": "iwmenu -m rofi"
     },
     "pulseaudio": {
         //"scroll-step": 1,
         "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon}",
-        "format-muted": "",
+        "format-muted": " ",
         "format-icons": {
-            "headphones": "",
-            "handsfree": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", ""]
+            "headphones": " ",
+            "handsfree": " ",
+            "headset": " ",
+            "phone": " ",
+            "portable": " ",
+            "car": " ",
+            "default": [" ", " "]
         },
         "on-click": "alacritty --class floating -e pulsemixer"
     },
+    "custom/paru" : {
+        "format": "{} {icon}",
+        "exec": "paru -Qu | wc -l",
+        "format-icons": {
+            "0": "󰏓 ",
+            "default": "󰏕 ",
+        },
+        "interval": 600,
+    }
 }
