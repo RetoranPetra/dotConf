@@ -7,20 +7,25 @@
     /* min-height: 0; */
     box-shadow: none;
 }
+/* GTK CSS as opposed to normal CSS */
+@define-color fg white;
+@define-color bg #0D0F1C;
 
 window#waybar {
     background: transparent;
-    color: white;
+    color: @fg;
 }
 
 #window {
     font-weight: bold;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 #workspaces button {
     padding: 5px;
     background: transparent;
-    color: white;
+    color: @fg;
     border-top: 2px solid transparent;
 }
 
@@ -31,8 +36,26 @@ window#waybar {
 } */
 
 #mode {
-    background: #64727D;
-    border-bottom: 3px solid white;
+    background: @bg;
+    border-bottom: 3px solid @fg;
+}
+
+.modules-right,
+.modules-left,
+.modules-center {
+    background: @bg;
+    border: 20px;
+    border-radius: 20px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+.modules-left {
+    border-left: none;
+    border-bottom-left-radius: 0px;
+}
+.modules-right {
+    border-right: none;
+    border-bottom-right-radius: 0px;
 }
 
 #clock,
@@ -65,7 +88,7 @@ window#waybar {
 
 @keyframes blink {
     to {
-        background-color: #ffffff;
+        background-color: @bg;
         color: black;
     }
 }
