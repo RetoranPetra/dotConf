@@ -42,8 +42,6 @@ java8() {
 # Machine specific things
 update() {
 	paru
-	#go get -u all
-	go install github.com/jesseduffield/lazygit@latest
 	rustup update
 	pipx upgrade-all
 	# Don't want waydroid to upgrade automatically as it might mess up the arm emulation layer.
