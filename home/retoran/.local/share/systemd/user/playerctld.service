@@ -1,0 +1,12 @@
+[Unit]
+Description="Playerctl Daemon"
+After=graphical-session.target
+After=gvfs-daemon.service
+After=xdg-desktop-portal.service
+BindsTo=graphical-session.target
+
+[Service]
+ExecStart=playerctld
+
+[Install]
+WantedBy=graphical-session.target
