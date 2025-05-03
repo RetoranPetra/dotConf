@@ -1,0 +1,10 @@
+[Unit]
+Description="RClone for google drive"
+After=network-online.target
+BindsTo=default.target
+
+[Service]
+ExecStart=rclone mount G: %h/Remote/GDrive --vfs-cache-mode full
+
+[Install]
+WantedBy=default.target
