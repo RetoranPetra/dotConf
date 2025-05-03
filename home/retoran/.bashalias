@@ -1,4 +1,10 @@
 #!/bin/bash
+
+# Bash alias is declared in default arch profile, but should make it explicit.
+alias ls='ls --color=tty'
+alias l='ls -lah'
+# End of arch implicit profile stuff.
+
 fz() {
 	"$@" "$(fzf)"
 }
