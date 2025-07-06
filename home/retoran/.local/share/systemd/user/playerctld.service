@@ -1,12 +1,9 @@
 [Unit]
-Description="Playerctl Daemon"
-After=graphical-session.target
-After=gvfs-daemon.service
-After=xdg-desktop-portal.service
-BindsTo=graphical-session.target
+Description=Keep track of media player activity
 
 [Service]
-ExecStart=playerctld
+Type=oneshot
+ExecStart=/usr/bin/playerctld daemon
 
 [Install]
-WantedBy=graphical-session.target
+WantedBy=default.target
