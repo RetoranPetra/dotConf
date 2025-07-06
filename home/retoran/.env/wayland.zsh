@@ -10,6 +10,8 @@ export QT_QPA_PLATFORM="wayland;xcb"
 export QT_QPA_PLATFORMTHEME=gtk3
 #SDL
 export SDL_VIDEODRIVER="wayland,x11"
+# PROTON/WINE
+export PROTON_ENABLE_WAYLAND=1
 
 #XDG
 # Firefox wayland environment variable
