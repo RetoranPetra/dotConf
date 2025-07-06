@@ -1,6 +1,7 @@
 [Unit]
 Description="RClone for google drive"
 After=network-online.target
+After=gvfs-udisks2-volume-monitor.service
 BindsTo=default.target
 
 [Service]
