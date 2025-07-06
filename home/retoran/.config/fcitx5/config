@@ -13,10 +13,6 @@ EnumerateSkipFirst=False
 EnumerateGroupForwardKeys=
 # Enumerate Input Method Group Backward
 EnumerateGroupBackwardKeys=
-# Activate Input Method
-ActivateKeys=
-# Deactivate Input Method
-DeactivateKeys=
 # Time limit in milliseconds for triggering modifier key shortcuts
 ModifierOnlyKeyTimeout=250
 
@@ -24,6 +20,12 @@ ModifierOnlyKeyTimeout=250
 0=Control+Alt+space
 1=Zenkaku_Hankaku
 2=Hangul
+
+[Hotkey/ActivateKeys]
+0=Control+grave
+
+[Hotkey/DeactivateKeys]
+0=Control+notsign
 
 [Hotkey/PrevPage]
 0=Up
