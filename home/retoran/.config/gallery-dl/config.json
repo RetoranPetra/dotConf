@@ -11,6 +11,7 @@
 			"{category}",
 			"{author}"
 		],
+		"mtime": "{date}",
 		"reddit": {
 			"filename": "{date} {id}{num:? //>02} {title[:220]}.{extension}",
 			"user": {
@@ -19,6 +20,7 @@
 			}
 		},
 		"reddit>*": {
+			"mtime": "{_reddit[date]}",
 			"filename": "{_reddit[date]} {_reddit[id]} {_reddit[title]}.{extension}",
 			"directory": ["tmp"],
 			"postprocessors": ["movetoparent"]
