@@ -3,22 +3,47 @@
 		"base-directory": "~/gallery-dl/",
 		"archive": "~/gallery-dl/archive.sqlite3",
 		"postprocessors": [
-			"giftomp4"
+			"giftomp4",
+			"removeduplicateimages",
+			"removeduplicatevideos"
+		],
+		"directory": [
+			"{category}",
+			"{author}"
 		],
 		"reddit": {
-			"parent-directory": true,
+			"filename": "{date} {id}{num:? //>02} {title[:220]}.{extension}",
 			"user": {
-				"directory" : ["reddit", "u_{author}"]
+				"parent-directory": true,
+				"parent-metadata": true
 			}
+		},
+		"reddit>imgur": {
+			"directory": []
+		},
+		"reddit>redgifs": {
+			"directory": []
 		}
 	},
 	"postprocessor": {
 		"giftomp4" : {
 				"name": "exec",
-				"async" : false,
-				"command" : "ffmpeg -i {} -pix_fmt yuv420p -vf 'scale=trunc(iw/2)*2:trunc(ih/2)*2' {}.mp4 -y && rm {}",
+				"async" : true,
+				"command" : "ffmpeg -i {} -pix_fmt yuv420p -vf 'scale=trunc(iw/2)*2:trunc(ih/2)*2' {}.mp4 -y 1&> /dev/null && rm {}",
 				"event" : "after",
 				"filter": "extension == 'gif'"
+		},
+		"removeduplicateimages": {
+			"name": "exec",
+			"async": false,
+			"command": "czkawka_cli image -d {_directory} -D AEO; if [ $? -eq 1 ]; then return 1; fi",
+			"event": "finalize"
+		},
+		"removeduplicatevideos": {
+			"name": "exec",
+			"async": false,
+			"command": "czkawka_cli image -d {_directory} -D AEO; if [ $? -eq 1 ]; then return 1; fi",
+			"event": "finalize"
 		}
 	}
 }
