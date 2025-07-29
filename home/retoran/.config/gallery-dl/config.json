@@ -18,20 +18,17 @@
 				"parent-metadata": "_reddit"
 			}
 		},
-		"reddit>imgur": {
-			"filename": "{_reddit[date]} {_reddit[id]} {_reddit[title]}",
-			"directory": []
-		},
-		"reddit>redgifs": {
-			"filename": "{_reddit[date]} {_reddit[id]} {_reddit[title]}",
-			"directory": []
+		"reddit>*": {
+			"filename": "{_reddit[date]} {_reddit[id]} {_reddit[title]}.{extension}",
+			"directory": ["tmp"],
+			"postprocessors": ["movetoparent"]
 		}
 	},
 	"postprocessor": {
 		"giftomp4" : {
 				"name": "exec",
-				"async" : true,
-				"command" : "ffmpeg -i {} -pix_fmt yuv420p -vf 'scale=trunc(iw/2)*2:trunc(ih/2)*2' {}.mp4 -y 1&> /dev/null && rm {}",
+				"async" : false,
+				"command" : "~/.config/gallery-dl/giftomp4.bash {}",
 				"event" : "after",
 				"filter": "extension == 'gif'"
 		},
@@ -44,8 +41,13 @@
 		"removeduplicatevideos": {
 			"name": "exec",
 			"async": false,
-			"command": "czkawka_cli image -d {_directory} -D AEO; if [ $? -eq 1 ]; then return 1; fi",
+			"command": "czkawka_cli video -d {_directory} -D AEO; if [ $? -eq 1 ]; then return 1; fi",
 			"event": "finalize"
+		},
+		"movetoparent": {
+			"name": "exec",
+			"async": false,
+			"command": "cd {_directory} && mv * .. && rmdir {_directory}"
 		}
 	}
 }
