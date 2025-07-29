@@ -1,0 +1,24 @@
+{
+	"extractor": {
+		"base-directory": "~/gallery-dl/",
+		"archive": "~/gallery-dl/archive.sqlite3",
+		"postprocessors": [
+			"giftomp4"
+		],
+		"reddit": {
+			"parent-directory": true,
+			"user": {
+				"directory" : ["reddit", "u_{author}"]
+			}
+		}
+	},
+	"postprocessor": {
+		"giftomp4" : {
+				"name": "exec",
+				"async" : false,
+				"command" : "ffmpeg -i {} -pix_fmt yuv420p -vf 'scale=trunc(iw/2)*2:trunc(ih/2)*2' {}.mp4 -y && rm {}",
+				"event" : "after",
+				"filter": "extension == 'gif'"
+		}
+	}
+}
