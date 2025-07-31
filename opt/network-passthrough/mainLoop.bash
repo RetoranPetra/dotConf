@@ -19,6 +19,7 @@ if [ $(id -u) -ne 0 ]; then
 fi
 
 control_c() {
+	ip netns exec "$ns" /usr/bin/dhcpcd -x "$macvlan"
 	echo "Destroying namespace"
 	ip netns delete "$ns" > /dev/null
 	if $setIPV4; then
@@ -42,19 +43,21 @@ ip -n "$ns" link set lo up
 ethLink="$(ip link | getInterfaces | sed -rn 's/^((en).*)$/\1/p' | head)"
 macvlan="mv-$ethLink"
 
-ip link add "$macvlan" link "$ethLink" type macvlan mode bridge
+ip link add "$macvlan" link "$ethLink" address 00:11:22:33:44:55 type macvlan mode bridge
 ip link set "$macvlan" netns "$ns"
 ip -n "$ns" link set "$macvlan" up
 
+# Start dhcpcd client
+ip netns exec "$ns" /usr/bin/dhcpcd "$macvlan" &
 # This portion is only needed while we don't have DHCP, I cannot be fucked with DHCP
 
 # copy default route from normal space
 # should also find the device to make sure it matches, but we assume it's always ethernet for now.
-gateway=$(ip route show default | sed -rn 's/^default via (.*) dev.*$/\1/p')
-assignedIP="192.168.0.31/24"
+#gateway=$(ip route show default | sed -rn 's/^default via (.*) dev.*$/\1/p')
+#assignedIP="192.168.0.31/24"
 
-ip -n "$ns" addr add "$assignedIP" dev "$macvlan"
-ip -n "$ns" route add default via "$gateway" dev "$macvlan"
+#ip -n "$ns" addr add "$assignedIP" dev "$macvlan"
+#ip -n "$ns" route add default via "$gateway" dev "$macvlan"
 
 #end
 

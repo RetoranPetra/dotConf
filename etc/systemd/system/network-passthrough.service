@@ -4,6 +4,7 @@ Description=Make a network namespace called "passthrough" seperate to the main n
 BindsTo=network-online.target
 
 [Service]
+Type=simple
 ExecStart=/opt/network-passthrough/mainLoop.bash
 
 [Install]
