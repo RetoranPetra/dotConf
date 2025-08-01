@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ns="passthrough"
-setIPV4=false
+setIPV4=$(cat /proc/sys/net/ipv4/ip_forward)
 
 # Usage: ip link show | getInterfaces
 getInterfaces() {
@@ -19,23 +19,20 @@ if [ $(id -u) -ne 0 ]; then
 fi
 
 control_c() {
-	ip netns exec "$ns" /usr/bin/dhcpcd -x "$macvlan"
-	echo "Destroying namespace"
-	ip netns delete "$ns" > /dev/null
-	if $setIPV4; then
-		sysctl -w net.ipv4.ip_forward=0
+	if [ -n "$macvlan" ];then
+		ip netns exec "$ns" /usr/bin/dhcpcd -x "$macvlan"
 	fi
+	ip netns pids "$ns" | xargs -r kill
+	ip netns delete "$ns"
+	sysctl -w net.ipv4.ip_forward=$setIPV4
 	exit
 }
 trap control_c SIGINT
+trap control_c SIGTERM
 
-if [ $(cat /proc/sys/net/ipv4/ip_forward) -eq 0 ]; then
-	setIPV4=true
-	sysctl -w net.ipv4.ip_forward=1
-fi
+sysctl -w net.ipv4.ip_forward=1
 
-echo "root"
-
+echo "Creating namespace $ns"
 ip netns add "$ns"
 ip -n "$ns" link set lo up
 
@@ -43,8 +40,10 @@ ip -n "$ns" link set lo up
 ethLink="$(ip link | getInterfaces | sed -rn 's/^((en).*)$/\1/p' | head)"
 macvlan="mv-$ethLink"
 
-ip link add "$macvlan" link "$ethLink" address 00:11:22:33:44:55 type macvlan mode bridge
+echo "Creating macvlan $macvlan"
+ip link add "$macvlan" link "$ethLink" type macvlan mode bridge
 ip link set "$macvlan" netns "$ns"
+echo "Setting $macvlan up"
 ip -n "$ns" link set "$macvlan" up
 
 # Start dhcpcd client
