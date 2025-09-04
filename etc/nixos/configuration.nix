@@ -139,6 +139,8 @@
       youtube-music
       wl-clipboard
       tor-browser-bundle-bin
+      pulsemixer
+      btop-rocm
 
       # Unsure if this works
       ffmpegthumbnailer
