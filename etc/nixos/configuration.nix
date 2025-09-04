@@ -64,6 +64,7 @@
 
   # Set your time zone.
   time.timeZone = "Europe/London";
+  services.ntp.enable = true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
