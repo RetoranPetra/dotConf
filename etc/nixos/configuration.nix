@@ -118,6 +118,31 @@
       xfce.thunar-media-tags-plugin
       xfce.tumbler
       mako
+      deluge-gtk
+      mpv
+      syncthing
+      qdirstat
+      helvum
+      blender
+      audacity
+      feh
+      fping
+      ffmpeg
+      gallery-dl
+      grim
+      slurp
+      krita
+      streamlink
+      chatterino2
+      youtube-music
+      wl-clipboard
+      tor-browser-bundle-bin
+
+      # Unsure if this works
+      ffmpegthumbnailer
+
+      # Need to check how this gets integrated.
+      fcitx5
       # Development tools that should NOT be put here but this is the fastest way to get neovim working.
       # clang_tools
       python3
@@ -144,6 +169,9 @@
     enable = true;
     remotePlay.openFirewall = true;
     localNetworkGameTransfers.openFirewall = true;
+    extraCompatPackages = with pkgs; [
+      proton-ge-bin
+    ];
   };
   programs.neovim = {
     enable = true;
@@ -179,8 +207,14 @@
     xdg-user-dirs
     gh
     git
+    git-lfs
     lazygit
     fzf
+    fd
+    jq
+    jo
+    strace
+    tmux
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
