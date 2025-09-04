@@ -38,13 +38,14 @@
     networkConfig.DHCP = "yes";
     dhcpV4Config.RouteMetric=19;
     ipv6AcceptRAConfig.RouteMetric=20;
+    linkConfig.RequiredForOnline= "no";
   };
   systemd.network.networks."30-wireless" = {
     matchConfig.Name = "wl*";
     networkConfig.DHCP = "yes";
     dhcpV4Config.RouteMetric=29;
     ipv6AcceptRAConfig.RouteMetric=30;
-    linkConfig.RequiredForOnline= "no";
+    # linkConfig.RequiredForOnline= "no";
   };
   systemd.network.networks."90-tun-ignore" = {
     matchConfig.Name = "tun*";
