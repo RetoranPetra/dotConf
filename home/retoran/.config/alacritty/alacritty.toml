@@ -56,7 +56,7 @@ family = "IosevkaTerm NF"
 style = "Regular"
 
 [terminal.shell]
-program = "/bin/zsh"
+program = "zsh"
 
 [window]
 opacity = 0.95

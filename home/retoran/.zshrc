@@ -93,5 +93,5 @@ antigen apply
 source ~/.bashalias
 
 if [[ $TTY == "tty1" ]] && uwsm check may-start; then
-	exec uwsm start hyprland.desktop
+	exec uwsm start hyprland-uwsm.desktop
 fi
