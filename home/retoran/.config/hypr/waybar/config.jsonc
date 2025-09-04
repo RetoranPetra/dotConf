@@ -6,7 +6,7 @@
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces", "hyprland/submap"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["pulseaudio", "custom/paru", "network", "cpu", "memory", "tray", "clock"],
+    "modules-right": ["pulseaudio", "network", "cpu", "memory", "tray", "clock"],
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": false,
@@ -73,14 +73,4 @@
         },
         "on-click": "alacritty --class floating -e pulsemixer"
     },
-    "custom/paru" : {
-        "format": "{} {icon}",
-        "tooltip": false,
-        "exec": "paru -Qu | wc -l",
-        "format-icons": {
-            "0": "󰏓 ",
-            "default": "󰏕 ",
-        },
-        "interval": 600,
-    }
 }
