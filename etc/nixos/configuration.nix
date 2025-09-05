@@ -148,6 +148,10 @@
       tor-browser-bundle-bin
       pulsemixer
       hyprpolkitagent
+      # Wine
+      wineWowPackages.stable
+      winetricks
+      protontricks
 
       # Unsure if this works
       ffmpegthumbnailer
