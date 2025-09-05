@@ -56,6 +56,10 @@
     matchConfig.Name = "tun*";
     linkConfig.Unmanaged=true;
   };
+  systemd.network.networks."91-pia-ignore" = {
+    matchConfig.Name = "pia";
+    linkConfig.Unmanaged = true;
+  };
   networking.wireless.iwd.enable = true;
   networking.wireless.iwd.settings = {
     General = {
@@ -274,6 +278,8 @@
     strace
     tmux
     btop-rocm
+    wireguard-tools
+    ripgrep
   ];
 
   # Open ports in the firewall.
