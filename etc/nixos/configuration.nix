@@ -70,7 +70,6 @@
   # Set your time zone.
   time.timeZone = "Europe/London";
   services.ntp.enable = true;
-  services.syncthing.enable = true;
 
   # Enable bluetooth
   hardware.bluetooth.enable = true;
@@ -79,20 +78,12 @@
   # Enable tablet driver
   hardware.opentabletdriver.enable = true;
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
   # Select internationalisation properties.
   i18n.defaultLocale = "en_GB.UTF-8";
   console = {
     font = "Lat2-Terminus16";
     useXkbConfig = true; # use xkb.options in tty.
   };
-
-  # Enable the X11 windowing system.
-  #services.xserver.enable = true;
-
 
   # Configure keymap in X11
   services.xserver.xkb.layout = "gb";
@@ -102,8 +93,6 @@
   # services.printing.enable = true;
 
   # Enable sound.
-  # services.pulseaudio.enable = true;
-  # OR
   services.pipewire = {
     enable = true;
     pulse.enable = true;
@@ -116,6 +105,10 @@
     enable = true;
     package = pkgs.plocate;
   };
+  services.syncthing.enable = true;
+
+  # Enable the OpenSSH daemon.
+  services.openssh.enable = true;
 
   #home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
@@ -282,19 +275,6 @@
     tmux
     btop-rocm
   ];
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
