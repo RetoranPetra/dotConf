@@ -1,3 +1,6 @@
+# Prevents home-manager managing our shell
+. "/etc/profiles/per-user/$HOME/etc/profile.d/hm-session-vars.sh"
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.zshhistory
 HISTSIZE=1000

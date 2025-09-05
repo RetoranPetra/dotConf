@@ -120,57 +120,68 @@
   home-manager.useGlobalPkgs = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.retoran = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ];
-    # Should handle theming with home manager, might want to split some of these packages off to home manager as well.
-    packages = with pkgs; [
+  home-manager.users.retoran = { pkgs, ... }: {
+    programs.zsh = {
+      enable = true;
+    };
+
+    home.packages = with pkgs; [
+      # Hyprland needed packages
       waybar
       hyprland
-      alacritty
-      kitty
-      vesktop
       rofi-wayland
-      xfce.thunar
-      xfce.thunar-volman
-      xfce.thunar-media-tags-plugin
-      xfce.tumbler
       mako
-      deluge-gtk
-      mpv
-      qdirstat
-      helvum
-      blender
-      audacity
-      feh
-      fping
-      ffmpeg
-      gallery-dl
+      alacritty
       grim
       slurp
-      krita
-      streamlink
-      chatterino2
-      youtube-music
       wl-clipboard
-      tor-browser-bundle-bin
-      pulsemixer
       hyprpolkitagent
       hyprpaper
       hyprcursor
       qt5.qtwayland
       qt6.qtwayland
+      #Need to check how this gets configured properly.
+      fcitx5
+
+      # System utilities
+      qdirstat
+      helvum
+      pulsemixer
+      btop-rocm
+      ## thunar
+      xfce.thunar
+      xfce.thunar-volman
+      xfce.thunar-media-tags-plugin
+      xfce.tumbler
+      ffmpegthumbnailer
+
+      # Essentials
+      mpv
+      ffmpeg
+      feh
 
       # Wine
       wineWowPackages.stable
       winetricks
       protontricks
 
-      # Unsure if this works
-      ffmpegthumbnailer
+      # Programs
+      vesktop
+      deluge-gtk
+      mpv
+      blender
+      audacity
+      krita
+      chatterino2
+      youtube-music
+      tor-browser-bundle-bin
+      firefox
 
-      # Need to check how this gets integrated.
-      fcitx5
+      # CLI programs
+      gallery-dl
+      fping
+      streamlink
+
       # Development tools that should NOT be put here but this is the fastest way to get neovim working.
       # clang_tools
       python3
@@ -184,6 +195,12 @@
       cmake
       gnumake
     ];
+
+    home.stateVersion = "25.05"; # From myself: don't change this manually until you update the channel
+  };
+  users.users.retoran = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" ];
     shell = pkgs.zsh;
   };
 
