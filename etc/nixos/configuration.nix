@@ -116,6 +116,7 @@
   users.users.retoran = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
+    # Should handle theming with home manager, might want to split some of these packages off to home manager as well.
     packages = with pkgs; [
       waybar
       hyprland
@@ -148,6 +149,11 @@
       tor-browser-bundle-bin
       pulsemixer
       hyprpolkitagent
+      hyprpaper
+      hyprcursor
+      qt5.qtwayland
+      qt6.qtwayland
+
       # Wine
       wineWowPackages.stable
       winetricks
@@ -198,6 +204,8 @@
     nerd-fonts.iosevka-term
     nerd-fonts.iosevka
     iosevka
+    noto-fonts
+    noto-fonts-cjk-sans
   ];
 
   # List packages installed in system profile.
