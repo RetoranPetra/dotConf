@@ -65,6 +65,11 @@
   # Set your time zone.
   time.timeZone = "Europe/London";
   services.ntp.enable = true;
+  services.syncthing.enable = true;
+
+  # Enable bluetooth
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -122,7 +127,6 @@
       mako
       deluge-gtk
       mpv
-      syncthing
       qdirstat
       helvum
       blender
@@ -140,7 +144,7 @@
       wl-clipboard
       tor-browser-bundle-bin
       pulsemixer
-      btop-rocm
+      hyprpolkitagent
 
       # Unsure if this works
       ffmpegthumbnailer
@@ -180,15 +184,6 @@
   programs.neovim = {
     enable = true;
     defaultEditor = true;
-#    extraPackages = with pkgs; [
-#      python3
-#      nodejs
-#      llvmPackages_latest.clang
-#      llvmPackages_latest.libcxx
-#      llvmPackages_latest.libllvm
-#      llvmPackages_latest.lldb
-#      unzip
-#    ];
   };
 
   # System fonts
@@ -219,6 +214,8 @@
     jo
     strace
     tmux
+    opentabletdriver
+    btop-rocm
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
