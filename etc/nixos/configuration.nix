@@ -117,11 +117,38 @@
     package = pkgs.plocate;
   };
 
-  home-manager.useGlobalPkgs = true;
+  #home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   home-manager.users.retoran = { pkgs, ... }: {
-    programs.zsh = {
+    #programs.zsh = {
+    #enable = true;
+    #};
+    # Git configuration
+    programs.git = {
+      enable = true;
+      userEmail = "flyro@live.co.uk";
+      userName = "RetoranPetra";
+      extraConfig = {
+        init.defaultBranch = "main";
+        core = {
+          editor = "nvim";
+        };
+        credential."https://github.com".helper = "!/usr/bin/env gh auth git-credential";
+        credential."https://gist.github.com".helper = "!/usr/bin/env gh auth git-credential";
+      };
+
+      lfs.enable = true;
+    };
+    # This doesn't work
+    /*
+    programs.gh = {
+      enable = true;
+      gitCredentialHelper.enable = true;
+    };
+    */
+    programs.lazygit = {
       enable = true;
     };
 
@@ -159,6 +186,7 @@
       mpv
       ffmpeg
       feh
+      gh
 
       # Wine
       wineWowPackages.stable
@@ -243,7 +271,6 @@
     lrzip
     traceroute
     xdg-user-dirs
-    gh
     git
     git-lfs
     lazygit
