@@ -147,29 +147,38 @@
     };
     programs.zsh = {
       enable = true;
-      antidote = {
-        enable = true;
-        plugins = [
-          "gitfast"
-          "heroku"
-          "pip"
-          "lein"
-          "command-not-found"
-
-          "fzf"
-          "fd"
-
-          "gh"
-          "gitignore"
-          "golang"
-          "rust"
-          "dotnet"
-
-          "zsh-users/zsh-syntax-highlighting"
-          "zsh-users/zsh-autosuggestions"
-          "zsh-users/zsh-completions"
-        ];
+      sessionVariables = {
+        EDITOR = "nvim";
+        TERM = "alacritty";
+        TERMINAL = "alacritty";
+        #PATH = "{$PATH}:{$HOME}/.bin";
       };
+#      enableCompletions = true;
+#      autosuggestions.enable = true;
+#      syntaxHighlighting = true;
+      #antidote = {
+        #enable = true;
+        #plugins = [
+#          "gitfast"
+#          "heroku"
+#          "pip"
+#          "lein"
+#          "command-not-found"
+
+#          "fzf"
+#          "fd"
+
+#          "gh"
+#          "gitignore"
+#          "golang"
+#          "rust"
+#          "dotnet"
+
+#          "zsh-users/zsh-syntax-highlighting"
+#          "zsh-users/zsh-autosuggestions"
+#          "zsh-users/zsh-completions"
+        #];
+      #};
     };
 
     # Linking existing .dotconf files
@@ -197,7 +206,7 @@
     #home.file.".zshrc".source = /etc/nixos/home.retoran/home/retoran/.zshrc;
     #home.file.".zshenv".source = /etc/nixos/home.retoran/home/retoran/.zshenv;
     home.file.".scripts".source = /etc/nixos/home.retoran/home/retoran/.scripts;
-    #home.file.".env".source = /etc/nixos/home.retoran/home/retoran/.env;
+    home.file.".env".source = /etc/nixos/home.retoran/home/retoran/.env;
     #home.file.".bashalias".source = /etc/nixos/home.retoran/home/retoran/.bashalias;
     home.file.".bin".source = /etc/nixos/home.retoran/home/retoran/.bin;
     #home.file."antigen.zsh".source = /etc/nixos/home.retoran/home/retoran/antigen.zsh;
