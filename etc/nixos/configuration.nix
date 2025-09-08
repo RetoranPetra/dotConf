@@ -119,6 +119,11 @@
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   home-manager.users.retoran = { pkgs, ... }: {
+    home.sessionPath = [
+      # Should probably move things from .bin to .local/bin
+      "$HOME/.bin"
+      "$HOME/.local/bin"
+    ];
     # Git configuration
     programs.git = {
       enable = true;
@@ -183,11 +188,7 @@
     };
     programs.zsh = {
       enable = true;
-      envExtra =
-        # sh
-        ''
-          for f in ~/.env/terminal/*; do source $f; done
-        '';
+
       sessionVariables = {
         EDITOR = "nvim";
       };
