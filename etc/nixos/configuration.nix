@@ -149,6 +149,36 @@
       enable = true;
     };
 
+    # Linking existing .dotconf files
+    home.file.".config/nvim".source = /etc/nixos/home.retoran/home/retoran/.config/nvim;
+    home.file.".config/alacritty".source = /etc/nixos/home.retoran/home/retoran/.config/alacritty;
+    home.file.".config/btop".source = /etc/nixos/home.retoran/home/retoran/.config/btop;
+    home.file.".config/gallery-dl".source = /etc/nixos/home.retoran/home/retoran/.config/gallery-dl;
+    home.file.".config/hypr".source = /etc/nixos/home.retoran/home/retoran/.config/hypr;
+    home.file.".config/waybar".source = /etc/nixos/home.retoran/home/retoran/.config/waybar;
+    home.file.".config/rofi".source = /etc/nixos/home.retoran/home/retoran/.config/rofi;
+    home.file.".config/yt-dlp.conf".source = /etc/nixos/home.retoran/home/retoran/.config/yt-dlp.conf;
+    home.file.".config/mako".source = /etc/nixos/home.retoran/home/retoran/.config/mako;
+    home.file.".config/uwsm" = {
+      source = /etc/nixos/home.retoran/home/retoran/.config/uwsm;
+      recursive = true;
+    };
+    home.file.".config/vesktop" = {
+      source = /etc/nixos/home.retoran/home/retoran/.config/vesktop;
+      recursive = true;
+    };
+    home.file.".config/YouTube Music" = {
+      source = "/etc/nixos/home.retoran/home/retoran/.config/YouTube Music";
+      recursive = true;
+    };
+    home.file.".zshrc".source = /etc/nixos/home.retoran/home/retoran/.zshrc;
+    home.file.".zshenv".source = /etc/nixos/home.retoran/home/retoran/.zshenv;
+    home.file.".scripts".source = /etc/nixos/home.retoran/home/retoran/.scripts;
+    home.file.".env".source = /etc/nixos/home.retoran/home/retoran/.env;
+    home.file.".bashalias".source = /etc/nixos/home.retoran/home/retoran/.bashalias;
+    home.file.".bin".source = /etc/nixos/home.retoran/home/retoran/.bin;
+    home.file."antigen.zsh".source = /etc/nixos/home.retoran/home/retoran/antigen.zsh;
+
     home.packages = with pkgs; [
       # Hyprland needed packages
       waybar
@@ -286,7 +316,7 @@
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall.enable = false;
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
