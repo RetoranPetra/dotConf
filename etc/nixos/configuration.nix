@@ -119,9 +119,6 @@
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   home-manager.users.retoran = { pkgs, ... }: {
-    #programs.zsh = {
-    #enable = true;
-    #};
     # Git configuration
     programs.git = {
       enable = true;
@@ -148,6 +145,32 @@
     programs.lazygit = {
       enable = true;
     };
+    programs.zsh = {
+      enable = true;
+      antidote = {
+        enable = true;
+        plugins = [
+          "gitfast"
+          "heroku"
+          "pip"
+          "lein"
+          "command-not-found"
+
+          "fzf"
+          "fd"
+
+          "gh"
+          "gitignore"
+          "golang"
+          "rust"
+          "dotnet"
+
+          "zsh-users/zsh-syntax-highlighting"
+          "zsh-users/zsh-autosuggestions"
+          "zsh-users/zsh-completions"
+        ];
+      };
+    };
 
     # Linking existing .dotconf files
     home.file.".config/nvim".source = /etc/nixos/home.retoran/home/retoran/.config/nvim;
@@ -171,13 +194,13 @@
       source = "/etc/nixos/home.retoran/home/retoran/.config/YouTube Music";
       recursive = true;
     };
-    home.file.".zshrc".source = /etc/nixos/home.retoran/home/retoran/.zshrc;
-    home.file.".zshenv".source = /etc/nixos/home.retoran/home/retoran/.zshenv;
+    #home.file.".zshrc".source = /etc/nixos/home.retoran/home/retoran/.zshrc;
+    #home.file.".zshenv".source = /etc/nixos/home.retoran/home/retoran/.zshenv;
     home.file.".scripts".source = /etc/nixos/home.retoran/home/retoran/.scripts;
-    home.file.".env".source = /etc/nixos/home.retoran/home/retoran/.env;
-    home.file.".bashalias".source = /etc/nixos/home.retoran/home/retoran/.bashalias;
+    #home.file.".env".source = /etc/nixos/home.retoran/home/retoran/.env;
+    #home.file.".bashalias".source = /etc/nixos/home.retoran/home/retoran/.bashalias;
     home.file.".bin".source = /etc/nixos/home.retoran/home/retoran/.bin;
-    home.file."antigen.zsh".source = /etc/nixos/home.retoran/home/retoran/antigen.zsh;
+    #home.file."antigen.zsh".source = /etc/nixos/home.retoran/home/retoran/antigen.zsh;
 
     home.packages = with pkgs; [
       # Hyprland needed packages
