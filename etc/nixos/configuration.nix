@@ -183,6 +183,11 @@
     };
     programs.zsh = {
       enable = true;
+      envExtra =
+        # sh
+        ''
+          for f in ~/.env/terminal/*; do source $f; done
+        '';
       sessionVariables = {
         EDITOR = "nvim";
       };
@@ -212,9 +217,9 @@
 
           "ohmyzsh/ohmyzsh path:themes/af-magic.zsh-theme"
 
-          "zsh-users/zsh-syntax-highlighting"
-          "zsh-users/zsh-autosuggestions"
-          "zsh-users/zsh-completions"
+          #"zsh-users/zsh-syntax-highlighting"
+          #"zsh-users/zsh-autosuggestions"
+          #"zsh-users/zsh-completions"
         ];
       };
     };
