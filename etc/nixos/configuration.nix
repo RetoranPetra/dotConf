@@ -153,32 +153,37 @@
         TERMINAL = "alacritty";
         #PATH = "{$PATH}:{$HOME}/.bin";
       };
-#      enableCompletions = true;
-#      autosuggestions.enable = true;
-#      syntaxHighlighting = true;
-      #antidote = {
-        #enable = true;
-        #plugins = [
-#          "gitfast"
-#          "heroku"
-#          "pip"
-#          "lein"
-#          "command-not-found"
+      enableCompletion = true;
+      autosuggestion.enable = true;
+      syntaxHighlighting.enable = true;
+      antidote = {
+        enable = true;
+        plugins = [
+          "getantidote/use-omz"
+          "ohmyzsh/ohmyzsh path:lib"
 
-#          "fzf"
-#          "fd"
+          "ohmyzsh/ohmyzsh path:plugins/gitfast"
+          "ohmyzsh/ohmyzsh path:plugins/heroku"
+          "ohmyzsh/ohmyzsh path:plugins/pip"
+          #"ohmyzsh/ohmyzsh path:plugins/lein"
+          "ohmyzsh/ohmyzsh path:plugins/command-not-found"
 
-#          "gh"
-#          "gitignore"
-#          "golang"
-#          "rust"
-#          "dotnet"
+          "ohmyzsh/ohmyzsh path:plugins/fzf"
+          #"ohmyzsh/ohmyzsh path:plugins/fd"
 
-#          "zsh-users/zsh-syntax-highlighting"
-#          "zsh-users/zsh-autosuggestions"
-#          "zsh-users/zsh-completions"
-        #];
-      #};
+          "ohmyzsh/ohmyzsh path:plugins/gh"
+          "ohmyzsh/ohmyzsh path:plugins/gitignore"
+          "ohmyzsh/ohmyzsh path:plugins/golang"
+          "ohmyzsh/ohmyzsh path:plugins/rust"
+          "ohmyzsh/ohmyzsh path:plugins/dotnet"
+
+          "ohmyzsh/ohmyzsh path:themes/af-magic.zsh-theme"
+
+          "zsh-users/zsh-syntax-highlighting"
+          "zsh-users/zsh-autosuggestions"
+          "zsh-users/zsh-completions"
+        ];
+      };
     };
 
     # Linking existing .dotconf files
