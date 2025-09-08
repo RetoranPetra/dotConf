@@ -145,13 +145,46 @@
     programs.lazygit = {
       enable = true;
     };
+    programs.alacritty = {
+      enable = true;
+      theme = "nightfly";
+      settings = {
+        colors = {
+          draw_bold_text_with_bright_colors = true;
+          primary = {
+            background = "#0D0F1C";
+            foreground = "#acb4c2";
+          };
+        };
+        cursor = {
+          blink_interval = 500;
+          blink_timeout = 0;
+          thickness = 0.15;
+          unfocused_hollow = false;
+          style = {
+            blinking = "on";
+            shape = "Underline";
+          };
+          vi_mode_style = {
+            blinking = "on";
+            shape = "Underline";
+          };
+        };
+        font = {
+          size = 12.0;
+          normal = {
+            family = "Iosevkaterm NF";
+            style = "Regular";
+          };
+        };
+        window.opacity = 0.95;
+        terminal.shell = "zsh";
+      };
+    };
     programs.zsh = {
       enable = true;
       sessionVariables = {
         EDITOR = "nvim";
-        TERM = "alacritty";
-        TERMINAL = "alacritty";
-        #PATH = "{$PATH}:{$HOME}/.bin";
       };
       enableCompletion = true;
       autosuggestion.enable = true;
@@ -188,7 +221,7 @@
 
     # Linking existing .dotconf files
     home.file.".config/nvim".source = /etc/nixos/home.retoran/home/retoran/.config/nvim;
-    home.file.".config/alacritty".source = /etc/nixos/home.retoran/home/retoran/.config/alacritty;
+    #home.file.".config/alacritty".source = /etc/nixos/home.retoran/home/retoran/.config/alacritty;
     home.file.".config/btop".source = /etc/nixos/home.retoran/home/retoran/.config/btop;
     home.file.".config/gallery-dl".source = /etc/nixos/home.retoran/home/retoran/.config/gallery-dl;
     home.file.".config/hypr".source = /etc/nixos/home.retoran/home/retoran/.config/hypr;
@@ -222,7 +255,6 @@
       hyprland
       rofi-wayland
       mako
-      alacritty
       grim
       slurp
       wl-clipboard
