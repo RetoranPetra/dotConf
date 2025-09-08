@@ -220,24 +220,23 @@
     };
 
     # Linking existing .dotconf files
-    home.file.".config/nvim".source = /etc/nixos/home.retoran/home/retoran/.config/nvim;
-    #home.file.".config/alacritty".source = /etc/nixos/home.retoran/home/retoran/.config/alacritty;
-    home.file.".config/btop".source = /etc/nixos/home.retoran/home/retoran/.config/btop;
-    home.file.".config/gallery-dl".source = /etc/nixos/home.retoran/home/retoran/.config/gallery-dl;
-    home.file.".config/hypr".source = /etc/nixos/home.retoran/home/retoran/.config/hypr;
-    home.file.".config/waybar".source = /etc/nixos/home.retoran/home/retoran/.config/waybar;
-    home.file.".config/rofi".source = /etc/nixos/home.retoran/home/retoran/.config/rofi;
-    home.file.".config/yt-dlp.conf".source = /etc/nixos/home.retoran/home/retoran/.config/yt-dlp.conf;
-    home.file.".config/mako".source = /etc/nixos/home.retoran/home/retoran/.config/mako;
-    home.file.".config/uwsm" = {
+    xdg.configFile."nvim".source = /etc/nixos/home.retoran/home/retoran/.config/nvim;
+    xdg.configFile."btop".source = /etc/nixos/home.retoran/home/retoran/.config/btop;
+    xdg.configFile."gallery-dl".source = /etc/nixos/home.retoran/home/retoran/.config/gallery-dl;
+    xdg.configFile."hypr".source = /etc/nixos/home.retoran/home/retoran/.config/hypr;
+    xdg.configFile."waybar".source = /etc/nixos/home.retoran/home/retoran/.config/waybar;
+    xdg.configFile."rofi".source = /etc/nixos/home.retoran/home/retoran/.config/rofi;
+    xdg.configFile."yt-dlp.conf".source = /etc/nixos/home.retoran/home/retoran/.config/yt-dlp.conf;
+    xdg.configFile."mako".source = /etc/nixos/home.retoran/home/retoran/.config/mako;
+    xdg.configFile."uwsm" = {
       source = /etc/nixos/home.retoran/home/retoran/.config/uwsm;
       recursive = true;
     };
-    home.file.".config/vesktop" = {
+    xdg.configFile."vesktop" = {
       source = /etc/nixos/home.retoran/home/retoran/.config/vesktop;
       recursive = true;
     };
-    home.file.".config/YouTube Music" = {
+    xdg.configFile."YouTube Music" = {
       source = "/etc/nixos/home.retoran/home/retoran/.config/YouTube Music";
       recursive = true;
     };
