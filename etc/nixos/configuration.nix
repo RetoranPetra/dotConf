@@ -346,6 +346,20 @@
           "$mainMod SHIFT, Q, exec, uwsm app -- alacritty --class floating"
           "$mainMod, E, exec, uwsm app -- $file"
           "$mainMod, R, exec, rofi -show drun -run-command \"uwsm app -- {cmd}\""
+          "$mainMod, S, exec, rofi -show window"
+          "CTRL_SHIFT, escape, exec, uwsm app -- alacritty --class floating -T btop -e btop"
+          ",Print, exec, grim -g \"$(slurp)\" | wl-copy && notify-send Grim \"Snapped Segment\""
+          "CTRL, Print, exec, grim -o \"$(hyprctl monitors -j | jaq -r '.[] | select(.focused).name')\" | wl-copy && notify-send Grim \"Snapped Monitor\""
+          "$mainMod, N, exec, ~/.config/hypr/scripts/hyprGamemode.sh"
+
+          # Media bindings
+          ",XF86AudioPlay, exec, playerctl play-pause"
+          ",XF86AudioPrev, exec, playerctl previous"
+          ",XF86AudioNext, exec, playerctl next"
+          ",XF86AudioRaiseVolume, exec, wpctl set-volume -1 1.0 @DEFAULT_AUDIO_SINK@ 1%+"
+          ",XF86AudioLowerVolume, exec, wpctl set-volume -1 1.0 @DEFAULT_AUDIO_SINK@ 1%-"
+          ",XF86AudioMute, exec, wpctl set-mute -1 1.0 @DEFAULT_AUDIO_SINK@ toggle"
+
         ];
         "bindm" = [
           "$mainMod, mouse:272, movewindow"
