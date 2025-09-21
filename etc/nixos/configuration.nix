@@ -79,6 +79,11 @@
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
+  # Enable preload
+  services.preload = {
+    enable = true;
+  };
+
   # Enable tablet driver
   hardware.opentabletdriver.enable = true;
 
