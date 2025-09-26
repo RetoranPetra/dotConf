@@ -263,6 +263,18 @@
     };
 
     xdg.configFile."uwsm/env".source = "/etc/profiles/per-user/retoran/etc/profile.d/hm-session-vars.sh"; 
+    xdg.portal = {
+      #enable = true;
+      #extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
+      configPackages = with pkgs; [ xdg-desktop-portal-gtk ];
+      config.hyprland = {
+        default = [
+          "hyprland"
+          "gtk"
+        ];
+        #org.freedesktop.impl.portal.FileChooser = "kde";
+      };
+    };
     wayland.windowManager.hyprland = {
       package = null;
       portalPackage = null;
