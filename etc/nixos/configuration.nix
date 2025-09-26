@@ -229,6 +229,39 @@
         ];
       };
     };
+    # Themeing
+    home.pointerCursor = {
+      gtk.enable = true;
+      name = "Bibata-Modern-Classic";
+      package = pkgs.bibata-cursors;
+    };
+    gtk = {
+      enable = true;
+      # Icon theme not respected for some reason. Might need to manually set in dconf.
+      iconTheme = {
+        name = "Adwaita";
+        package = pkgs.adwaita-icon-theme;
+      };
+      theme = {
+        #name = "Tokyonight";
+        #package = pkgs.tokyonight-gtk-theme;
+        name = "Materia-dark";
+        package = pkgs.materia-theme;
+      };
+      cursorTheme = {
+        name = "Materia-dark";
+        package = pkgs.materia-theme;
+      };
+      font = {
+        name = "Sans";
+        size = 11;
+      };
+    };
+    qt = {
+      enable = true;
+      platformTheme.name = "gtk";
+    };
+
     xdg.configFile."uwsm/env".source = "/etc/profiles/per-user/retoran/etc/profile.d/hm-session-vars.sh"; 
     wayland.windowManager.hyprland = {
       package = null;
