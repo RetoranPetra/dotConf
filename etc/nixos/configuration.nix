@@ -428,6 +428,7 @@
     xdg.configFile."rofi".source = /etc/nixos/home.retoran/home/retoran/.config/rofi;
     xdg.configFile."yt-dlp.conf".source = /etc/nixos/home.retoran/home/retoran/.config/yt-dlp.conf;
     xdg.configFile."mako".source = /etc/nixos/home.retoran/home/retoran/.config/mako;
+    # Vesktop has a programs.vesktop implementation. Should use that instead.
     xdg.configFile."vesktop" = {
       source = /etc/nixos/home.retoran/home/retoran/.config/vesktop;
       recursive = true;
@@ -488,9 +489,10 @@
       wl-clipboard
       hyprpolkitagent
       hyprpaper
-      hyprcursor
+      #hyprcursor
       qt5.qtwayland
       qt6.qtwayland
+      handlr
 
       # System utilities
       qdirstat
