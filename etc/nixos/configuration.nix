@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./configuration.d/network.nix
+      ./configuration.d/system.nix
       <home-manager/nixos>
     ];
 
@@ -18,32 +19,14 @@
     "flakes"
   ];
 
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_zen;
-
-  boot.kernel.sysctl = {
-    "vm.max_map_count" = 2147483642;
-  };
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # Set your time zone.
-  time.timeZone = "Europe/London";
-  services.ntp.enable = true;
 
   # Enable bluetooth
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
-  # Enable preload
-  services.preload = {
-    enable = true;
-  };
 
   # Enable tablet driver
   hardware.opentabletdriver.enable = true;
@@ -71,11 +54,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
-  services.locate = {
-    enable = true;
-    package = pkgs.plocate;
-  };
-  services.syncthing.enable = true;
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
