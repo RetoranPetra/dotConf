@@ -214,6 +214,10 @@
     };
 
     home.packages = with pkgs; [
+      fcitx5
+
+      # Need to figure out how to set fcitx5 theme
+      fcitx5-tokyonight
 
       # System utilities
       qdirstat
