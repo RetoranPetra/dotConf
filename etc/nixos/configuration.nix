@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       ./configuration.d/network.nix
       ./configuration.d/system.nix
+      ./configuration.d/retoran.nix
       <home-manager/nixos>
     ];
 
@@ -489,36 +490,9 @@
 
     home.stateVersion = "25.05"; # From myself: don't change this manually until you update the channel
   };
-  users.users.retoran = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ];
-    shell = pkgs.zsh;
-  };
-
-  programs.firefox.enable = true;
-  programs.hyprland = {
-    enable = true;
-    withUWSM = true;
-  };
-  programs.zsh.enable = true;
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true;
-    localNetworkGameTransfers.openFirewall = true;
-    extraCompatPackages = with pkgs; [
-      proton-ge-bin
-    ];
-  };
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-  };
 
   # System fonts
   fonts.packages = with pkgs; [
-    nerd-fonts.iosevka-term
-    nerd-fonts.iosevka
-    iosevka
     noto-fonts
     noto-fonts-cjk-sans
   ];
