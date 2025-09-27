@@ -31,15 +31,20 @@
 		];
 
 		xdg.portal = {
-			#enable = true;
-			#extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
-			configPackages = with pkgs; [ xdg-desktop-portal-gtk xdg-desktop-portal-kde ];
+			enable = true;
+			extraPortals = with pkgs;
+				[
+					xdg-desktop-portal-gtk
+					kdePackages.xdg-desktop-portal-kde
+					xdg-desktop-portal-hyprland
+				];
+			#configPackages = with pkgs; [ xdg-desktop-portal-gtk xdg-desktop-portal-kde ];
 			config.Hyprland = {
 				default = [
 					"hyprland"
 					"gtk"
 				];
-				org.freedesktop.impl.portal.FileChooser = "kde";
+				"org.freedesktop.impl.portal.FileChooser" = "kde";
 			};
 		};
 		programs.zsh = {
@@ -56,7 +61,7 @@
 		xdg.configFile."uwsm/env".source = "/etc/profiles/per-user/retoran/etc/profile.d/hm-session-vars.sh"; 
 		wayland.windowManager.hyprland = {
 			package = null;
-			portalPackage = null;
+			#portalPackage = null;
 			enable = true;
 			settings = {
 				# Global settings
