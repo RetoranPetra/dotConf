@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./configuration.d/network.nix
       <home-manager/nixos>
     ];
 
@@ -30,46 +31,6 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  networking.hostName = "flex5-retoran"; # Define your hostname.
-  networking.useDHCP = false;
-  networking.nftables.enable = true;
-  # Pick only one of the below networking options.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-  systemd.network.enable = true;
-  systemd.network.networks."20-wired" = {
-    matchConfig.Name = "en*";
-    networkConfig.DHCP = "yes";
-    dhcpV4Config.RouteMetric=19;
-    ipv6AcceptRAConfig.RouteMetric=20;
-    linkConfig.RequiredForOnline= "no";
-  };
-  systemd.network.networks."30-wireless" = {
-    matchConfig.Name = "wl*";
-    networkConfig.DHCP = "yes";
-    dhcpV4Config.RouteMetric=29;
-    ipv6AcceptRAConfig.RouteMetric=30;
-    # linkConfig.RequiredForOnline= "no";
-  };
-  systemd.network.networks."90-tun-ignore" = {
-    matchConfig.Name = "tun*";
-    linkConfig.Unmanaged=true;
-  };
-  systemd.network.networks."91-pia-ignore" = {
-    matchConfig.Name = "pia";
-    linkConfig.Unmanaged = true;
-  };
-  networking.wireless.iwd.enable = true;
-  networking.wireless.iwd.settings = {
-    General = {
-      EnableNetworkConfiguration = false;
-    };
-    Network = {
-      NameResolvingService="systemd";
-    };
-  };
-
 
   # Set your time zone.
   time.timeZone = "Europe/London";
@@ -609,11 +570,6 @@
     ripgrep
   ];
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  networking.firewall.enable = false;
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
@@ -638,6 +594,5 @@
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "25.05"; # Did you read the comment?
-
 }
 
