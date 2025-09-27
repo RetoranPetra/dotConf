@@ -23,8 +23,4 @@
     nerd-fonts.iosevka-term
     nerd-fonts.iosevka
   ];
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-  };
 }

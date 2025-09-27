@@ -68,9 +68,6 @@
       userName = "RetoranPetra";
       extraConfig = {
         init.defaultBranch = "main";
-        core = {
-          editor = "nvim";
-        };
         credential."https://github.com".helper = "!/usr/bin/env gh auth git-credential";
         credential."https://gist.github.com".helper = "!/usr/bin/env gh auth git-credential";
       };
@@ -158,7 +155,6 @@
 
 
     # Linking existing .dotconf files
-    xdg.configFile."nvim".source = /etc/nixos/home.retoran/home/retoran/.config/nvim;
     xdg.configFile."btop".source = /etc/nixos/home.retoran/home/retoran/.config/btop;
     xdg.configFile."gallery-dl".source = /etc/nixos/home.retoran/home/retoran/.config/gallery-dl;
     xdg.configFile."yt-dlp.conf".source = /etc/nixos/home.retoran/home/retoran/.config/yt-dlp.conf;
@@ -255,16 +251,6 @@
 
       # Development tools that should NOT be put here but this is the fastest way to get neovim working.
       # clang_tools
-      python3
-      nodejs
-      llvmPackages_latest.clang
-      llvmPackages_latest.libcxx
-      llvmPackages_latest.libllvm
-      llvmPackages_latest.lldb
-      unzip
-      go
-      cmake
-      gnumake
     ];
 
     home.stateVersion = "25.05"; # From myself: don't change this manually until you update the channel
