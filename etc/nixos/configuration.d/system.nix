@@ -25,4 +25,5 @@
     package = pkgs.plocate;
   };
   services.syncthing.enable = true;
+  services.gvfs.enable = true;
 }
