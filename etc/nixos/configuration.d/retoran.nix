@@ -27,8 +27,4 @@
     enable = true;
     defaultEditor = true;
   };
-  programs.hyprland = {
-    enable = true;
-    withUWSM = true;
-  };
 }

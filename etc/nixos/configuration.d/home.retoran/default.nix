@@ -1,3 +1,6 @@
 {
-	imports = [ ./zsh.nix ];
+	imports = [
+		./zsh.nix
+		./hyprland.nix
+	];
 }
