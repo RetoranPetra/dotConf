@@ -5,27 +5,21 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      <home-manager/nixos>
-      ./configuration.d
-    ];
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    <home-manager/nixos>
+    ./configuration.d
+  ];
 
   # Enable experimental features
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-
   # Enable bluetooth
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
-
 
   # Enable tablet driver
   hardware.opentabletdriver.enable = true;
@@ -47,7 +41,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
-
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
@@ -68,36 +61,36 @@
       userName = "RetoranPetra";
       extraConfig = {
         init.defaultBranch = "main";
-        credential."https://github.com".helper = "!/usr/bin/env gh auth git-credential";
-        credential."https://gist.github.com".helper = "!/usr/bin/env gh auth git-credential";
+        credential."https://github.com".helper =
+          "!/usr/bin/env gh auth git-credential";
+        credential."https://gist.github.com".helper =
+          "!/usr/bin/env gh auth git-credential";
       };
 
       lfs.enable = true;
     };
     # This doesn't work
-    /*
-    programs.gh = {
-      enable = true;
-      gitCredentialHelper.enable = true;
-    };
+    /* programs.gh = {
+         enable = true;
+         gitCredentialHelper.enable = true;
+       };
     */
-    programs.lazygit = {
-      enable = true;
-    };
+    programs.lazygit = { enable = true; };
     programs.alacritty = {
       enable = true;
-      settings = {
-        terminal.shell = "zsh";
-      };
+      settings = { terminal.shell = "zsh"; };
     };
     # Themeing
 
-
     # Linking existing .dotconf files
-    xdg.configFile."btop".source = /etc/nixos/home.retoran/home/retoran/.config/btop;
-    xdg.configFile."gallery-dl".source = /etc/nixos/home.retoran/home/retoran/.config/gallery-dl;
-    xdg.configFile."yt-dlp.conf".source = /etc/nixos/home.retoran/home/retoran/.config/yt-dlp.conf;
-    xdg.configFile."mako".source = /etc/nixos/home.retoran/home/retoran/.config/mako;
+    xdg.configFile."btop".source =
+      /etc/nixos/home.retoran/home/retoran/.config/btop;
+    xdg.configFile."gallery-dl".source =
+      /etc/nixos/home.retoran/home/retoran/.config/gallery-dl;
+    xdg.configFile."yt-dlp.conf".source =
+      /etc/nixos/home.retoran/home/retoran/.config/yt-dlp.conf;
+    xdg.configFile."mako".source =
+      /etc/nixos/home.retoran/home/retoran/.config/mako;
     # Vesktop has a programs.vesktop implementation. Should use that instead.
     xdg.configFile."vesktop" = {
       source = /etc/nixos/home.retoran/home/retoran/.config/vesktop;
@@ -126,12 +119,8 @@
                 "1" = "Zenkaku_Hankaku";
                 "2" = "Hangul";
               };
-              ActivateKeys = {
-                "0" = "Control+grave";
-              };
-              DeactivateKeys = {
-                "0" = "Control-notsign";
-              };
+              ActivateKeys = { "0" = "Control+grave"; };
+              DeactivateKeys = { "0" = "Control-notsign"; };
             };
           };
           inputMethod = {
@@ -189,14 +178,12 @@
       # clang_tools
     ];
 
-    home.stateVersion = "25.05"; # From myself: don't change this manually until you update the channel
+    home.stateVersion =
+      "25.05"; # From myself: don't change this manually until you update the channel
   };
 
   # System fonts
-  fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-cjk-sans
-  ];
+  fonts.packages = with pkgs; [ noto-fonts noto-fonts-cjk-sans ];
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
@@ -222,7 +209,6 @@
     wireguard-tools
     ripgrep
   ];
-
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you

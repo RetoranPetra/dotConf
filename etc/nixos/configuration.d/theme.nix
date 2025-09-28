@@ -1,10 +1,9 @@
-{ config, lib, pkgs, ... }:
-{
-	imports = [ <home-manager/nixos> ];
-	home-manager.users.retoran = { pkgs, ... }: {
-		programs.alacritty = {
-			theme = "nightfly";
-			settings = {
+{ config, lib, pkgs, ... }: {
+  imports = [ <home-manager/nixos> ];
+  home-manager.users.retoran = { pkgs, ... }: {
+    programs.alacritty = {
+      theme = "nightfly";
+      settings = {
         colors = {
           draw_bold_text_with_bright_colors = true;
           primary = {
@@ -34,8 +33,8 @@
           };
         };
         window.opacity = 0.95;
-			};
-		};
+      };
+    };
     home.pointerCursor = {
       gtk.enable = true;
       name = "Bibata-Modern-Classic";
@@ -68,9 +67,10 @@
       platformTheme.name = "gtk";
     };
 
-		home.packages = with pkgs; [
-			# Need to decide if this actually belongs in theming.
-			# fcitx5-tokyonight
-		];
-	};
+    home.packages = with pkgs;
+      [
+        # Need to decide if this actually belongs in theming.
+        # fcitx5-tokyonight
+      ];
+  };
 }

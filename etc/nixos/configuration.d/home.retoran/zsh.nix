@@ -1,8 +1,5 @@
-{ config, lib, pkgs, ... }:
-{
-  imports = [
-      <home-manager/nixos>
-    ];
+{ config, lib, pkgs, ... }: {
+  imports = [ <home-manager/nixos> ];
   home-manager.users.retoran = { pkgs, ... }: {
     programs.zsh = {
       enable = true;

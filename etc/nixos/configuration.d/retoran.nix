@@ -1,8 +1,5 @@
-{ config, lib, pkgs, ... }:
-{
-  imports = [
-    <home-manager/nixos>
-  ];
+{ config, lib, pkgs, ... }: {
+  imports = [ <home-manager/nixos> ];
   home-manager.useUserPackages = true;
   users.users.retoran = {
     isNormalUser = true;
@@ -15,12 +12,7 @@
     enable = true;
     remotePlay.openFirewall = true;
     localNetworkGameTransfers.openFirewall = true;
-    extraCompatPackages = with pkgs; [
-      proton-ge-bin
-    ];
+    extraCompatPackages = with pkgs; [ proton-ge-bin ];
   };
-  fonts.packages = with pkgs; [
-    nerd-fonts.iosevka-term
-    nerd-fonts.iosevka
-  ];
+  fonts.packages = with pkgs; [ nerd-fonts.iosevka-term nerd-fonts.iosevka ];
 }
