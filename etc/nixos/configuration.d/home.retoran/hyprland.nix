@@ -28,7 +28,17 @@
       "org.freedesktop.impl.portal.FileChooser" = "kde";
     };
   };
-  programs.zsh = { sessionVariables = { "GTK_USE_PORTAL" = 1; }; };
+  programs.zsh =
+    {
+      sessionVariables = { "GTK_USE_PORTAL" = 1; };
+      loginExtra =
+      ''
+        TTY=$(ps -p $$ -o tty=)
+        if [[ $TTY == "tty1" ]] && uwsm check may-start; then
+          exec uwsm start hyprland-uwsm.desktop
+        fi
+      '';
+    };
 
   xdg.configFile."hypr/waybar".source =
     /etc/nixos/home.retoran/home/retoran/.config/hypr/waybar;
