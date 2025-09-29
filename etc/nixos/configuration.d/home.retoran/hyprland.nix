@@ -13,6 +13,7 @@
     qt6.qtwayland
     handlr
     btop-rocm
+    jaq
   ];
 
   xdg.portal = {
@@ -28,8 +29,7 @@
       "org.freedesktop.impl.portal.FileChooser" = "kde";
     };
   };
-  programs.zsh =
-    {
+  programs.zsh = {
       sessionVariables = { "GTK_USE_PORTAL" = 1; };
       loginExtra =
       ''
@@ -39,6 +39,7 @@
         fi
       '';
     };
+  programs.alacritty.enable = true;
 
   xdg.configFile."hypr/waybar".source =
     /etc/nixos/home.retoran/home/retoran/.config/hypr/waybar;
