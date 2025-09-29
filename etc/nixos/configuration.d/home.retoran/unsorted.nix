@@ -17,8 +17,6 @@
     /etc/nixos/home.retoran/home/retoran/.config/gallery-dl;
   xdg.configFile."yt-dlp.conf".source =
     /etc/nixos/home.retoran/home/retoran/.config/yt-dlp.conf;
-  xdg.configFile."mako".source =
-    /etc/nixos/home.retoran/home/retoran/.config/mako;
   # Vesktop has a programs.vesktop implementation. Should use that instead.
   xdg.configFile."vesktop" = {
     source = /etc/nixos/home.retoran/home/retoran/.config/vesktop;

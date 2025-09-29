@@ -41,6 +41,8 @@
     };
   programs.alacritty.enable = true;
 
+  xdg.configFile."mako".source =
+    /etc/nixos/home.retoran/home/retoran/.config/mako;
   xdg.configFile."hypr/waybar".source =
     /etc/nixos/home.retoran/home/retoran/.config/hypr/waybar;
   xdg.configFile."hypr/scripts".source =
