@@ -69,7 +69,7 @@
     tmux
     btop-rocm
     wireguard-tools
-    ripgrep
+    ripgrep-all
   ];
 
   # Copy the NixOS configuration file and link it from the resulting system
