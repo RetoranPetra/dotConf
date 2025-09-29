@@ -6,5 +6,6 @@
     ./unsorted.nix
     ./git.nix
     ./fcitx5.nix
+    ./programs.desktop
   ];
 }
