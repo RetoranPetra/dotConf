@@ -14,6 +14,7 @@
     handlr
     btop-rocm
     jaq
+    xorg.xwininfo
   ];
 
   xdg.portal = {
