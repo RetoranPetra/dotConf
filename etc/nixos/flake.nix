@@ -7,6 +7,10 @@
       #       so we don't have two versions of nixpkgs.
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixvim = {
+      url = "github:nix-community/nixvim/nixos-25.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = { nixpkgs, home-manager, ... }: {
       nixosConfigurations.flex5-retoran = nixpkgs.lib.nixosSystem rec {

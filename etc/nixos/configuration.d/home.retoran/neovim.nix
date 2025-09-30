@@ -1,9 +1,5 @@
-let
-  nixvim = import (builtins.fetchGit {
-    url = "https://github.com/nix-community/nixvim";
-    ref = "nixos-25.05";
-  });
-in {
+{ nixvim, ... }:
+{
   imports = [ nixvim.homeModules.nixvim ];
   # Relies on git
   programs.git.enable = true;
