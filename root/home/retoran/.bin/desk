@@ -1,9 +1,0 @@
-#!/bin/zsh
-#if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-if [ -z "${WAYLAND_DISPLAY}" ]; then
-  TTY=$(ps -p $$ -o tty=)
-  if [[ $TTY == "tty1" ]]; then
-    echo "Starting Hyprland"
-    source ~/.config/hypr/scripts/hyprLaunch.zsh
-  fi
-fi
