@@ -1,5 +1,4 @@
 { config, lib, pkgs, ... }: {
-  imports = [ <home-manager/nixos> ];
   programs.thunar = {
     enable = true;
     plugins = with pkgs; [

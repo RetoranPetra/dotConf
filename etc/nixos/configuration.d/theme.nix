@@ -1,5 +1,4 @@
 { config, lib, pkgs, ... }: {
-  imports = [ <home-manager/nixos> ];
   home-manager.users.retoran = { pkgs, ... }: {
     programs.alacritty = {
       theme = "nightfly";
