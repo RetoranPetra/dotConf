@@ -1,11 +1,8 @@
 { pkgs, ... }:
 {
-  xdg.configFile."btop".source =
-    /etc/nixos/home.retoran/home/retoran/.config/btop;
-  xdg.configFile."gallery-dl".source =
-    /etc/nixos/home.retoran/home/retoran/.config/gallery-dl;
-  xdg.configFile."yt-dlp.conf".source =
-    /etc/nixos/home.retoran/home/retoran/.config/yt-dlp.conf;
+  xdg.configFile."btop".source = ./../../../../root/home/retoran/.config/btop;
+  xdg.configFile."gallery-dl".source = ./../../../../root/home/retoran/.config/gallery-dl/;
+  xdg.configFile."yt-dlp.conf".source = ./../../../../root/home/retoran/.config/yt-dlp.conf;
 
   home.packages = with pkgs; [
     # System utils

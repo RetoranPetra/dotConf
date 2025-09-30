@@ -41,18 +41,13 @@
     };
   programs.alacritty.enable = true;
 
-  xdg.configFile."mako".source =
-    /etc/nixos/home.retoran/home/retoran/.config/mako;
-  xdg.configFile."hypr/waybar".source =
-    /etc/nixos/home.retoran/home/retoran/.config/hypr/waybar;
-  xdg.configFile."hypr/scripts".source =
-    /etc/nixos/home.retoran/home/retoran/.config/hypr/scripts;
-  xdg.configFile."hypr/hyprpaper.conf".source =
-    /etc/nixos/home.retoran/home/retoran/.config/hypr/hyprpaper.conf;
-  xdg.configFile."rofi".source =
-    /etc/nixos/home.retoran/home/retoran/.config/rofi;
+  xdg.configFile."mako".source = ./../../../../root/home/retoran/.config/mako;
+  xdg.configFile."hypr/waybar".source = ./../../../../root/home/retoran/.config/hypr/waybar;
+  xdg.configFile."hypr/scripts".source = ./../../../../root/home/retoran/.config/hypr/scripts;
+  xdg.configFile."hypr/hyprpaper.conf".source = ./../../../../root/home/retoran/.config/hypr/hyprpaper.conf;
+  xdg.configFile."rofi".source = ./../../../../root/home/retoran/.config/rofi;
 
-  xdg.configFile."uwsm/env".source =
+  xdg.configFile."uwsm/env".source = config.lib.file.mkOutOfStoreSymlink
     "/etc/profiles/per-user/retoran/etc/profile.d/hm-session-vars.sh";
   wayland.windowManager.hyprland = {
     package = null;

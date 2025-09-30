@@ -7,7 +7,7 @@
   programs.lazygit.enable = true;
 
   programs.nixvim = {
-    # imports = [ /etc/nixos/home.retoran/home/retoran/.config/nvim/config ];
+    imports = [ ./../../../../modules/nvim/config ];
     enable = true;
   };
 }

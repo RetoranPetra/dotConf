@@ -17,7 +17,7 @@
         system = "x86_64-linux";
         pkgs = import nixpkgs { inherit system; config = { allowUnfree = true; }; };
         modules = [
-          ./configuration.nix
+          ./hosts/flex5/configuration.nix
 
           home-manager.nixosModules.home-manager {
             home-manager.useUserPackages = true;
@@ -25,7 +25,7 @@
               imports =
               [
                 nixvim.homeModules.nixvim
-                ./configuration.d/home.retoran
+                ./hosts/flex5/configuration.d/home.retoran
               ];
             };
           }
