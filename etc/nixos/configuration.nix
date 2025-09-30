@@ -13,9 +13,6 @@
   # Enable experimental features
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
   # Enable bluetooth
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;

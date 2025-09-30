@@ -12,7 +12,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { nixpkgs, home-manager, ... }: {
+  outputs = { nixpkgs, home-manager, nixvim, ... }: {
       nixosConfigurations.flex5-retoran = nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
         pkgs = import nixpkgs { inherit system; config = { allowUnfree = true; }; };
@@ -22,7 +22,11 @@
           home-manager.nixosModules.home-manager {
             home-manager.useUserPackages = true;
             home-manager.users.retoran = {
-              imports = [ ./configuration.d/home.retoran ];
+              imports =
+              [
+                nixvim.homeModules.nixvim
+                ./configuration.d/home.retoran
+              ];
             };
           }
         ];
