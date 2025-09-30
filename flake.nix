@@ -11,6 +11,7 @@
       url = "github:nix-community/nixvim/nixos-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    self.submodules = true;
   };
   outputs = { nixpkgs, home-manager, nixvim, ... }: {
       nixosConfigurations.flex5-retoran = nixpkgs.lib.nixosSystem rec {
