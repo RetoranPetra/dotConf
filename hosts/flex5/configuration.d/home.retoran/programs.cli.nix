@@ -5,6 +5,9 @@
   xdg.configFile."yt-dlp.conf".source = ./../../../../root/home/retoran/.config/yt-dlp.conf;
 
   home.packages = with pkgs; [
+    # Nix tools
+    nixfmt-classic
+
     # System utils
     pulsemixer
     btop-rocm

@@ -66,6 +66,7 @@
     btop-rocm
     wireguard-tools
     ripgrep-all
+    nixfmt-classic
   ];
 
   # Copy the NixOS configuration file and link it from the resulting system
