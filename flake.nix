@@ -31,7 +31,16 @@
               imports =
               [
                 nixvim.homeModules.nixvim
-                ./hosts/flex5/configuration.d/home.retoran
+                ./hosts/flex5/configuration.d/home.retoran/alacritty
+                ./hosts/flex5/configuration.d/home.retoran/hyprland
+                ./hosts/flex5/configuration.d/home.retoran/programs.desktop
+                ./hosts/flex5/configuration.d/home.retoran/fcitx5.nix
+                ./hosts/flex5/configuration.d/home.retoran/git.nix
+                ./hosts/flex5/configuration.d/home.retoran/neovim.nix
+                ./hosts/flex5/configuration.d/home.retoran/programs.cli.nix
+                ./hosts/flex5/configuration.d/home.retoran/theme.nix
+                ./hosts/flex5/configuration.d/home.retoran/unsorted.nix
+                ./hosts/flex5/configuration.d/home.retoran/zsh.nix
               ];
             };
           }

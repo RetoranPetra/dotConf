@@ -1,4 +1,7 @@
 {
+  programs.alacritty = {
+    settings = { terminal.shell = "zsh"; };
+  };
   programs.zsh = {
     enable = true;
     enableCompletion = true;

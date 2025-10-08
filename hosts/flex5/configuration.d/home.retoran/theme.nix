@@ -1,5 +1,5 @@
-{ config, lib, pkgs, ... }: {
-  home-manager.users.retoran = { pkgs, ... }: {
+{ pkgs, ... }:
+{
     programs.alacritty = {
       theme = "nightfly";
       settings = {
@@ -71,5 +71,4 @@
         # Need to decide if this actually belongs in theming.
         # fcitx5-tokyonight
       ];
-  };
 }

@@ -5,10 +5,6 @@
     "$HOME/.bin"
     "$HOME/.local/bin"
   ];
-  programs.alacritty = {
-    enable = true;
-    settings = { terminal.shell = "zsh"; };
-  };
 
   home.file.".scripts".source = ./../../../../root/home/retoran/.scripts;
   home.file.".bin".source = ./../../../../root/home/retoran/.bin;
