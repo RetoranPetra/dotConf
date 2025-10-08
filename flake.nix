@@ -17,7 +17,8 @@
     };
     self.submodules = true;
   };
-  outputs = { nixpkgs, home-manager, nixvim, nur, ... }: {
+  # @inputs allows access to inputs from inputs.INPUT as well as the direct mapping.
+  outputs = { nixpkgs, home-manager, nixvim, nur, ... } @inputs: {
       nixosConfigurations.flex5-retoran = nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
         pkgs = import nixpkgs { inherit system; config = { allowUnfree = true; }; };
