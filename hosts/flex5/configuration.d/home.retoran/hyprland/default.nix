@@ -42,11 +42,11 @@
     };
   programs.alacritty.enable = true;
 
-  xdg.configFile."mako".source = ./../../../../../root/home/retoran/.config/mako;
-  xdg.configFile."hypr/waybar".source = ./../../../../../root/home/retoran/.config/hypr/waybar;
-  xdg.configFile."hypr/scripts".source = ./../../../../../root/home/retoran/.config/hypr/scripts;
-  xdg.configFile."hypr/hyprpaper.conf".source = ./../../../../../root/home/retoran/.config/hypr/hyprpaper.conf;
-  xdg.configFile."rofi".source = ./../../../../../root/home/retoran/.config/rofi;
+  xdg.configFile."mako".source = ./mako;
+  xdg.configFile."hypr/waybar".source = ./waybar;
+  xdg.configFile."hypr/scripts".source = ./scripts;
+  xdg.configFile."hypr/hyprpaper.conf".source = ./hyprpaper.conf;
+  xdg.configFile."rofi".source = ./rofi;
 
   xdg.configFile."uwsm/env".source = config.lib.file.mkOutOfStoreSymlink
     "/etc/profiles/per-user/retoran/etc/profile.d/hm-session-vars.sh";
@@ -61,10 +61,10 @@
       "$taskmgr" = "alacritty --class floating -T btop -e btop";
 
       "exec-once" = [
-        "$exec waybar -c ~/.config/hypr/waybar/config.jsonc -s ~/.config/hypr/waybar/style.css"
+        "$exec waybar -c ${builtins.toString ./waybar/config.jsonc} -s ${builtins.toString ./waybar/style.css}"
       ];
       "exec" = [
-        "$exec /etc/nixos/home.retoran/home/retoran/.config/hypr/scripts/hyprGamemode.sh"
+        "$exec ${builtins.toString ./scripts/hyprGamemode.sh}"
         "xrandr --output eDP-1 --primary"
       ];
       input = {
@@ -173,7 +173,7 @@
           ,Print, exec, grim -g "$(slurp)" | wl-copy && notify-send Grim "Snapped Segment"''
         ''
           CTRL, Print, exec, grim -o "$(hyprctl monitors -j | jaq -r '.[] | select(.focused).name')" | wl-copy && notify-send Grim "Snapped Monitor"''
-        "$mainMod, N, exec, ~/.config/hypr/scripts/hyprGamemode.sh"
+        "$mainMod, N, exec, ${builtins.toString ./scripts/hyprGamemode.sh}"
 
         # Media bindings
         ",XF86AudioPlay, exec, playerctl play-pause"
