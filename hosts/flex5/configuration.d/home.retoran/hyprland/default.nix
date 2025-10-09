@@ -46,8 +46,6 @@ in
   programs.alacritty.enable = true;
 
   xdg.configFile."mako".source = ./mako;
-  xdg.configFile."hypr/waybar".source = ./waybar;
-  xdg.configFile."hypr/scripts".source = ./scripts;
   xdg.configFile."hypr/hyprpaper.conf".source = ./hyprpaper.conf;
   xdg.configFile."rofi".source = ./rofi;
 
