@@ -1,3 +1,6 @@
+let
+  mod = a: b: a - (b * (a / b));
+in
 { config, lib, pkgs, ... }: {
   home.packages = with pkgs; [
     waybar
@@ -111,79 +114,52 @@
         "4,monitor:eDP-1"
         "5,monitor:eDP-1"
       ];
-      "bind" = [
-        # Navigation bindings
-        "$mainMod, h, movefocus, l"
-        "$mainMod, j, movefocus, d"
-        "$mainMod, k, movefocus, u"
-        "$mainMod, l, movefocus, r"
-        # Switch to workspace
-        "$mainMod, 1, workspace, 1"
-        "$mainMod, 2, workspace, 2"
-        "$mainMod, 3, workspace, 3"
-        "$mainMod, 4, workspace, 4"
-        "$mainMod, 5, workspace, 5"
-        "$mainMod, 6, workspace, 6"
-        "$mainMod, 7, workspace, 7"
-        "$mainMod, 8, workspace, 8"
-        "$mainMod, 9, workspace, 9"
-        "$mainMod, 0, workspace, 10"
-        # Move to active workspace
-        "$mainMod SHIFT, 1, movetoworkspacesilent, 1"
-        "$mainMod SHIFT, 2, movetoworkspacesilent, 2"
-        "$mainMod SHIFT, 3, movetoworkspacesilent, 3"
-        "$mainMod SHIFT, 4, movetoworkspacesilent, 4"
-        "$mainMod SHIFT, 5, movetoworkspacesilent, 5"
-        "$mainMod SHIFT, 6, movetoworkspacesilent, 6"
-        "$mainMod SHIFT, 7, movetoworkspacesilent, 7"
-        "$mainMod SHIFT, 8, movetoworkspacesilent, 8"
-        "$mainMod SHIFT, 9, movetoworkspacesilent, 9"
-        "$mainMod SHIFT, 0, movetoworkspacesilent, 10"
-        # Move to workspace and focus
-        "$mainMod SHIFT CONTROL, 1, movetoworkspace, 1"
-        "$mainMod SHIFT CONTROL, 2, movetoworkspace, 2"
-        "$mainMod SHIFT CONTROL, 3, movetoworkspace, 3"
-        "$mainMod SHIFT CONTROL, 4, movetoworkspace, 4"
-        "$mainMod SHIFT CONTROL, 5, movetoworkspace, 5"
-        "$mainMod SHIFT CONTROL, 6, movetoworkspace, 6"
-        "$mainMod SHIFT CONTROL, 7, movetoworkspace, 7"
-        "$mainMod SHIFT CONTROL, 8, movetoworkspace, 8"
-        "$mainMod SHIFT CONTROL, 9, movetoworkspace, 9"
-        "$mainMod SHIFT CONTROL, 0, movetoworkspace, 10"
+      "bind" = 
+        builtins.concatLists [
+          [
+            # Navigation bindings
+            "$mainMod, h, movefocus, l"
+            "$mainMod, j, movefocus, d"
+            "$mainMod, k, movefocus, u"
+            "$mainMod, l, movefocus, r"
+          ]
+          # Workspace bindings 0 to 9
+          (map (x: "$mainMod, ${builtins.toString (mod x 10)}, workspace, ${builtins.toString x}") [ 1 2 3 4 5 6 7 8 9 10 ])
+          (map (x: "$mainMod SHIFT, ${builtins.toString (mod x 10)}, movetoworkspacesilent, ${builtins.toString x}") [ 1 2 3 4 5 6 7 8 9 10 ])
+          (map (x: "$mainMod SHIFT CONTROL, ${builtins.toString (mod x 10)}, movetoworkspace, ${builtins.toString x}") [ 1 2 3 4 5 6 7 8 9 10 ])
+          [
+            # scroll through workspaces
+            "$mainMod, mouse_down, workspace, e+1"
+            "$mainMod, mouse_up, workspace, e-1"
+            "$mainMod, C, killactive"
+            "$mainMod SHIFT, M, exec, sleep 1 && loginctl terminate-user ''"
 
-        # scroll through workspaces
-        "$mainMod, mouse_down, workspace, e+1"
-        "$mainMod, mouse_up, workspace, e-1"
+            "$mainMod, Space, togglefloating"
+            "$mainMod, F, fullscreen"
 
-        "$mainMod, C, killactive"
-        "$mainMod SHIFT, M, exec, sleep 1 && loginctl terminate-user ''"
+            # Execution bindings
+            "$mainMod, Q, exec, uwsm app -- alacritty"
+            "$mainMod SHIFT, Q, exec, uwsm app -- alacritty --class floating"
+            "$mainMod, E, exec, uwsm app -- $file"
+            ''
+              $mainMod, R, exec, rofi -show drun -run-command "uwsm app -- {cmd}"''
+            "$mainMod, S, exec, rofi -show window"
+            "CTRL_SHIFT, escape, exec, uwsm app -- alacritty --class floating -T btop -e btop"
+            ''
+              ,Print, exec, grim -g "$(slurp)" | wl-copy && notify-send Grim "Snapped Segment"''
+            ''
+              CTRL, Print, exec, grim -o "$(hyprctl monitors -j | jaq -r '.[] | select(.focused).name')" | wl-copy && notify-send Grim "Snapped Monitor"''
+            "$mainMod, N, exec, ${builtins.toString ./scripts/hyprGamemode.sh}"
 
-        "$mainMod, Space, togglefloating"
-        "$mainMod, F, fullscreen"
-
-        # Execution bindings
-        "$mainMod, Q, exec, uwsm app -- alacritty"
-        "$mainMod SHIFT, Q, exec, uwsm app -- alacritty --class floating"
-        "$mainMod, E, exec, uwsm app -- $file"
-        ''
-          $mainMod, R, exec, rofi -show drun -run-command "uwsm app -- {cmd}"''
-        "$mainMod, S, exec, rofi -show window"
-        "CTRL_SHIFT, escape, exec, uwsm app -- alacritty --class floating -T btop -e btop"
-        ''
-          ,Print, exec, grim -g "$(slurp)" | wl-copy && notify-send Grim "Snapped Segment"''
-        ''
-          CTRL, Print, exec, grim -o "$(hyprctl monitors -j | jaq -r '.[] | select(.focused).name')" | wl-copy && notify-send Grim "Snapped Monitor"''
-        "$mainMod, N, exec, ${builtins.toString ./scripts/hyprGamemode.sh}"
-
-        # Media bindings
-        ",XF86AudioPlay, exec, playerctl play-pause"
-        ",XF86AudioPrev, exec, playerctl previous"
-        ",XF86AudioNext, exec, playerctl next"
-        ",XF86AudioRaiseVolume, exec, wpctl set-volume -1 1.0 @DEFAULT_AUDIO_SINK@ 1%+"
-        ",XF86AudioLowerVolume, exec, wpctl set-volume -1 1.0 @DEFAULT_AUDIO_SINK@ 1%-"
-        ",XF86AudioMute, exec, wpctl set-mute -1 1.0 @DEFAULT_AUDIO_SINK@ toggle"
-
-      ];
+            # Media bindings
+            ",XF86AudioPlay, exec, playerctl play-pause"
+            ",XF86AudioPrev, exec, playerctl previous"
+            ",XF86AudioNext, exec, playerctl next"
+            ",XF86AudioRaiseVolume, exec, wpctl set-volume -1 1.0 @DEFAULT_AUDIO_SINK@ 1%+"
+            ",XF86AudioLowerVolume, exec, wpctl set-volume -1 1.0 @DEFAULT_AUDIO_SINK@ 1%-"
+            ",XF86AudioMute, exec, wpctl set-mute -1 1.0 @DEFAULT_AUDIO_SINK@ toggle"
+          ]
+        ];
       "bindm" = [
         "$mainMod, mouse:272, movewindow"
         "$mainMod, mouse:273, resizewindow"
