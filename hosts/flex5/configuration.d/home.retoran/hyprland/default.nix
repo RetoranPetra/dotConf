@@ -139,14 +139,11 @@ in
             "$mainMod, Q, exec, uwsm app -- alacritty"
             "$mainMod SHIFT, Q, exec, uwsm app -- alacritty --class floating"
             "$mainMod, E, exec, uwsm app -- $file"
-            ''
-              $mainMod, R, exec, rofi -show drun -run-command "uwsm app -- {cmd}"''
+            "$mainMod, R, exec, rofi -show drun -run-command \"uwsm app -- {cmd}\""
             "$mainMod, S, exec, rofi -show window"
             "CTRL_SHIFT, escape, exec, uwsm app -- alacritty --class floating -T btop -e btop"
-            ''
-              ,Print, exec, grim -g "$(slurp)" | wl-copy && notify-send Grim "Snapped Segment"''
-            ''
-              CTRL, Print, exec, grim -o "$(hyprctl monitors -j | jq -r '.[] | select(.focused).name')" | wl-copy && notify-send Grim "Snapped Monitor"''
+            ",Print, exec, grim -g \"$(slurp)\" | wl-copy && notify-send Grim \"Snapped Segment\""
+            "CTRL, Print, exec, grim -o \"$(hyprctl monitors -j | jq -r '.[] | select(.focused).name')\" | wl-copy && notify-send Grim \"Snapped Monitor\""
             "$mainMod, N, exec, ${builtins.toString ./scripts/hyprGamemode.sh}"
 
             # Media bindings
