@@ -146,7 +146,7 @@ in
             ''
               ,Print, exec, grim -g "$(slurp)" | wl-copy && notify-send Grim "Snapped Segment"''
             ''
-              CTRL, Print, exec, grim -o "$(hyprctl monitors -j | jaq -r '.[] | select(.focused).name')" | wl-copy && notify-send Grim "Snapped Monitor"''
+              CTRL, Print, exec, grim -o "$(hyprctl monitors -j | jq -r '.[] | select(.focused).name')" | wl-copy && notify-send Grim "Snapped Monitor"''
             "$mainMod, N, exec, ${builtins.toString ./scripts/hyprGamemode.sh}"
 
             # Media bindings
