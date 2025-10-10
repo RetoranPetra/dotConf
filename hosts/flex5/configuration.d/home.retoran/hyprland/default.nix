@@ -63,9 +63,9 @@ in
 
       "exec-once" = [
         "$exec waybar -c ${builtins.toString ./waybar/config.jsonc} -s ${builtins.toString ./waybar/style.css}"
+        "$exec ${builtins.toString ./scripts/hyprGamemode.sh}"
       ];
       "exec" = [
-        "$exec ${builtins.toString ./scripts/hyprGamemode.sh}"
         "xrandr --output eDP-1 --primary"
       ];
       input = {
