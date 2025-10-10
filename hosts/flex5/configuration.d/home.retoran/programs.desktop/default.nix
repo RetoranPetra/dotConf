@@ -1,10 +1,9 @@
 {
   imports = [
-    ./vesktop.nix
     ./chatterino.nix
     ./firefox.nix
     ./misc.nix
-    ./vesktop.nix
+    ./vesktop
     ./wine.nix
   ];
 }
