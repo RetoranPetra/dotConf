@@ -33,8 +33,10 @@ in
       "org.freedesktop.impl.portal.FileChooser" = "kde";
     };
   };
+  home.sessionVariables = {
+      "GTK_USE_PORTAL" = 1;
+  };
   programs.zsh = {
-      sessionVariables = { "GTK_USE_PORTAL" = 1; };
       loginExtra =
       ''
         TTY=$(ps -p $$ -o tty=)
