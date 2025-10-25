@@ -22,8 +22,25 @@
 		"reddit>*": {
 			"mtime": "{_reddit[date]}",
 			"filename": "{_reddit[date]} {_reddit[id]} {_reddit[title]}.{extension}",
-			"directory": ["tmp"],
+			"directory": [
+				"tmp"
+			],
 			"postprocessors": ["movetoparent"]
+		},
+		"twitter": {
+			"cookies": "~/.config/gallery-dl/cookies-x-com.txt"
+		},
+		"pixiv": {
+			"directory": [
+				"{category}",
+				"{user['id']}_{user['account']}"
+			],
+			"postprocessors": [
+				{
+					"name": "metadata",
+					"mode": "tags"
+				}
+			]
 		}
 	},
 	"postprocessor": {
