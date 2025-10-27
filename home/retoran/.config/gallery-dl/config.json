@@ -28,7 +28,12 @@
 			"postprocessors": ["movetoparent"]
 		},
 		"twitter": {
-			"cookies": "~/.config/gallery-dl/cookies-x-com.txt"
+			"directory": [
+				"{category}",
+			  "{user['name']}"
+			],
+			"filename": "{date}_{tweet_id}_{num}.{extension}",
+			"cookies": "/home/retoran/.config/gallery-dl/xcookies.txt"
 		},
 		"pixiv": {
 			"directory": [
