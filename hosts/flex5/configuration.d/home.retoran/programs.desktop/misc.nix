@@ -20,5 +20,6 @@
     krita
     youtube-music
     tor-browser-bundle-bin
+    libreoffice
   ];
 }
