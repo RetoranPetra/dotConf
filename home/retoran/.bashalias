@@ -4,6 +4,7 @@
 alias ls='ls --color=tty'
 alias l='ls -lah'
 # End of arch implicit profile stuff.
+#alias feh='feh -.'
 
 fz() {
 	"$@" "$(fzf)"
