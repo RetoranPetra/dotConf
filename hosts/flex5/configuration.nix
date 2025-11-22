@@ -70,6 +70,10 @@
     wireguard-tools
     ripgrep-all
     nixfmt-classic
+
+    # Used to get commandline access to libinput
+    # Need this for detecting convertible transitions
+    libinput
   ];
 
   system.stateVersion = "25.05"; # Did you read the comment?
