@@ -1,0 +1,2 @@
+#!/bin/sh
+libinput debug-events --device /dev/input/by-path/platform-PNP0C14:02-event | awk '/switch tablet-mode state/{print $7}'
