@@ -5,7 +5,6 @@ in
   home.packages = with pkgs; [
     waybar
     hyprland
-    rofi-wayland
     mako
     grim
     slurp
@@ -47,9 +46,19 @@ in
     };
   programs.alacritty.enable = true;
 
+  programs.rofi = {
+      enable = true;
+      package = pkgs.rofi-wayland;
+      theme = "${pkgs.rofi-wayland}/share/rofi/themes/Arc-Dark.rasi";
+      modes = [
+        "drun"
+        "window"
+      ];
+  };
+
   xdg.configFile."mako".source = ./mako;
   xdg.configFile."hypr/hyprpaper.conf".source = ./hyprpaper.conf;
-  xdg.configFile."rofi".source = ./rofi;
+  # xdg.configFile."rofi".source = ./rofi;
 
   xdg.configFile."uwsm/env".source = config.lib.file.mkOutOfStoreSymlink
     "/etc/profiles/per-user/retoran/etc/profile.d/hm-session-vars.sh";
