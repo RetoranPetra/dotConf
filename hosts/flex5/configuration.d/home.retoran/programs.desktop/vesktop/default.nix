@@ -1,4 +1,5 @@
 { pkgs, ... }: {
+  services.arrpc.enable = true;
   programs.vesktop = {
     settings = {
       discordBranch = "stable";
