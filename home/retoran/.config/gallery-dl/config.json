@@ -14,10 +14,8 @@
 		"mtime": "{date}",
 		"reddit": {
 			"filename": "{date} {id}{num:? //>02} {title[:220]}.{extension}",
-			"user": {
-				"parent-directory": true,
-				"parent-metadata": "_reddit"
-			},
+			"parent-directory": true,
+			"metadata-parent": "_reddit",
 			"blacklist": [
 				"twitter"
 			]
@@ -25,10 +23,10 @@
 		"reddit>*": {
 			"mtime": "{_reddit[date]}",
 			"filename": "{_reddit[date]} {_reddit[id]} {_reddit[title]}.{extension}",
-			"directory": [
-				"tmp"
-			],
-			"postprocessors": ["movetoparent"]
+			"directory": [],
+			"postprocessors": [
+				"giftomp4"
+			]
 		},
 		"twitter": {
 			"directory": [
