@@ -3,9 +3,11 @@
   # Git configuration
   programs.git = {
     enable = true;
-    userEmail = "flyro@live.co.uk";
-    userName = "RetoranPetra";
-    extraConfig = {
+    settings = {
+      user = {
+        email = "flyro@live.co.uk";
+        name = "RetoranPetra";
+      };
       init.defaultBranch = "main";
       credential."https://github.com".helper =
         "!/usr/bin/env gh auth git-credential";
