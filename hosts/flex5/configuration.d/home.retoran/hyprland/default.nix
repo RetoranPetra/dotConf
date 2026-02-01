@@ -48,8 +48,8 @@ in
 
   programs.rofi = {
       enable = true;
-      package = pkgs.rofi-wayland;
-      theme = "${pkgs.rofi-wayland}/share/rofi/themes/Arc-Dark.rasi";
+      package = pkgs.rofi;
+      theme = "${pkgs.rofi}/share/rofi/themes/Arc-Dark.rasi";
       modes = [
         "drun"
         "window"
