@@ -1,5 +1,6 @@
 let
   mod = a: b: a - (b * (a / b));
+  playerctl = "playerctl --player=mpv,%any,chromium,firefox";
 in
 { config, lib, pkgs, ... }: {
   home.packages = with pkgs; [
@@ -145,6 +146,7 @@ in
 
             "$mainMod, Space, togglefloating"
             "$mainMod, F, fullscreen"
+            "$mainMod SHIFT, F, fullscreen, 1"
 
             # Execution bindings
             "$mainMod, Q, exec, uwsm app -- alacritty"
@@ -158,9 +160,9 @@ in
             "$mainMod, N, exec, ${builtins.toString ./scripts/hyprGamemode.sh}"
 
             # Media bindings
-            ",XF86AudioPlay, exec, playerctl play-pause"
-            ",XF86AudioPrev, exec, playerctl previous"
-            ",XF86AudioNext, exec, playerctl next"
+            ",XF86AudioPlay, exec, ${playerctl} play-pause"
+            ",XF86AudioPrev, exec, ${playerctl} previous"
+            ",XF86AudioNext, exec, ${playerctl} next"
             ",XF86AudioRaiseVolume, exec, wpctl set-volume -1 1.0 @DEFAULT_AUDIO_SINK@ 1%+"
             ",XF86AudioLowerVolume, exec, wpctl set-volume -1 1.0 @DEFAULT_AUDIO_SINK@ 1%-"
             ",XF86AudioMute, exec, wpctl set-mute -1 1.0 @DEFAULT_AUDIO_SINK@ toggle"
