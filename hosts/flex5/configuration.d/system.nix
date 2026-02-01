@@ -12,10 +12,6 @@
   time.timeZone = "Europe/London";
   services.ntp.enable = true;
 
-  # TODO: Should re-add preload when it becomes available again.
-  # Enable preload
-  #services.preload = { enable = true; };
-
   services.locate = {
     enable = true;
     package = pkgs.plocate;

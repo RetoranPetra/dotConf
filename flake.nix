@@ -11,6 +11,10 @@
       url = "github:nix-community/nixvim/nixos-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    preload-ng = {
+      url = "github:miguel-b-p/preload-ng";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -18,12 +22,16 @@
     self.submodules = true;
   };
   # @inputs allows access to inputs from inputs.INPUT as well as the direct mapping.
-  outputs = { nixpkgs, home-manager, nixvim, nur, ... } @inputs: {
+  outputs = { nixpkgs, home-manager, nixvim, nur, preload-ng, ... } @inputs: {
       nixosConfigurations.flex5-retoran = nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
         pkgs = import nixpkgs { inherit system; config = { allowUnfree = true; }; };
         modules = [
           ./hosts/flex5/configuration.nix
+          # Preload
+          preload-ng.nixosModules.default {
+            services.preload-ng.enable = true;
+          }
 
           home-manager.nixosModules.home-manager {
             home-manager.useUserPackages = true;
