@@ -26,4 +26,5 @@
     librecad
     freecad
   ];
+  services.syncthing.enable = true;
 }
