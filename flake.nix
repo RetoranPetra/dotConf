@@ -26,45 +26,52 @@
     self.submodules = true;
   };
   # @inputs allows access to inputs from inputs.INPUT as well as the direct mapping.
-  outputs = { nixpkgs, home-manager, nixvim, nur, preload-ng, nixos-wsl, ... } @inputs: {
+  outputs =
+    { nixpkgs, home-manager, nixvim, nur, preload-ng, nixos-wsl, ... }@inputs: {
       # WSL config
       nixosConfigurations.wsl = nixpkgs.lib.nixosSystem rec {
-      	system = "x86_64-linux";
-	pkgs = import nixpkgs { inherit system; config = { allowUnfree = true; }; };
-	modules = [
-	  # WSL module NEEDED for WSL
-	  nixos-wsl.nixosModules.wsl
-	  ./hosts/wsl/configuration.nix
-	  home-manager.nixosModules.home-manager {
-	    home-manager.useUserPackages = true;
-	    home-manager.users.retoran = {
-	      imports = [
-		  nixvim.homeModules.nixvim
-		  ./hosts/flex5/configuration.d/home.retoran/neovim.nix
-		  ./hosts/flex5/configuration.d/home.retoran/zsh.nix
-		  ./hosts/flex5/configuration.d/home.retoran/programs.cli.nix
-                  ./hosts/flex5/configuration.d/home.retoran/state-version.nix
-		  ./hosts/flex5/configuration.d/home.retoran/git.nix
-	      ];
-	    };
-	  }
-	];
+        system = "x86_64-linux";
+        pkgs = import nixpkgs {
+          inherit system;
+          config = { allowUnfree = true; };
+        };
+        modules = [
+          # WSL module NEEDED for WSL
+          nixos-wsl.nixosModules.wsl
+          ./hosts/wsl/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useUserPackages = true;
+            home-manager.users.retoran = {
+              imports = [
+                nixvim.homeModules.nixvim
+                ./hosts/flex5/configuration.d/home.retoran/neovim.nix
+                ./hosts/flex5/configuration.d/home.retoran/zsh.nix
+                ./hosts/flex5/configuration.d/home.retoran/programs.cli.nix
+                ./hosts/flex5/configuration.d/home.retoran/state-version.nix
+                ./hosts/flex5/configuration.d/home.retoran/git.nix
+              ];
+            };
+          }
+        ];
       };
       nixosConfigurations.flex5-retoran = nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
-        pkgs = import nixpkgs { inherit system; config = { allowUnfree = true; }; };
+        pkgs = import nixpkgs {
+          inherit system;
+          config = { allowUnfree = true; };
+        };
         modules = [
           ./hosts/flex5/configuration.nix
           # Preload
-          preload-ng.nixosModules.default {
-            services.preload-ng.enable = true;
-          }
+          preload-ng.nixosModules.default
+          { services.preload-ng.enable = true; }
 
-          home-manager.nixosModules.home-manager {
+          home-manager.nixosModules.home-manager
+          {
             home-manager.useUserPackages = true;
             home-manager.users.retoran = {
-              imports =
-              [
+              imports = [
                 nixvim.homeModules.nixvim
                 ./hosts/flex5/configuration.d/home.retoran/alacritty
                 ./hosts/flex5/configuration.d/home.retoran/hyprland
@@ -83,5 +90,5 @@
           }
         ];
       };
-  };
+    };
 }
