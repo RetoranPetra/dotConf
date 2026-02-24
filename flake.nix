@@ -19,10 +19,37 @@
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixos-wsl = {
+      url = "github:nix-community/NixOS-WSL/release-25.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     self.submodules = true;
   };
   # @inputs allows access to inputs from inputs.INPUT as well as the direct mapping.
-  outputs = { nixpkgs, home-manager, nixvim, nur, preload-ng, ... } @inputs: {
+  outputs = { nixpkgs, home-manager, nixvim, nur, preload-ng, nixos-wsl, ... } @inputs: {
+      # WSL config
+      nixosConfigurations.wsl = nixpkgs.lib.nixosSystem rec {
+      	system = "x86_64-linux";
+	pkgs = import nixpkgs { inherit system; config = { allowUnfree = true; }; };
+	modules = [
+	  # WSL module NEEDED for WSL
+	  nixos-wsl.nixosModules.wsl
+	  ./hosts/wsl/configuration.nix
+	  home-manager.nixosModules.home-manager {
+	    home-manager.useUserPackages = true;
+	    home-manager.users.retoran = {
+	      imports = [
+		  nixvim.homeModules.nixvim
+		  ./hosts/flex5/configuration.d/home.retoran/neovim.nix
+		  ./hosts/flex5/configuration.d/home.retoran/zsh.nix
+		  ./hosts/flex5/configuration.d/home.retoran/programs.cli.nix
+                  ./hosts/flex5/configuration.d/home.retoran/state-version.nix
+		  ./hosts/flex5/configuration.d/home.retoran/git.nix
+	      ];
+	    };
+	  }
+	];
+      };
       nixosConfigurations.flex5-retoran = nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
         pkgs = import nixpkgs { inherit system; config = { allowUnfree = true; }; };

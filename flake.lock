@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "flake-compat": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1767039857,
+        "narHash": "sha256-vNpUSpF5Nuw8xvDLj2KCwwksIbjua2LZCqhV1LNRDns=",
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "rev": "5edf11c44bc78a0d334f6334cdaf7d60d732daab",
+        "type": "github"
+      },
+      "original": {
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "type": "github"
+      }
+    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": [
@@ -127,6 +143,28 @@
         "type": "github"
       }
     },
+    "nixos-wsl": {
+      "inputs": {
+        "flake-compat": "flake-compat",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1771243101,
+        "narHash": "sha256-p/qTbQU5wQEqbKWF8M0bZWuryUCrPsWrJB0GlNF1k6M=",
+        "owner": "nix-community",
+        "repo": "NixOS-WSL",
+        "rev": "6d52ea6d66cb333c611c7b0e16dd24a05c9263e7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "release-25.11",
+        "repo": "NixOS-WSL",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1769741972,
@@ -234,6 +272,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
         "nur": "nur",
