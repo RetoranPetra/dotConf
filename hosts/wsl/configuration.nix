@@ -27,13 +27,16 @@
     ripgrep-all
     nixfmt-classic
   ];
+
+  virtualisation.docker.enable = true;
+
   wsl.enable = true;
   wsl.defaultUser = "retoran";
 
   # Add retoran user
   users.users.retoran = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "docker" ];
     shell = pkgs.zsh;
   };
 
