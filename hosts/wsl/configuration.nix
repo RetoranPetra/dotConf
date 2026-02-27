@@ -26,6 +26,8 @@
     tmux
     ripgrep-all
     nixfmt-classic
+    # GCC SHOULDN'T be here, putting here for now until I can sort out nvim.
+    gcc
   ];
 
   virtualisation.docker.enable = true;
