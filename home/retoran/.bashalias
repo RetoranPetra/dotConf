@@ -45,6 +45,18 @@ java11() {
 java8() {
 	export PATH="/lib/jvm/java-8-openjdk/bin:$PATH"
 }
+gallery-dl-redditu() {
+	for user in "$@"
+	do
+		gallery-dl "reddit.com/search/?q=author%3A${user}&include_over_18=on&sort=new"
+	done
+}
+gallery-dl-twitteru() {
+	for user in "$@"
+	do
+		gallery-dl "x.com/${user}"
+	done
+}
 
 # Machine specific things
 update() {

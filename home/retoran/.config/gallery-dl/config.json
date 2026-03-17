@@ -17,7 +17,8 @@
 			"parent-directory": true,
 			"metadata-parent": "_reddit",
 			"blacklist": [
-				"twitter"
+				"twitter",
+				"instagram"
 			]
 		},
 		"reddit>*": {
