@@ -48,13 +48,13 @@ java8() {
 gallery-dl-redditu() {
 	for user in "$@"
 	do
-		gallery-dl "reddit.com/search/?q=author%3A${user}&include_over_18=on&sort=new"
+		gallery-dl "reddit.com/search/?q=author%3A${user}&include_over_18=on&sort=new" -o skip=abort
 	done
 }
 gallery-dl-twitteru() {
 	for user in "$@"
 	do
-		gallery-dl "x.com/${user}"
+		gallery-dl "x.com/${user}" -o skip=abort
 	done
 }
 
