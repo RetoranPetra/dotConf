@@ -1,0 +1,7 @@
+#!/bin/bash
+if [ $XDG_CURRENT_DESKTOP = "gamescope" ]; then
+	$@
+	exit
+fi
+unset PROTON_ENABLE_WAYLAND
+gamescope -W 2560 -H 1440 -ef --backend sdl --adaptive-sync -O DP-1 -- $@
