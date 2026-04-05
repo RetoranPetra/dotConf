@@ -3,10 +3,7 @@
     "autoUpdateNotification": true,
     "useQuickCss": true,
     "themeLinks": [],
-    "enabledThemes": [
-        "SkeuoCord.theme.css",
-        "HorizontalServerList.theme.css"
-    ],
+    "enabledThemes": [],
     "enableReactDevtools": false,
     "frameless": false,
     "transparent": false,
@@ -66,7 +63,7 @@
             "enabled": false
         },
         "WebRichPresence (arRPC)": {
-            "enabled": false
+            "enabled": true
         },
         "BANger": {
             "enabled": false
@@ -155,9 +152,6 @@
         "DontRoundMyTimestamps": {
             "enabled": false
         },
-        "EmoteCloner": {
-            "enabled": false
-        },
         "Experiments": {
             "enabled": false
         },
@@ -210,9 +204,6 @@
             "enabled": true
         },
         "GreetStickerPicker": {
-            "enabled": false
-        },
-        "HideAttachments": {
             "enabled": false
         },
         "iLoveSpam": {
@@ -269,9 +260,6 @@
             "logEdits": true,
             "logDeletes": true,
             "inlineEdits": true
-        },
-        "MessageTags": {
-            "enabled": false
         },
         "MoreCommands": {
             "enabled": false
@@ -337,7 +325,7 @@
             "enabled": false
         },
         "NSFWGateBypass": {
-            "enabled": false
+            "enabled": true
         },
         "OnePingPerDM": {
             "enabled": false
@@ -493,10 +481,11 @@
             "enabled": true,
             "includeMutedChannels": false,
             "includeCurrentChannel": true,
-            "indicatorMode": 3
+            "indicatorMode": 3,
+            "includeBlockedUsers": false
         },
         "TypingTweaks": {
-            "enabled": true,
+            "enabled": false,
             "alternativeFormatting": true,
             "showRoleColors": true,
             "showAvatars": true
@@ -584,6 +573,27 @@
         },
         "BadgeAPI": {
             "enabled": true
+        },
+        "HideMedia": {
+            "enabled": false
+        },
+        "DisableDeepLinks": {
+            "enabled": true
+        },
+        "ExpressionCloner": {
+            "enabled": false
+        },
+        "CopyStickerLinks": {
+            "enabled": false
+        },
+        "ImageFilename": {
+            "enabled": false
+        },
+        "MoreQuickReactions": {
+            "enabled": false
+        },
+        "CustomCommands": {
+            "enabled": false
         }
     },
     "notifications": {
@@ -596,6 +606,11 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1738226820708
+        "settingsSyncVersion": 1774966125082
+    },
+    "eagerPatches": false,
+    "uiElements": {
+        "chatBarButtons": {},
+        "messagePopoverButtons": {}
     }
 }
