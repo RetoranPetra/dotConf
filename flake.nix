@@ -90,5 +90,40 @@
           }
         ];
       };
+      nixosConfigurations.desktop-retoran = nixpkgs.lib.nixosSystem rec {
+        system = "x86_64-linux";
+        pkgs = import nixpkgs {
+          inherit system;
+          config = { allowUnfree = true; };
+        };
+        modules = [
+          ./hosts/desktop/configuration.nix
+          # Preload
+          preload-ng.nixosModules.default
+          { services.preload-ng.enable = true; }
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useUserPackages = true;
+            home-manager.users.retoran = {
+              imports = [
+                nixvim.homeModules.nixvim
+                ./hosts/flex5/configuration.d/home.retoran/alacritty
+                ./hosts/flex5/configuration.d/home.retoran/hyprland
+                ./hosts/flex5/configuration.d/home.retoran/programs.desktop
+                ./hosts/flex5/configuration.d/home.retoran/fcitx5.nix
+                ./hosts/flex5/configuration.d/home.retoran/git.nix
+                ./hosts/flex5/configuration.d/home.retoran/neovim.nix
+                ./hosts/flex5/configuration.d/home.retoran/programs.cli.nix
+                ./hosts/flex5/configuration.d/home.retoran/theme.nix
+                ./hosts/flex5/configuration.d/home.retoran/state-version.nix
+                ./hosts/flex5/configuration.d/home.retoran/zsh.nix
+                ./hosts/flex5/configuration.d/home.retoran/localbin
+                ./hosts/flex5/configuration.d/home.retoran/userscripts
+              ];
+            };
+          }
+        ];
+      };
     };
 }
