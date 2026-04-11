@@ -116,13 +116,13 @@ in
       # set false for debug.
       debug.disable_logs = true;
       # 00_monitors
-      "monitor" = [ "eDP-1,1920x1080@60, 0x0, 1" ",preferred,auto,auto" ];
+      "monitor" = [ "DP-1,2560x1440@180,0x0,1" "DP-2,2560x1440@120,-1440x0,1,transform,1" ",preferred,auto,auto" ];
       "workspace" = [
-        "1,monitor:eDP-1"
-        "2,monitor:eDP-1"
-        "3,monitor:eDP-1"
-        "4,monitor:eDP-1"
-        "5,monitor:eDP-1"
+        "1,monitor:DP-1"
+        "2,monitor:DP-1"
+        "3,monitor:DP-1"
+        "4,monitor:DP-1"
+        "5,monitor:DP-1"
       ];
       "bind" = 
         builtins.concatLists [
