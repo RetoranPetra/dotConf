@@ -5,14 +5,6 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports = [ # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-    ./configuration.d/retoran.nix
-    ./configuration.d/system.nix
-    ./configuration.d/systemd-network.nix
-    ./configuration.d/thunar.nix
-  ];
-
   # Enable experimental features
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -22,6 +14,18 @@
 
   # Enable tablet driver
   hardware.opentabletdriver.enable = true;
+
+  boot.kernel.sysctl = { "vm.max_map_count" = 2147483642; };
+
+  # Set your time zone.
+  time.timeZone = "Europe/London";
+  services.ntp.enable = true;
+
+  services.locate = {
+    enable = true;
+    package = pkgs.plocate;
+  };
+  services.gvfs.enable = true;
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_GB.UTF-8";

@@ -62,7 +62,7 @@
           config = { allowUnfree = true; };
         };
         modules = [
-          ./modules/nixos/configuration.nix
+          ./hosts/desktop/nixos
           # Preload
           preload-ng.nixosModules.default
           { services.preload-ng.enable = true; }
@@ -73,18 +73,7 @@
             home-manager.users.retoran = {
               imports = [
                 nixvim.homeModules.nixvim
-                ./modules/home.retoran/alacritty
-                ./modules/home.retoran/hyprland
-                ./modules/home.retoran/programs.desktop
-                ./modules/home.retoran/fcitx5.nix
-                ./modules/home.retoran/git.nix
-                ./modules/home.retoran/neovim.nix
-                ./modules/home.retoran/programs.cli.nix
-                ./modules/home.retoran/theme.nix
-                ./modules/home.retoran/state-version.nix
-                ./modules/home.retoran/zsh.nix
-                ./modules/home.retoran/localbin
-                ./modules/home.retoran/userscripts
+                ./hosts/desktop/home.retoran
               ];
             };
           }
