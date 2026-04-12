@@ -13,6 +13,7 @@
   boot.kernelModules = [ "kvm-amd" "dcrypt" ];
   boot.extraModulePackages = [ ];
 
+  # File systems
   fileSystems."/" =
     { device = "/dev/mapper/root";
       fsType = "btrfs";

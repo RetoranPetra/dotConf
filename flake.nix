@@ -23,11 +23,15 @@
       url = "github:nix-community/NixOS-WSL/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     self.submodules = true;
   };
   # @inputs allows access to inputs from inputs.INPUT as well as the direct mapping.
   outputs =
-    { nixpkgs, home-manager, nixvim, nur, preload-ng, nixos-wsl, ... }@inputs: {
+    { nixpkgs, home-manager, nixvim, nur, preload-ng, nixos-wsl, lanzaboote, ... }@inputs: {
       # WSL config
       nixosConfigurations.wsl = nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
@@ -62,6 +66,7 @@
           config = { allowUnfree = true; };
         };
         modules = [
+          lanzaboote.nixosModules.lanzaboote
           ./hosts/desktop/nixos
           # Preload
           preload-ng.nixosModules.default
