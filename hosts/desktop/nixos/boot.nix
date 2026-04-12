@@ -23,4 +23,12 @@ in
     enable = true;
     pkiBundle = "/var/lib/sbctl";
   };
+  boot.kernelModules = [
+    "dm-snapshot"
+    "tpm2-tss"
+  ];
+  boot.initrd.systemd = {
+    enable = true;
+    tpm2.enable = true;
+  };
 }
