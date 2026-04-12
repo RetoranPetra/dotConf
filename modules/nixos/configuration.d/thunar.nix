@@ -15,4 +15,5 @@
       totem
     ];
   };
+  programs.xfconf.enable = true;
 }
