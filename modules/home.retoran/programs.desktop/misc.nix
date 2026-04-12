@@ -27,4 +27,16 @@
     freecad
   ];
   services.syncthing.enable = true;
+
+  # Also setup our mimeapps here as well.
+  xdg = {
+    mime.enable = true;
+    mimeApps = {
+      enable = true;
+      defaultApplications = {
+        "inode/directory" = ["thunar.desktop"];
+        "inode/mount-point" = ["thunar.desktop"];
+      };
+    };
+  };
 }
