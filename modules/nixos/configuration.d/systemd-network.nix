@@ -32,5 +32,5 @@
 
   # Firewall
   networking.nftables.enable = true;
-  networking.firewall.enable = false;
+  networking.firewall.enable = true;
 }
