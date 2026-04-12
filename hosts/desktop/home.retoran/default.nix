@@ -1,8 +1,8 @@
 {...}:
 {
 	imports = [
+		./hyprland.nix
 		./../../../modules/home.retoran/alacritty
-		./../../../modules/home.retoran/hyprland
 		./../../../modules/home.retoran/localbin
 		./../../../modules/home.retoran/programs.desktop
 		./../../../modules/home.retoran/userscripts
