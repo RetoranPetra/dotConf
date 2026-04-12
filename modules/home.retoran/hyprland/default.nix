@@ -87,11 +87,12 @@ with lib;
         "$taskmgr" = "alacritty --class floating -T btop -e btop";
 
         "exec-once" = [
-          "$exec waybar -c ${builtins.toString ./waybar/config.jsonc} -s ${builtins.toString ./waybar/style.css}"
-          "$exec ${builtins.toString ./scripts/hyprGamemode.sh}"
+          "uwsm app -- waybar -c ${builtins.toString ./waybar/config.jsonc} -s ${builtins.toString ./waybar/style.css}"
         ];
         "exec" = [
+          "${builtins.toString ./scripts/forcePrimary.bash} ${cfg.primaryMonitor}"
           "xrandr --output ${cfg.primaryMonitor} --primary"
+          (builtins.toString ./scripts/hyprGamemode.sh)
         ];
         input = {
           # Should sync this keyboard options with xkb, as a global option somewhere.
