@@ -12,6 +12,9 @@ with lib;
       default = "DP-1";
     };
   };
+  imports = [
+    ./../wayland.nix
+  ];
   config = {
     home.packages = with pkgs; [
       waybar
@@ -48,6 +51,7 @@ with lib;
     };
     home.sessionVariables = {
         "GTK_USE_PORTAL" = 1;
+        "GRIM_DEFAULT_DIR" = "/home/retoran/Pictures/grim";
     };
     programs.zsh = {
         loginExtra =
