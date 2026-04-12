@@ -187,6 +187,20 @@ with lib;
           "$mainMod, mouse:272, movewindow"
           "$mainMod, mouse:273, resizewindow"
         ];
+        "windowrule" = [
+          "float, class:^floating$"
+          "float, class:^thunar$"
+          "float, size 720 1280, class:^(w|W)aydroid.*"
+          "size 720 1280, class:^(w|W)aydroid.*"
+          "float, center, size 1000 700, class:^org\.kde\.polkit-kde-authentication-agent-1$"
+          "float, center, size 1000 700, class:^krita$, title:- Krita"
+          "float, center, class:^xarchiver$"
+          "float, size 1000 700, center, initialTitle:^(Save\ As|Open\ Files)$"
+          "float, size 1000 700, center, initialClass:^xdg-desktop-portal-gtk$"
+          "float, size 1000 700, center, initialClass:^org\.freedesktop\.impl\.portal\.desktop\.kde$"
+          "float, center, size 1000 700, class:^(zenity|yad)$"
+          # Haven't added warframe launcher or godot rules.
+        ];
       };
     };
   };
