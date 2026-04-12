@@ -29,6 +29,7 @@ with lib;
       jaq
       xorg.xwininfo
       playerctl
+      xrandr
     ];
     services.playerctld.enable = true;
 
