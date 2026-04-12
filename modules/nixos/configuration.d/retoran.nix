@@ -2,7 +2,10 @@
 
   users.users.retoran = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [
+      "wheel"
+      "openrazer"
+    ];
     shell = pkgs.zsh;
   };
   programs.firefox.enable = true;
