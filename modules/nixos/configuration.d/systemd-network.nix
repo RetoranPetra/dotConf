@@ -1,5 +1,4 @@
 { config, libs, pkgs, ... }: {
-  networking.hostName = "flex5-retoran"; # Define your hostname.
   networking.useDHCP = false;
 
   systemd.network.enable = true;
