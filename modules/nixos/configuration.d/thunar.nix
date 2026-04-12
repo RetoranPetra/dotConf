@@ -5,7 +5,14 @@
       xfce.thunar-volman
       xfce.thunar-media-tags-plugin
       xfce.tumbler
+      # Extra thumbnail packages
       ffmpegthumbnailer
+      papers
+      freetype
+      icoextract
+      libgsf
+      gnome-epub-thumbnailer
+      totem
     ];
   };
 }
