@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 let
   mod = a: b: a - (b * (a / b));
-  playerctl = "playerctl --player=mpv,%any,chromium,firefox";
+  playerctlCmd = "playerctl --player=mpv,%any,chromium,firefox";
   cfg = config.wayland.windowManager.hyprland;
 in
 with lib;
@@ -28,7 +28,9 @@ with lib;
       btop-rocm
       jaq
       xorg.xwininfo
+      playerctl
     ];
+    services.playerctld.enable = true;
 
     xdg.portal = {
       enable = true;
@@ -169,12 +171,14 @@ with lib;
               "$mainMod, N, exec, ${builtins.toString ./scripts/hyprGamemode.sh}"
 
               # Media bindings
-              ",XF86AudioPlay, exec, ${playerctl} play-pause"
-              ",XF86AudioPrev, exec, ${playerctl} previous"
-              ",XF86AudioNext, exec, ${playerctl} next"
-              ",XF86AudioRaiseVolume, exec, wpctl set-volume -1 1.0 @DEFAULT_AUDIO_SINK@ 1%+"
-              ",XF86AudioLowerVolume, exec, wpctl set-volume -1 1.0 @DEFAULT_AUDIO_SINK@ 1%-"
-              ",XF86AudioMute, exec, wpctl set-mute -1 1.0 @DEFAULT_AUDIO_SINK@ toggle"
+              ",XF86AudioPlay, exec, ${playerctlCmd} play-pause"
+              ",XF86AudioPause, exec, ${playerctlCmd} play-pause"
+              ",XF86AudioStop, exec, ${playerctlCmd} stop"
+              ",XF86AudioPrev, exec, ${playerctlCmd} previous"
+              ",XF86AudioNext, exec, ${playerctlCmd} next"
+              ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 1%+"
+              ",XF86AudioLowerVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 1%-"
+              ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
             ]
           ];
         "bindm" = [
