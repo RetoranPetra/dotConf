@@ -24,7 +24,7 @@ with lib;
       hyprpaper
       qt5.qtwayland
       qt6.qtwayland
-      handlr
+      handlr-regex
       btop-rocm
       jaq
       xorg.xwininfo
