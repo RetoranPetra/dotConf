@@ -19,15 +19,17 @@
     };
 
   boot.initrd.luks.devices."root".device = "/dev/disk/by-uuid/12fc0ea1-09ad-4d89-b77b-6b4a1b57286e";
-
-/*
-  fileSystems."/mnt/raidn0" =
-    { device = "/dev/mapper/raidn0_2";
-      fsType = "btrfs";
-    };
-
-  boot.initrd.luks.devices."raidn0_2".device = "/dev/disk/by-uuid/fc993da8-0957-4d24-a543-e77d8b01ef48";
-*/
+  environment.etc."crypttab".text = ''
+    raidn0_0 /dev/disk/by-uuid/f84d1c39-7d03-486b-b2bb-7a073d0bfa3b /etc/cryptkey
+    raidn0_1 /dev/disk/by-uuid/9a976daf-3d19-43b1-8a0a-cb9a92e2c0ca /etc/cryptkey
+    raidn0_2 /dev/disk/by-uuid/fc993da8-0957-4d24-a543-e77d8b01ef48 /etc/cryptkey
+  '';
+  fileSystems."/mnt/raidn0" = {
+    # TODO: Should go by mapper UUID instead, that's more correct.
+    device = "/dev/mapper/raidn0_0";
+    fsType = "btrfs";
+    # There should also be some other mount options we use for this.
+  };
 
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/2611-2EA3";
