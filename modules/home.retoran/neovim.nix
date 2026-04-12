@@ -10,7 +10,7 @@
   };
 
   programs.nixvim = {
-    imports = [ ./../../../../modules/nvim/config ];
+    imports = [ ./../../modules/nvim/config ];
     enable = true;
   };
 }
