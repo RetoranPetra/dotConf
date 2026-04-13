@@ -25,7 +25,7 @@
     strace
     tmux
     ripgrep-all
-    nixfmt-classic
+    nixfmt
     # GCC SHOULDN'T be here, putting here for now until I can sort out nvim.
     gcc
   ];

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
     programs.alacritty = {
       theme = "nightfly";
@@ -52,6 +52,7 @@
         name = "Materia-dark";
         package = pkgs.materia-theme;
       };
+      gtk4.theme = config.gtk.theme;
       cursorTheme = {
         name = "Materia-dark";
         package = pkgs.materia-theme;

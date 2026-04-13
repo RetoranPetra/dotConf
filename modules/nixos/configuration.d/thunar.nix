@@ -2,9 +2,9 @@
   programs.thunar = {
     enable = true;
     plugins = with pkgs; [
-      xfce.thunar-volman
-      xfce.thunar-media-tags-plugin
-      xfce.tumbler
+      thunar-volman
+      thunar-media-tags-plugin
+      tumbler
       # Extra thumbnail packages
       ffmpegthumbnailer
       papers

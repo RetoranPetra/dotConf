@@ -73,7 +73,7 @@
     btop-rocm
     wireguard-tools
     ripgrep-all
-    nixfmt-classic
+    nixfmt
 
     # Used to get commandline access to libinput
     # Need this for detecting convertible transitions

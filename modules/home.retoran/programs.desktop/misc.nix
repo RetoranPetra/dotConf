@@ -7,7 +7,7 @@
   home.packages = with pkgs; [
     # System Utils
     qdirstat
-    helvum
+    crosspipe
 
     # Essential
     mpv
@@ -18,7 +18,7 @@
     blender
     audacity
     krita
-    youtube-music
+    pear-desktop
     tor-browser
     libreoffice
 

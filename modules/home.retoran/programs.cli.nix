@@ -6,7 +6,7 @@
 
   home.packages = with pkgs; [
     # Nix tools
-    nixfmt-classic
+    nixfmt
 
     # System utils
     pulsemixer

@@ -38,7 +38,7 @@ with lib;
       handlr-regex
       btop-rocm
       jaq
-      xorg.xwininfo
+      xwininfo
       playerctl
       xrandr
     ];

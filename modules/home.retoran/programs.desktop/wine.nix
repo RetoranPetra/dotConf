@@ -2,7 +2,7 @@
 {
   home.packages = with pkgs; [
     # Wine
-    wineWowPackages.stable
+    wineWow64Packages.stable
     winetricks
     protontricks
   ];
