@@ -1,6 +1,8 @@
 { pkgs, ... }: {
   services.arrpc.enable = true;
   programs.vesktop = {
+    # Enabling middle click scroll doesn't disable middle click paste because they hate me.
+    package = pkgs.vesktop.override { withMiddleClickScroll = true; };
     settings = {
       discordBranch = "stable";
       minimizeToTray = true;
