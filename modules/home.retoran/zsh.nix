@@ -1,6 +1,8 @@
 {
   programs.alacritty = {
-    settings = { terminal.shell = "zsh"; };
+    settings = {
+      terminal.shell = "zsh";
+    };
   };
   programs.zsh = {
     enable = true;

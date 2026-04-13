@@ -2,11 +2,19 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   # Enable experimental features
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Enable bluetooth
   hardware.bluetooth.enable = true;
@@ -15,7 +23,9 @@
   # Enable tablet driver
   hardware.opentabletdriver.enable = true;
 
-  boot.kernel.sysctl = { "vm.max_map_count" = 2147483642; };
+  boot.kernel.sysctl = {
+    "vm.max_map_count" = 2147483642;
+  };
 
   # Set your time zone.
   time.timeZone = "Europe/London";
@@ -55,9 +65,11 @@
     jack.enable = true;
   };
 
-
   # System fonts
-  fonts.packages = with pkgs; [ noto-fonts noto-fonts-cjk-sans ];
+  fonts.packages = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk-sans
+  ];
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
@@ -91,4 +103,3 @@
 
   system.stateVersion = "25.05"; # Did you read the comment?
 }
-

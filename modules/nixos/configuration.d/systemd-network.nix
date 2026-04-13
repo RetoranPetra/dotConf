@@ -1,4 +1,10 @@
-{ config, libs, pkgs, ... }: {
+{
+  config,
+  libs,
+  pkgs,
+  ...
+}:
+{
   networking.useDHCP = false;
 
   systemd.network.enable = true;
@@ -26,8 +32,12 @@
   };
   networking.wireless.iwd.enable = true;
   networking.wireless.iwd.settings = {
-    General = { EnableNetworkConfiguration = false; };
-    Network = { NameResolvingService = "systemd"; };
+    General = {
+      EnableNetworkConfiguration = false;
+    };
+    Network = {
+      NameResolvingService = "systemd";
+    };
   };
 
   # Firewall

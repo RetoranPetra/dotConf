@@ -15,8 +15,12 @@
               "1" = "Zenkaku_Hankaku";
               "2" = "Hangul";
             };
-            ActivateKeys = { "0" = "Control+grave"; };
-            DeactivateKeys = { "0" = "Control-notsign"; };
+            ActivateKeys = {
+              "0" = "Control+grave";
+            };
+            DeactivateKeys = {
+              "0" = "Control-notsign";
+            };
           };
         };
         inputMethod = {

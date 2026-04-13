@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   mod = a: b: a - (b * (a / b));
   playerctlCmd = "playerctl --player=mpv,%any,chromium,firefox";
@@ -53,41 +58,43 @@ with lib;
       ];
       #configPackages = with pkgs; [ xdg-desktop-portal-gtk xdg-desktop-portal-kde ];
       config.Hyprland = {
-        default = [ "hyprland" "gtk" ];
+        default = [
+          "hyprland"
+          "gtk"
+        ];
         "org.freedesktop.impl.portal.FileChooser" = "kde";
       };
     };
     home.sessionVariables = {
-        "GTK_USE_PORTAL" = 1;
-        "GRIM_DEFAULT_DIR" = "/home/retoran/Pictures/grim";
+      "GTK_USE_PORTAL" = 1;
+      "GRIM_DEFAULT_DIR" = "/home/retoran/Pictures/grim";
     };
     programs.zsh = {
-        loginExtra =
-        ''
-          TTY=$(ps -p $$ -o tty=)
-          if [[ $TTY == "tty1" ]] && uwsm check may-start; then
-            exec uwsm start hyprland-uwsm.desktop
-          fi
-        '';
-      };
+      loginExtra = ''
+        TTY=$(ps -p $$ -o tty=)
+        if [[ $TTY == "tty1" ]] && uwsm check may-start; then
+          exec uwsm start hyprland-uwsm.desktop
+        fi
+      '';
+    };
     programs.alacritty.enable = true;
 
     programs.rofi = {
-        enable = true;
-        package = pkgs.rofi;
-        theme = "${pkgs.rofi}/share/rofi/themes/Arc-Dark.rasi";
-        modes = [
-          "drun"
-          "window"
-        ];
+      enable = true;
+      package = pkgs.rofi;
+      theme = "${pkgs.rofi}/share/rofi/themes/Arc-Dark.rasi";
+      modes = [
+        "drun"
+        "window"
+      ];
     };
 
     xdg.configFile."mako".source = ./mako;
     xdg.configFile."hypr/hyprpaper.conf".source = ./hyprpaper.conf;
     # xdg.configFile."rofi".source = ./rofi;
 
-    xdg.configFile."uwsm/env".source = config.lib.file.mkOutOfStoreSymlink
-      "/etc/profiles/per-user/retoran/etc/profile.d/hm-session-vars.sh";
+    xdg.configFile."uwsm/env".source =
+      config.lib.file.mkOutOfStoreSymlink "/etc/profiles/per-user/retoran/etc/profile.d/hm-session-vars.sh";
     wayland.windowManager.hyprland = {
       package = null;
       #portalPackage = null;
@@ -129,7 +136,9 @@ with lib;
           shadow.enabled = false;
           blur.size = 2;
         };
-        animations = { enabled = true; };
+        animations = {
+          enabled = true;
+        };
         dwindle = {
           pseudotile = true;
           preserve_split = true;
@@ -149,52 +158,95 @@ with lib;
           "4,monitor:${cfg.primaryMonitor}"
           "5,monitor:${cfg.primaryMonitor}"
         ];
-        "bind" = 
-          builtins.concatLists [
+        "bind" = builtins.concatLists [
+          [
+            # Navigation bindings
+            "$mainMod, h, movefocus, l"
+            "$mainMod, j, movefocus, d"
+            "$mainMod, k, movefocus, u"
+            "$mainMod, l, movefocus, r"
+          ]
+          # Workspace bindings 0 to 9
+          (map (x: "$mainMod, ${builtins.toString (mod x 10)}, workspace, ${builtins.toString x}") [
+            1
+            2
+            3
+            4
+            5
+            6
+            7
+            8
+            9
+            10
+          ])
+          (map
+            (
+              x: "$mainMod SHIFT, ${builtins.toString (mod x 10)}, movetoworkspacesilent, ${builtins.toString x}"
+            )
             [
-              # Navigation bindings
-              "$mainMod, h, movefocus, l"
-              "$mainMod, j, movefocus, d"
-              "$mainMod, k, movefocus, u"
-              "$mainMod, l, movefocus, r"
+              1
+              2
+              3
+              4
+              5
+              6
+              7
+              8
+              9
+              10
             ]
-            # Workspace bindings 0 to 9
-            (map (x: "$mainMod, ${builtins.toString (mod x 10)}, workspace, ${builtins.toString x}") [ 1 2 3 4 5 6 7 8 9 10 ])
-            (map (x: "$mainMod SHIFT, ${builtins.toString (mod x 10)}, movetoworkspacesilent, ${builtins.toString x}") [ 1 2 3 4 5 6 7 8 9 10 ])
-            (map (x: "$mainMod SHIFT CONTROL, ${builtins.toString (mod x 10)}, movetoworkspace, ${builtins.toString x}") [ 1 2 3 4 5 6 7 8 9 10 ])
+          )
+          (map
+            (
+              x:
+              "$mainMod SHIFT CONTROL, ${builtins.toString (mod x 10)}, movetoworkspace, ${builtins.toString x}"
+            )
             [
-              # scroll through workspaces
-              "$mainMod, mouse_down, workspace, e+1"
-              "$mainMod, mouse_up, workspace, e-1"
-              "$mainMod, C, killactive"
-              "$mainMod SHIFT, M, exec, sleep 1 && loginctl terminate-user ''"
-
-              "$mainMod, Space, togglefloating"
-              "$mainMod, F, fullscreen"
-              "$mainMod SHIFT, F, fullscreen, 1"
-
-              # Execution bindings
-              "$mainMod, Q, exec, uwsm app -- alacritty"
-              "$mainMod SHIFT, Q, exec, uwsm app -- alacritty --class floating"
-              "$mainMod, E, exec, uwsm app -- $file"
-              "$mainMod, R, exec, rofi -show drun -run-command \"uwsm app -- {cmd}\""
-              "$mainMod, S, exec, rofi -show window"
-              "CTRL_SHIFT, escape, exec, uwsm app -- alacritty --class floating -T btop -e btop"
-              ",Print, exec, grim -g \"$(slurp)\" | wl-copy && notify-send Grim \"Snapped Segment\""
-              "CTRL, Print, exec, grim -o \"$(hyprctl monitors -j | jq -r '.[] | select(.focused).name')\" | wl-copy && notify-send Grim \"Snapped Monitor\""
-              "$mainMod, N, exec, ${builtins.toString ./scripts/hyprGamemode.sh}"
-
-              # Media bindings
-              ",XF86AudioPlay, exec, ${playerctlCmd} play-pause"
-              ",XF86AudioPause, exec, ${playerctlCmd} play-pause"
-              ",XF86AudioStop, exec, ${playerctlCmd} stop"
-              ",XF86AudioPrev, exec, ${playerctlCmd} previous"
-              ",XF86AudioNext, exec, ${playerctlCmd} next"
-              ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 1%+"
-              ",XF86AudioLowerVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 1%-"
-              ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+              1
+              2
+              3
+              4
+              5
+              6
+              7
+              8
+              9
+              10
             ]
-          ];
+          )
+          [
+            # scroll through workspaces
+            "$mainMod, mouse_down, workspace, e+1"
+            "$mainMod, mouse_up, workspace, e-1"
+            "$mainMod, C, killactive"
+            "$mainMod SHIFT, M, exec, sleep 1 && loginctl terminate-user ''"
+
+            "$mainMod, Space, togglefloating"
+            "$mainMod, F, fullscreen"
+            "$mainMod SHIFT, F, fullscreen, 1"
+
+            # Execution bindings
+            "$mainMod, Q, exec, uwsm app -- alacritty"
+            "$mainMod SHIFT, Q, exec, uwsm app -- alacritty --class floating"
+            "$mainMod, E, exec, uwsm app -- $file"
+            "$mainMod, R, exec, rofi -show drun -run-command \"uwsm app -- {cmd}\""
+            "$mainMod, S, exec, rofi -show window"
+            "CTRL_SHIFT, escape, exec, uwsm app -- alacritty --class floating -T btop -e btop"
+            ",Print, exec, grim -g \"$(slurp)\" | wl-copy && notify-send Grim \"Snapped Segment\""
+            "CTRL, Print, exec, grim -o \"$(hyprctl monitors -j | jq -r '.[] | select(.focused).name')\" | wl-copy && notify-send Grim \"Snapped Monitor\""
+            "$mainMod, N, exec, ${builtins.toString ./scripts/hyprGamemode.sh}"
+
+            # Media bindings
+            ",XF86AudioPlay, exec, ${playerctlCmd} play-pause"
+            ",XF86AudioPause, exec, ${playerctlCmd} play-pause"
+            ",XF86AudioStop, exec, ${playerctlCmd} stop"
+            ",XF86AudioPrev, exec, ${playerctlCmd} previous"
+            ",XF86AudioNext, exec, ${playerctlCmd} next"
+            ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 1%+"
+            ",XF86AudioLowerVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 1%-"
+            ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+          ]
+        ];
         "bindm" = [
           "$mainMod, mouse:272, movewindow"
           "$mainMod, mouse:273, resizewindow"

@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   services.arrpc.enable = true;
   programs.vesktop = {
     # Enabling middle click scroll doesn't disable middle click paste because they hate me.
@@ -62,5 +63,6 @@
     };
     enable = true;
   };
-  xdg.configFile."autostart/vesktop.desktop".source = "${pkgs.vesktop}/share/applications/vesktop.desktop";
+  xdg.configFile."autostart/vesktop.desktop".source =
+    "${pkgs.vesktop}/share/applications/vesktop.desktop";
 }

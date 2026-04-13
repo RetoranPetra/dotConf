@@ -1,9 +1,9 @@
 { pkgs, ... }:
 {
-#  xdg.configFile."YouTube Music" = {
-#    source = "./../../../../../root/home/retoran/.config/YouTube Music";
-#    recursive = true;
-#  };
+  #  xdg.configFile."YouTube Music" = {
+  #    source = "./../../../../../root/home/retoran/.config/YouTube Music";
+  #    recursive = true;
+  #  };
   home.packages = with pkgs; [
     # System Utils
     qdirstat
@@ -34,8 +34,8 @@
     mimeApps = {
       enable = true;
       defaultApplications = {
-        "inode/directory" = ["thunar.desktop"];
-        "inode/mount-point" = ["thunar.desktop"];
+        "inode/directory" = [ "thunar.desktop" ];
+        "inode/mount-point" = [ "thunar.desktop" ];
       };
     };
   };

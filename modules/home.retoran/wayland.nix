@@ -1,4 +1,5 @@
-{...}: {
+{ ... }:
+{
   # Environment variables for forcing wayland.
   home.sessionVariables = {
     # TODO: Copy FCITX5 environment variables to wherever the FCITX5 setup is.

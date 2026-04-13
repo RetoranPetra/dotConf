@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   # Enable razer hardware support
   hardware.openrazer.enable = true;
 

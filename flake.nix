@@ -31,13 +31,25 @@
   };
   # @inputs allows access to inputs from inputs.INPUT as well as the direct mapping.
   outputs =
-    { nixpkgs, home-manager, nixvim, nur, preload-ng, nixos-wsl, lanzaboote, ... }@inputs: {
+    {
+      nixpkgs,
+      home-manager,
+      nixvim,
+      nur,
+      preload-ng,
+      nixos-wsl,
+      lanzaboote,
+      ...
+    }@inputs:
+    {
       # WSL config
       nixosConfigurations.wsl = nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
         pkgs = import nixpkgs {
           inherit system;
-          config = { allowUnfree = true; };
+          config = {
+            allowUnfree = true;
+          };
         };
         modules = [
           # WSL module NEEDED for WSL
@@ -63,7 +75,9 @@
         system = "x86_64-linux";
         pkgs = import nixpkgs {
           inherit system;
-          config = { allowUnfree = true; };
+          config = {
+            allowUnfree = true;
+          };
         };
         modules = [
           lanzaboote.nixosModules.lanzaboote

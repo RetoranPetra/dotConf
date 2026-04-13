@@ -1,4 +1,9 @@
-{ config, lib, pkgs,  ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   # TODO: This should build from the latest release automatically at some point.
   proton-dw-bin = pkgs.stdenvNoCC.mkDerivation (finalAttrs: {
@@ -41,9 +46,9 @@ let
       '';
       homepage = "https://dawn.wine/";
       license = licenses.unfree;
-      platforms = ["x86_64-linux"];
-      maintainers = [];
-      sourceProvenance = [sourceTypes.binaryNativeCode];
+      platforms = [ "x86_64-linux" ];
+      maintainers = [ ];
+      sourceProvenance = [ sourceTypes.binaryNativeCode ];
     };
   });
 in
@@ -78,5 +83,8 @@ in
     enable = true;
     withUWSM = true;
   };
-  fonts.packages = with pkgs; [ nerd-fonts.iosevka-term nerd-fonts.iosevka ];
+  fonts.packages = with pkgs; [
+    nerd-fonts.iosevka-term
+    nerd-fonts.iosevka
+  ];
 }

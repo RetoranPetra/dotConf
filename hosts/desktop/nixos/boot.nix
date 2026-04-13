@@ -1,4 +1,4 @@
-{ pkgs, lib, ...}:
+{ pkgs, lib, ... }:
 let
   # This just adds a script to our bin to easily enroll TPM2 to our root.
   luksEnrollTPM = pkgs.writeTextFile {
