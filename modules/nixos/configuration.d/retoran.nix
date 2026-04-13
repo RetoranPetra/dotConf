@@ -67,7 +67,9 @@ in
       proton-ge-bin
       proton-dw-bin
     ];
+    protontricks.enable = true;
   };
+  programs.gamescope.enable = true;
   services.pipewire = {
     enable = true;
     pulse.enable = true;

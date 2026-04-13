@@ -4,6 +4,5 @@
     # Wine
     wineWow64Packages.stable
     winetricks
-    protontricks
   ];
 }
