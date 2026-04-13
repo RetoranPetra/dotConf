@@ -11,6 +11,14 @@ with lib;
       type = types.str;
       default = "DP-1";
     };
+    wayland.windowManager.hyprland.workspaces.game = mkOption {
+      type = types.str;
+      default = "5";
+    };
+    wayland.windowManager.hyprland.workspaces.discord = mkOption {
+      type = types.str;
+      default = "6";
+    };
   };
   imports = [
     ./../wayland.nix
@@ -204,6 +212,11 @@ with lib;
           "float, size 1000 700, center, initialClass:^org\.freedesktop\.impl\.portal\.desktop\.kde$"
           "float, center, size 1000 700, class:^(zenity|yad)$"
           # Haven't added warframe launcher or godot rules.
+
+          # Workspace rules
+          "workspace ${cfg.workspaces.game}, content:game"
+          "workspace ${cfg.workspaces.game}, initialClass:^steam$"
+          "workspace ${cfg.workspaces.discord}, initialClass:^(WebCord|VencordDesktop|vesktop)$"
         ];
       };
     };
