@@ -47,6 +47,15 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
+  # Set pipewire for audio explicitly
+  services.pipewire = {
+    enable = true;
+    pulse.enable = true;
+    alsa.enable = true;
+    jack.enable = true;
+  };
+
+
   # System fonts
   fonts.packages = with pkgs; [ noto-fonts noto-fonts-cjk-sans ];
 
