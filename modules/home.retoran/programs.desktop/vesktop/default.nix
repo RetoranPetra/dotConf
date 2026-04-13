@@ -19,7 +19,7 @@
         autoUpdateNotification = true;
         enabledThemes = [
           "HorizontalServerList.css"
-          "SkeuoCord.css"
+          #"SkeuoCord.css"
         ];
         plugins = {
           BetterGifPicker.enabled = true;
@@ -57,7 +57,7 @@
       # Should set themes in this list AND enabledthemes with same list, it's dumb there are two lists.
       themes = {
         "HorizontalServerList" = ./config/themes/HorizontalServerList.theme.css;
-        "SkeuoCord" = ./config/themes/SkeuoCord.theme.css;
+        #"SkeuoCord" = ./config/themes/SkeuoCord.theme.css;
       };
     };
     enable = true;
