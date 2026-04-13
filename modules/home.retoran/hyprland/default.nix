@@ -200,23 +200,23 @@ with lib;
           "$mainMod, mouse:273, resizewindow"
         ];
         "windowrule" = [
-          "float, class:^floating$"
-          "float, class:^thunar$"
-          "float, size 720 1280, class:^(w|W)aydroid.*"
-          "size 720 1280, class:^(w|W)aydroid.*"
-          "float, center, size 1000 700, class:^org\.kde\.polkit-kde-authentication-agent-1$"
-          "float, center, size 1000 700, class:^krita$, title:- Krita"
-          "float, center, class:^xarchiver$"
-          "float, size 1000 700, center, initialTitle:^(Save\ As|Open\ Files)$"
-          "float, size 1000 700, center, initialClass:^xdg-desktop-portal-gtk$"
-          "float, size 1000 700, center, initialClass:^org\.freedesktop\.impl\.portal\.desktop\.kde$"
-          "float, center, size 1000 700, class:^(zenity|yad)$"
+          "float on, match:class ^floating$"
+          "float on, match:class ^thunar$"
+          "float on, size 720 1280, match:class ^(w|W)aydroid.*"
+          "size 720 1280, match:class ^(w|W)aydroid.*"
+          "float on, center on, size 1000 700, match:class ^org\.kde\.polkit-kde-authentication-agent-1$"
+          "float on, center on, size 1000 700, match:class ^krita$, match:title - Krita"
+          "float on, center on, size 1000 700, match:class ^xarchiver$"
+          "float on, size 1000 700, center on, match:title ^(Save\ As|Open\ Files)$"
+          "float on, size 1000 700, center on, match:class ^xdg-desktop-portal-gtk$"
+          "float on, size 1000 700, center on, match:class ^org\.freedesktop\.impl\.portal\.desktop\.kde$"
+          "float on, center on, size 1000 700, match:class ^(zenity|yad)$"
           # Haven't added warframe launcher or godot rules.
 
           # Workspace rules
-          "workspace ${cfg.workspaces.game}, content:game"
-          "workspace ${cfg.workspaces.game}, initialClass:^steam$"
-          "workspace ${cfg.workspaces.discord}, initialClass:^(WebCord|VencordDesktop|vesktop)$"
+          "workspace ${cfg.workspaces.game}, match:content game"
+          "workspace ${cfg.workspaces.game}, match:class ^steam$"
+          "workspace ${cfg.workspaces.discord}, match:class ^(WebCord|VencordDesktop|vesktop)$"
         ];
       };
     };
