@@ -46,6 +46,9 @@
     device = "/dev/mapper/raidn0_0";
     fsType = "btrfs";
     # There should also be some other mount options we use for this.
+    options = [
+      "compress=zstd"
+    ];
   };
 
   fileSystems."/boot" = {
