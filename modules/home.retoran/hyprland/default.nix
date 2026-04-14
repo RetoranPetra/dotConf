@@ -267,8 +267,8 @@ with lib;
 
           # Workspace rules
           "workspace ${cfg.workspaces.game}, match:content game"
-          "workspace ${cfg.workspaces.game}, match:class ^steam$"
-          "workspace ${cfg.workspaces.discord}, match:class ^(WebCord|VencordDesktop|vesktop)$"
+          "workspace ${cfg.workspaces.game} silent, match:class ^steam$"
+          "workspace ${cfg.workspaces.discord} silent, match:class ^(WebCord|VencordDesktop|vesktop)$"
         ];
       };
     };
