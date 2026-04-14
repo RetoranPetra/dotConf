@@ -167,53 +167,16 @@ with lib;
             "$mainMod, l, movefocus, r"
           ]
           # Workspace bindings 0 to 9
-          (map (x: "$mainMod, ${builtins.toString (mod x 10)}, workspace, ${builtins.toString x}") [
-            1
-            2
-            3
-            4
-            5
-            6
-            7
-            8
-            9
-            10
-          ])
-          (map
-            (
-              x: "$mainMod SHIFT, ${builtins.toString (mod x 10)}, movetoworkspacesilent, ${builtins.toString x}"
-            )
-            [
-              1
-              2
-              3
-              4
-              5
-              6
-              7
-              8
-              9
-              10
-            ]
-          )
-          (map
-            (
-              x:
-              "$mainMod SHIFT CONTROL, ${builtins.toString (mod x 10)}, movetoworkspace, ${builtins.toString x}"
-            )
-            [
-              1
-              2
-              3
-              4
-              5
-              6
-              7
-              8
-              9
-              10
-            ]
-          )
+          (map (x: "$mainMod, ${builtins.toString (mod x 10)}, workspace, ${builtins.toString x}") (
+            lib.lists.range 1 10
+          ))
+          (map (
+            x: "$mainMod SHIFT, ${builtins.toString (mod x 10)}, movetoworkspacesilent, ${builtins.toString x}"
+          ) (lib.lists.range 1 10))
+          (map (
+            x:
+            "$mainMod SHIFT CONTROL, ${builtins.toString (mod x 10)}, movetoworkspace, ${builtins.toString x}"
+          ) (lib.lists.range 1 10))
           [
             # scroll through workspaces
             "$mainMod, mouse_down, workspace, e+1"
