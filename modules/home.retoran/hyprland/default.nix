@@ -46,7 +46,10 @@ with lib;
     ];
     services.hyprpolkitagent.enable = true;
     services.playerctld.enable = true;
-    services.hyprpaper.enable = true;
+    services.hyprpaper = {
+      enable = true;
+      settings.splash = false;
+    };
 
     xdg.portal = {
       enable = true;
@@ -89,7 +92,6 @@ with lib;
     };
 
     xdg.configFile."mako".source = ./mako;
-    xdg.configFile."hypr/hyprpaper.conf".source = ./hyprpaper.conf;
     # xdg.configFile."rofi".source = ./rofi;
 
     xdg.configFile."uwsm/env".source =

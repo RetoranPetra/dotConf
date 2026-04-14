@@ -21,4 +21,18 @@
       misc.vrr = 1;
     };
   };
+  services.hyprpaper.settings.wallpaper = [
+    {
+      monitor = "DP-1";
+      path = "/home/retoran/Pictures/backgrounds/lucyBackgrounds/lucyIllustration.png";
+    }
+    {
+      monitor = "DP-2";
+      path = "/home/retoran/Pictures/backgrounds/lucyBackgrounds/lucy_portrait.png";
+    }
+    {
+      monitor = "";
+      path = "/home/retoran/Pictures/backgrounds/lucyBackgrounds/lucyIllustration.png";
+    }
+  ];
 }
