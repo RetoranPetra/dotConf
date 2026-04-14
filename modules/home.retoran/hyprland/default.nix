@@ -36,7 +36,6 @@ with lib;
       grim
       slurp
       wl-clipboard
-      hyprpolkitagent
       hyprpaper
       qt5.qtwayland
       qt6.qtwayland
@@ -46,6 +45,7 @@ with lib;
       playerctl
       xrandr
     ];
+    services.hyprpolkitagent.enable = true;
     services.playerctld.enable = true;
 
     xdg.portal = {

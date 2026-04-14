@@ -87,4 +87,5 @@ in
     nerd-fonts.iosevka-term
     nerd-fonts.iosevka
   ];
+  security.polkit.enable = true;
 }
