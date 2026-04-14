@@ -98,5 +98,31 @@
           }
         ];
       };
+      nixosConfigurations.flex5-retoran = nixpkgs.lib.nixosSystem rec {
+        system = "x86_64-linux";
+        pkgs = import nixpkgs {
+          inherit system;
+          config = {
+            allowUnfree = true;
+          };
+        };
+        modules = [
+          ./hosts/flex5/nixos
+          preload-ng.nixosModules.default
+          {
+            services.preload-ng.enable = true;
+          }
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useUserPackages = true;
+            home-manager.users.retoran = {
+              imports = [
+                nixvim.homeModules.nixvim
+                ./hosts/flex5/home.retoran
+              ];
+            };
+          }
+        ];
+      };
     };
 }
