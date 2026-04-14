@@ -18,6 +18,7 @@
         "uwsm app -- vesktop.desktop"
         "[workspace 1 silent] uwsm app -- firefox.desktop"
       ];
+      misc.vrr = 1;
     };
   };
 }
