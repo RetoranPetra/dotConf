@@ -39,4 +39,7 @@
       };
     };
   };
+
+  # Also set up font config support
+  fonts.fontconfig.enable = true;
 }
