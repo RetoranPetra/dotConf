@@ -63,6 +63,4 @@
     };
     enable = true;
   };
-  xdg.configFile."autostart/vesktop.desktop".source =
-    "${pkgs.vesktop}/share/applications/vesktop.desktop";
 }

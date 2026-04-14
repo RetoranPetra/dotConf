@@ -13,6 +13,11 @@
         "DP-2,2560x1440@120,-1440x0,1,transform,1"
         ",preferred,auto,auto"
       ];
+      "exec-once" = [
+        "uwsm app -- steam.desktop"
+        "uwsm app -- vesktop.desktop"
+        "[workspace 1 silent] uwsm app -- firefox.desktop"
+      ];
     };
   };
 }
