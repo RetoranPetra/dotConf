@@ -86,6 +86,8 @@ in
   fonts.packages = with pkgs; [
     nerd-fonts.iosevka-term
     nerd-fonts.iosevka
+    nerd-fonts.symbols-only
+    font-awesome
   ];
   security.polkit.enable = true;
 }
