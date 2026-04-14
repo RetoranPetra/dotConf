@@ -36,30 +36,32 @@
   };
   home.pointerCursor = {
     gtk.enable = true;
-    name = "Bibata-Modern-Classic";
-    package = pkgs.bibata-cursors;
+    name = "everforest-cursors-light";
+    package = pkgs.everforest-cursors;
+    size = 32;
   };
   gtk = {
     enable = true;
-    # Icon theme not respected for some reason. Might need to manually set in dconf.
     iconTheme = {
-      name = "Adwaita";
-      package = pkgs.adwaita-icon-theme;
+      # This icon theme is actually misspelt, this is correct.
+      name = "Everforest-Dark";
+      package = pkgs.everforest-gtk-theme;
     };
     theme = {
-      #name = "Tokyonight";
-      #package = pkgs.tokyonight-gtk-theme;
-      name = "Materia-dark";
+      /*
+        name = "Tokyonight-Dark";
+        package = pkgs.tokyonight-gtk-theme;
+      */
+      name = "Materia-dark-compact";
       package = pkgs.materia-theme;
     };
     gtk4.theme = config.gtk.theme;
-    cursorTheme = {
-      name = "Materia-dark";
-      package = pkgs.materia-theme;
-    };
     font = {
       name = "Sans";
       size = 11;
+    };
+    gtk4.extraConfig = {
+      "gtk-application-prefer-dark-theme" = 1;
     };
   };
   qt = {
