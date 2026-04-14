@@ -43,7 +43,7 @@
   '';
   fileSystems."/mnt/raidn0" = {
     # TODO: Should go by mapper UUID instead, that's more correct.
-    device = "/dev/mapper/raidn0_0";
+    device = "/dev/disk/by-uuid/465ce5a8-ed17-4c4e-8bf9-2ef10ced35c5";
     fsType = "btrfs";
     # There should also be some other mount options we use for this.
     options = [
