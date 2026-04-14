@@ -45,6 +45,8 @@ with lib;
       xwininfo
       playerctl
       xrandr
+      # Need socat for script
+      socat
     ];
     services.playerctld.enable = true;
 
@@ -106,10 +108,9 @@ with lib;
 
         "exec-once" = [
           "uwsm app -- waybar -c ${builtins.toString ./waybar/config.jsonc} -s ${builtins.toString ./waybar/style.css}"
+          "${builtins.toString ./scripts/hyprKeepPrimary.sh} ${cfg.primaryMonitor}"
         ];
         "exec" = [
-          "${builtins.toString ./scripts/forcePrimary.bash} ${cfg.primaryMonitor}"
-          "xrandr --output ${cfg.primaryMonitor} --primary"
           (builtins.toString ./scripts/hyprGamemode.sh)
         ];
         input = {
