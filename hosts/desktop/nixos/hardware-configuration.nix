@@ -48,6 +48,8 @@
     # There should also be some other mount options we use for this.
     options = [
       "compress=zstd"
+      # Make it appear in GVFS
+      "x-gvfs-show"
     ];
   };
 
