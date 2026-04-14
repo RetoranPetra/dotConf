@@ -40,7 +40,6 @@ with lib;
       hyprpaper
       qt5.qtwayland
       qt6.qtwayland
-      handlr-regex
       btop-rocm
       jaq
       xwininfo
