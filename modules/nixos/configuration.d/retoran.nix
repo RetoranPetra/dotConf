@@ -88,6 +88,9 @@ in
     nerd-fonts.iosevka
     nerd-fonts.symbols-only
     font-awesome
+
+    # Foreign fonts
+    source-han-sans
   ];
   security.polkit.enable = true;
 }
