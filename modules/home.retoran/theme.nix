@@ -76,5 +76,10 @@
     # These are needed for GTK theme to be applied properly.
     qt6Packages.qt6gtk2
     libsForQt5.qtstyleplugins
+
+    # Font packages needed for our themes
+    pkgs.nerd-fonts.iosevka-term
+    pkgs.font-awesome
+    pkgs.nerd-fonts.iosevka
   ];
 }
