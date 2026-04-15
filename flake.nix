@@ -58,6 +58,7 @@
           home-manager.nixosModules.home-manager
           {
             home-manager.useUserPackages = true;
+            home-manager.useGlobalPkgs = true;
             home-manager.users.retoran = {
               imports = [
                 nixvim.homeModules.nixvim
@@ -89,6 +90,7 @@
           home-manager.nixosModules.home-manager
           {
             home-manager.useUserPackages = true;
+            home-manager.useGlobalPkgs = true;
             home-manager.users.retoran = {
               imports = [
                 nixvim.homeModules.nixvim
@@ -115,6 +117,7 @@
           home-manager.nixosModules.home-manager
           {
             home-manager.useUserPackages = true;
+            home-manager.useGlobalPkgs = true;
             home-manager.users.retoran = {
               imports = [
                 nixvim.homeModules.nixvim
