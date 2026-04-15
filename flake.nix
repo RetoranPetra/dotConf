@@ -61,11 +61,11 @@
             home-manager.users.retoran = {
               imports = [
                 nixvim.homeModules.nixvim
-                ./hosts/flex5/configuration.d/home.retoran/neovim.nix
-                ./hosts/flex5/configuration.d/home.retoran/zsh.nix
-                ./hosts/flex5/configuration.d/home.retoran/programs.cli.nix
-                ./hosts/flex5/configuration.d/home.retoran/state-version.nix
-                ./hosts/flex5/configuration.d/home.retoran/git.nix
+                ./modules/home.retoran/neovim.nix
+                ./modules/home.retoran/zsh.nix
+                ./modules/home.retoran/programs.cli.nix
+                ./modules/home.retoran/state-version.nix
+                ./modules/home.retoran/git.nix
               ];
             };
           }
