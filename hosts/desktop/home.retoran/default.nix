@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 {
   imports = [
     ./hyprland.nix
@@ -28,4 +28,7 @@
   home.file.Music.source = config.lib.file.mkOutOfStoreSymlink "/mnt/raidn0/retoran/Music";
   home.file.Documents.source = config.lib.file.mkOutOfStoreSymlink "/mnt/raidn0/retoran/Documents";
   home.file.Source.source = config.lib.file.mkOutOfStoreSymlink "/mnt/raidn0/retoran/Source";
+  home.packages = [
+    pkgs.vintagestory
+  ];
 }
