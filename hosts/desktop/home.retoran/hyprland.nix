@@ -2,6 +2,7 @@
 {
   imports = [
     ./../../../modules/home.retoran/hyprland
+    ./../../../modules/home.retoran/fcitx5.nix
   ];
   wayland.windowManager.hyprland = {
     workspaces.game = "5";
