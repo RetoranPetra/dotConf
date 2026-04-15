@@ -35,4 +35,10 @@
       path = "/home/retoran/Pictures/backgrounds/lucyBackgrounds/lucyIllustration.png";
     }
   ];
+  home.sessionVariables = {
+    # Needed to stop VDPAU from falling back to NVIDIA by default on wayland
+    "VDPAU_DRIVER" = "radeonsi";
+    # Included just for completeness, not typically needed.
+    "LIBVA_DRIVER_NAME" = "radeonsi";
+  };
 }
