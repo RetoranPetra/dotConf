@@ -7,6 +7,7 @@
     workspaces.game = "5";
     workspaces.discord = "6";
     primaryMonitor = "DP-1";
+    jpOCR = true;
     settings = {
       "monitor" = [
         "DP-1,2560x1440@180,0x0,1"
