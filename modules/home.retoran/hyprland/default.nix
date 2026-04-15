@@ -43,6 +43,7 @@ with lib;
       xwininfo
       playerctl
       xrandr
+      notify-desktop
     ];
     services.hyprpolkitagent.enable = true;
     services.playerctld.enable = true;
@@ -196,8 +197,8 @@ with lib;
             "$mainMod, R, exec, rofi -show drun -run-command \"uwsm app -- {cmd}\""
             "$mainMod, S, exec, rofi -show window"
             "CTRL_SHIFT, escape, exec, uwsm app -- alacritty --class floating -T btop -e btop"
-            ",Print, exec, grim -g \"$(slurp)\" | wl-copy && notify-send Grim \"Snapped Segment\""
-            "CTRL, Print, exec, grim -o \"$(hyprctl monitors -j | jq -r '.[] | select(.focused).name')\" | wl-copy && notify-send Grim \"Snapped Monitor\""
+            ",Print, exec, ${builtins.toString ./scripts/screenshotSegment.sh}"
+            "CTRL, Print, exec, ${builtins.toString ./scripts/screenshotDisplay.sh}"
             "$mainMod, N, exec, ${builtins.toString ./scripts/hyprGamemode.sh}"
 
             # Media bindings
