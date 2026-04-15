@@ -3,9 +3,7 @@
 		"base-directory": "~/gallery-dl/",
 		"archive": "~/gallery-dl/archive.sqlite3",
 		"postprocessors": [
-			"giftomp4",
-			"removeduplicateimages",
-			"removeduplicatevideos"
+			"giftomp4"
 		],
 		"directory": [
 			"{category}",
@@ -13,11 +11,16 @@
 		],
 		"mtime": "{date}",
 		"reddit": {
-			"filename": "{date} {id}{num:? //>02} {title[:220]}.{extension}",
+			"filename": "{date} {id}{num:? //>02} {title[:200]}.{extension}",
 			"parent-directory": true,
 			"metadata-parent": "_reddit",
 			"blacklist": [
-				"twitter"
+				"twitter",
+				"instagram"
+			],
+			"postprocessors": [
+				"removeduplicateimages",
+				"removeduplicatevideos"
 			]
 		},
 		"reddit>*": {

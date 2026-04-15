@@ -15,6 +15,7 @@
     ./../../../modules/home.retoran/zsh.nix
     ./../../../modules/home.retoran/handlr.nix
     ./../../../modules/home.retoran/prismlauncher.nix
+    ./../../../modules/home.retoran/gallery-dl
   ];
 
   # Use real paths for user directories

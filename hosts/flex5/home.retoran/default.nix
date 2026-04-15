@@ -15,5 +15,6 @@
     ./../../../modules/home.retoran/theme.nix
     ./../../../modules/home.retoran/zsh.nix
     ./../../../modules/home.retoran/handlr.nix
+    ./../../../modules/home.retoran/gallery-dl
   ];
 }
