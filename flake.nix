@@ -27,6 +27,10 @@
       url = "github:nix-community/lanzaboote";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    gallery-dl = {
+      url = "github:mikf/gallery-dl/master";
+      flake = false;
+    };
     self.submodules = true;
   };
   # @inputs allows access to inputs from inputs.INPUT as well as the direct mapping.
@@ -35,10 +39,10 @@
       nixpkgs,
       home-manager,
       nixvim,
-      nur,
       preload-ng,
       nixos-wsl,
       lanzaboote,
+      gallery-dl,
       ...
     }@inputs:
     {
@@ -80,6 +84,7 @@
             allowUnfree = true;
           };
         };
+        specialArgs.gallery-dl = gallery-dl;
         modules = [
           lanzaboote.nixosModules.lanzaboote
           ./hosts/desktop/nixos
@@ -89,6 +94,7 @@
 
           home-manager.nixosModules.home-manager
           {
+            home-manager.extraSpecialArgs.gallery-dl = gallery-dl;
             home-manager.useUserPackages = true;
             home-manager.useGlobalPkgs = true;
             home-manager.users.retoran = {
@@ -116,6 +122,7 @@
           }
           home-manager.nixosModules.home-manager
           {
+            home-manager.extraSpecialArgs.gallery-dl = gallery-dl;
             home-manager.useUserPackages = true;
             home-manager.useGlobalPkgs = true;
             home-manager.users.retoran = {
