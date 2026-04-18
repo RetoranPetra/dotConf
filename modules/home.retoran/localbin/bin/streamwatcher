@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 username=$1
 url="https://twitch.tv/${username}"
 quality="best"
