@@ -1,6 +1,10 @@
 {
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       # NOTE: Use our existing nixpkgs declaration for nixpkgs in home-manager
@@ -30,18 +34,21 @@
     self.submodules = true;
   };
   # @inputs allows access to inputs from inputs.INPUT as well as the direct mapping.
-  outputs =
-    {
-      nixpkgs,
-      home-manager,
-      nixvim,
-      preload-ng,
-      nixos-wsl,
-      lanzaboote,
-      gallery-dl,
-      ...
-    }@inputs:
-    {
+  outputs = inputs@{
+    flake-parts,
+    nixpkgs,
+    nixos-wsl,
+    home-manager,
+    nixvim,
+    gallery-dl,
+    lanzaboote,
+    preload-ng,
+    ... }: 
+    flake-parts.lib.mkFlake {inherit inputs;} (top@{config, withSystem, moduleWithSystem, ... }: {
+
+    imports = [];
+
+    flake = {
       # WSL config
       nixosConfigurations.wsl = nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
@@ -131,4 +138,11 @@
         ];
       };
     };
+
+    systems = [ "x86_64-linux"];
+
+    perSystem = { config, pkgs, ... }: {
+      # packages.somePkg = pkgs.CallPackage;
+    };
+  });
 }
