@@ -38,15 +38,10 @@
       preload-ng,
       nixos-wsl,
       lanzaboote,
+      gallery-dl,
       ...
     }@inputs:
     {
-      nixpkgs.overlays = [(final: prev: {
-        gallery-dl = prev.gallery-dl.overrideAttrs {
-          version = "git";
-          src = inputs.gallery-dl;
-        };
-      })];
       # WSL config
       nixosConfigurations.wsl = nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
@@ -85,6 +80,7 @@
             allowUnfree = true;
           };
         };
+        specialArgs.gallery-dl = gallery-dl;
         modules = [
           lanzaboote.nixosModules.lanzaboote
           ./hosts/desktop/nixos
@@ -94,6 +90,7 @@
 
           home-manager.nixosModules.home-manager
           {
+            home-manager.extraSpecialArgs.gallery-dl = gallery-dl;
             home-manager.useUserPackages = true;
             home-manager.useGlobalPkgs = true;
             home-manager.users.retoran = {
@@ -121,6 +118,7 @@
           }
           home-manager.nixosModules.home-manager
           {
+            home-manager.extraSpecialArgs.gallery-dl = gallery-dl;
             home-manager.useUserPackages = true;
             home-manager.useGlobalPkgs = true;
             home-manager.users.retoran = {
