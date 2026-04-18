@@ -34,115 +34,138 @@
     self.submodules = true;
   };
   # @inputs allows access to inputs from inputs.INPUT as well as the direct mapping.
-  outputs = inputs@{
-    flake-parts,
-    nixpkgs,
-    nixos-wsl,
-    home-manager,
-    nixvim,
-    gallery-dl,
-    lanzaboote,
-    preload-ng,
-    ... }: 
-    flake-parts.lib.mkFlake {inherit inputs;} (top@{config, withSystem, moduleWithSystem, ... }: {
+  outputs =
+    inputs@{
+      flake-parts,
+      nixpkgs,
+      nixos-wsl,
+      home-manager,
+      nixvim,
+      gallery-dl,
+      lanzaboote,
+      preload-ng,
+      ...
+    }:
+    flake-parts.lib.mkFlake { inherit inputs; } (
+      top@{
+        config,
+        withSystem,
+        moduleWithSystem,
+        ...
+      }:
+      {
 
-    imports = [];
+        imports = [ ];
 
-    flake = {
-      # WSL config
-      nixosConfigurations.wsl = nixpkgs.lib.nixosSystem rec {
-        system = "x86_64-linux";
-        pkgs = import nixpkgs {
-          inherit system;
-          config = {
-            allowUnfree = true;
+        flake = {
+          # WSL config
+          nixosConfigurations.wsl = nixpkgs.lib.nixosSystem {
+            modules = [
+              # WSL module NEEDED for WSL
+              nixos-wsl.nixosModules.wsl
+              ./hosts/wsl/configuration.nix
+
+              (
+                { config, ... }:
+                {
+                  nixpkgs.pkgs = withSystem config.nixpkgs.hostPlatform.system ({ pkgs, ... }: pkgs);
+                }
+              )
+              home-manager.nixosModules.home-manager
+              {
+                home-manager.useUserPackages = true;
+                home-manager.useGlobalPkgs = true;
+                home-manager.users.retoran = {
+                  imports = [
+                    nixvim.homeModules.nixvim
+                    ./modules/home.retoran/neovim.nix
+                    ./modules/home.retoran/zsh.nix
+                    ./modules/home.retoran/programs.cli.nix
+                    ./modules/home.retoran/state-version.nix
+                    ./modules/home.retoran/git.nix
+                  ];
+                };
+              }
+            ];
+          };
+          nixosConfigurations.desktop-retoran = nixpkgs.lib.nixosSystem {
+            specialArgs.gallery-dl = gallery-dl;
+            modules = [
+              (
+                { config, ... }:
+                {
+                  nixpkgs.pkgs = withSystem config.nixpkgs.hostPlatform.system ({ pkgs, ... }: pkgs);
+                }
+              )
+              lanzaboote.nixosModules.lanzaboote
+              ./hosts/desktop/nixos
+              # Preload
+              preload-ng.nixosModules.default
+              { services.preload-ng.enable = true; }
+
+              home-manager.nixosModules.home-manager
+              {
+                home-manager.useUserPackages = true;
+                home-manager.useGlobalPkgs = true;
+                home-manager.users.retoran = {
+                  imports = [
+                    nixvim.homeModules.nixvim
+                    ./hosts/desktop/home.retoran
+                  ];
+                };
+              }
+            ];
+          };
+          nixosConfigurations.flex5-retoran = nixpkgs.lib.nixosSystem {
+            modules = [
+              (
+                { config, ... }:
+                {
+                  nixpkgs.pkgs = withSystem config.nixpkgs.hostPlatform.system ({ pkgs, ... }: pkgs);
+                }
+              )
+              ./hosts/flex5/nixos
+              preload-ng.nixosModules.default
+              {
+                services.preload-ng.enable = true;
+              }
+              home-manager.nixosModules.home-manager
+              {
+                home-manager.useUserPackages = true;
+                home-manager.useGlobalPkgs = true;
+                home-manager.users.retoran = {
+                  imports = [
+                    nixvim.homeModules.nixvim
+                    ./hosts/flex5/home.retoran
+                  ];
+                };
+              }
+            ];
           };
         };
-        modules = [
-          # WSL module NEEDED for WSL
-          nixos-wsl.nixosModules.wsl
-          ./hosts/wsl/configuration.nix
-          home-manager.nixosModules.home-manager
+
+        systems = [ "x86_64-linux" ];
+
+        perSystem =
+          { system, ... }:
           {
-            home-manager.useUserPackages = true;
-            home-manager.useGlobalPkgs = true;
-            home-manager.users.retoran = {
-              imports = [
-                nixvim.homeModules.nixvim
-                ./modules/home.retoran/neovim.nix
-                ./modules/home.retoran/zsh.nix
-                ./modules/home.retoran/programs.cli.nix
-                ./modules/home.retoran/state-version.nix
-                ./modules/home.retoran/git.nix
+            _module.args.pkgs = import inputs.nixpkgs {
+              inherit system;
+              overlays = [
+                (final: prev: {
+                  gallery-dl = (
+                    prev.gallery-dl.overrideAttrs {
+                      version = "git";
+                      src = gallery-dl;
+                    }
+                  );
+                })
               ];
+              config = {
+                allowUnfree = true;
+              };
             };
-          }
-        ];
-      };
-      nixosConfigurations.desktop-retoran = nixpkgs.lib.nixosSystem rec {
-        system = "x86_64-linux";
-        pkgs = import nixpkgs {
-          inherit system;
-          config = {
-            allowUnfree = true;
           };
-        };
-        specialArgs.gallery-dl = gallery-dl;
-        modules = [
-          lanzaboote.nixosModules.lanzaboote
-          ./hosts/desktop/nixos
-          # Preload
-          preload-ng.nixosModules.default
-          { services.preload-ng.enable = true; }
-
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.extraSpecialArgs.gallery-dl = gallery-dl;
-            home-manager.useUserPackages = true;
-            home-manager.useGlobalPkgs = true;
-            home-manager.users.retoran = {
-              imports = [
-                nixvim.homeModules.nixvim
-                ./hosts/desktop/home.retoran
-              ];
-            };
-          }
-        ];
-      };
-      nixosConfigurations.flex5-retoran = nixpkgs.lib.nixosSystem rec {
-        system = "x86_64-linux";
-        pkgs = import nixpkgs {
-          inherit system;
-          config = {
-            allowUnfree = true;
-          };
-        };
-        modules = [
-          ./hosts/flex5/nixos
-          preload-ng.nixosModules.default
-          {
-            services.preload-ng.enable = true;
-          }
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.extraSpecialArgs.gallery-dl = gallery-dl;
-            home-manager.useUserPackages = true;
-            home-manager.useGlobalPkgs = true;
-            home-manager.users.retoran = {
-              imports = [
-                nixvim.homeModules.nixvim
-                ./hosts/flex5/home.retoran
-              ];
-            };
-          }
-        ];
-      };
-    };
-
-    systems = [ "x86_64-linux"];
-
-    perSystem = { config, pkgs, ... }: {
-      # packages.somePkg = pkgs.CallPackage;
-    };
-  });
+      }
+    );
 }

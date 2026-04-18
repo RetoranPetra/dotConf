@@ -1,9 +1,6 @@
-{ pkgs, lib, specialArgs, ... }: {
+{ pkgs, lib, ... }: {
   home.packages = [
-    (pkgs.gallery-dl.overrideAttrs (new: old: {
-      version = "git";
-      src = specialArgs.gallery-dl;
-    }))
+    pkgs.gallery-dl
     pkgs.czkawka-full
   ];
   xdg.configFile."gallery-dl/config.json".source = ./config.json;
