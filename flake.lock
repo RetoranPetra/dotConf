@@ -107,11 +107,11 @@
     "gallery-dl": {
       "flake": false,
       "locked": {
-        "lastModified": 1776544662,
-        "narHash": "sha256-qyHOh+K75FTsCgG1gLDq00Eq9RKWrTLWDA7/vv2g63U=",
+        "lastModified": 1776622824,
+        "narHash": "sha256-aH29mHI/BEqdeGagCZ9eQKO6w67oekhpslxVtTwHRag=",
         "owner": "mikf",
         "repo": "gallery-dl",
-        "rev": "50cb580cd92f3d0501d294d7f6b027c8405767fc",
+        "rev": "d10c4a72ff451425676c3bc7f2d047393b08dfbc",
         "type": "github"
       },
       "original": {
