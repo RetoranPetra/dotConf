@@ -159,6 +159,26 @@
                       src = gallery-dl;
                     }
                   );
+                  patreon-dl =
+                    let
+                      version = "v3.8.1";
+                      src = prev.fetchFromGitHub {
+                        owner = "patrickkfkan";
+                        repo = "patreon-dl";
+                        rev = version;
+                        hash = "sha256-D0iSDAUTRc4IR0CxzG40sdHQqpkfKSlBH1qOfDZrnrA=";
+                      };
+                    in
+                    (prev.buildNpmPackage {
+                      pname = "patreon-dl";
+                      version = version;
+                      npmDeps = prev.importNpmLock {
+                        npmRoot = src;
+                      };
+                      npmConfigHook = prev.importNpmLock.npmConfigHook;
+                      src = src;
+                      env.PUPPETEER_SKIP_DOWNLOAD = 1;
+                    });
                 })
               ];
               config = {

@@ -29,6 +29,7 @@
 
     # Archivers
     yt-dlp
+    patreon-dl
 
     # Files
     rclone
