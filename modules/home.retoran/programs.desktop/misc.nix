@@ -10,7 +10,6 @@
     crosspipe
 
     # Essential
-    mpv
     feh
 
     # Misc

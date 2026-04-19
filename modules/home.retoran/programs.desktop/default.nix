@@ -5,5 +5,6 @@
     ./misc.nix
     ./vesktop
     ./wine.nix
+    ./mpv.nix
   ];
 }
