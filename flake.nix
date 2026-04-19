@@ -178,6 +178,11 @@
                       npmConfigHook = prev.importNpmLock.npmConfigHook;
                       src = src;
                       env.PUPPETEER_SKIP_DOWNLOAD = 1;
+                      postFixup = ''
+                          # Unsure if we need to wrap patreon-dl-vimeo and patreon-dl-sprout as well.
+                          wrapProgram $out/bin/patreon-dl \
+                            --set PATH ${prev.lib.makeBinPath [prev.deno prev.ffmpeg]}
+                          '';
                     });
                 })
               ];
