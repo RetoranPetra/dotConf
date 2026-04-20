@@ -121,7 +121,13 @@
               (
                 { config, ... }:
                 {
-                  nixpkgs.pkgs = withSystem config.nixpkgs.hostPlatform.system ({ pkgs, ... }: pkgs);
+                  nixpkgs.pkgs = import (withSystem config.nixpkgs.hostPlatform.system ({ pkgs, ... }: pkgs)) {
+                    overlays = [
+                      (final: prev:{
+                        blender = (prev.blender.overrides { rocmSupport = true;});
+                      })
+                    ];
+                  };
                 }
               )
               ./hosts/flex5/nixos
