@@ -94,7 +94,11 @@
               (
                 { config, ... }:
                 {
-                  nixpkgs.pkgs = withSystem config.nixpkgs.hostPlatform.system ({ pkgs, ... }: pkgs);
+                  # We made pkgs into a function that takes in configuration and combines it with the configuration to create pkgs.
+                  # This lets us override parts of the config in an elegant fashion.
+                  # May end up with us rebuilding pkgs for every place we reference "pkgs",
+                  # but this shouldn't matter as this flake should only build a system at a time.
+                  nixpkgs.pkgs = withSystem config.nixpkgs.hostPlatform.system ({ pkgs, ... }: pkgs {rocmSupport = true;});
                 }
               )
               lanzaboote.nixosModules.lanzaboote
@@ -121,13 +125,7 @@
               (
                 { config, ... }:
                 {
-                  nixpkgs.pkgs = import (withSystem config.nixpkgs.hostPlatform.system ({ pkgs, ... }: pkgs)) {
-                    overlays = [
-                      (final: prev:{
-                        blender = (prev.blender.overrides { rocmSupport = true;});
-                      })
-                    ];
-                  };
+                  nixpkgs.pkgs = withSystem config.nixpkgs.hostPlatform.system ({ pkgs, ... }: pkgs);
                 }
               )
               ./hosts/flex5/nixos
@@ -155,7 +153,7 @@
         perSystem =
           { system, ... }:
           {
-            _module.args.pkgs = import inputs.nixpkgs {
+            _module.args.pkgs = (config: import inputs.nixpkgs {
               inherit system;
               overlays = [
                 (final: prev: {
@@ -168,10 +166,10 @@
                   patreon-dl = import ./pkgs/patreon-dl.nix { pkgs = prev; };
                 })
               ];
-              config = {
+              config = config // {
                 allowUnfree = true;
               };
-            };
+            });
           };
       }
     );
