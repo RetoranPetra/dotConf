@@ -6,7 +6,6 @@
     fcitx5 = {
       addons = with pkgs; [
         fcitx5-mozc
-        fcitx5-gtk
       ];
       # Likely don't need all these settings set, but copying .dotConf one for one until I know what I'm doing.
       settings = {
