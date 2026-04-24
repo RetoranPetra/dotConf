@@ -1,7 +1,7 @@
 { ... }:
 {
   imports = [
-    ./../../../modules/nixos/default.nix
+    ./../../../modules/nixos
     ./hardware-configuration.nix
     ./boot.nix
   ];

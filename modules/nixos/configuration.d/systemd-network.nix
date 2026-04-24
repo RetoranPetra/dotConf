@@ -25,14 +25,22 @@ with lib;
     systemd.network.networks."20-wired" = {
       matchConfig.Name = "en*";
       networkConfig.DHCP = "yes";
-      dhcpV4Config.RouteMetric = 19;
+      dhcpV4Config = {
+        # Don't use DNS from DHCP
+        UseDNS = false;
+        RouteMetric = 19;
+      };
       ipv6AcceptRAConfig.RouteMetric = 20;
       linkConfig.RequiredForOnline = cfg.online.ethernetRequired;
     };
     systemd.network.networks."30-wireless" = {
       matchConfig.Name = "wl*";
       networkConfig.DHCP = "yes";
-      dhcpV4Config.RouteMetric = 29;
+      dhcpV4Config = {
+        # Don't use DNS from DHCP
+        UseDNS = false;
+        RouteMetric = 29;
+      };
       ipv6AcceptRAConfig.RouteMetric = 30;
       linkConfig.RequiredForOnline = cfg.online.wifiRequired;
     };
