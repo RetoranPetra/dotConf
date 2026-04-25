@@ -97,7 +97,9 @@
                   # This lets us override parts of the config in an elegant fashion.
                   # May end up with us rebuilding pkgs for every place we reference "pkgs",
                   # but this shouldn't matter as this flake should only build a system at a time.
-                  nixpkgs.pkgs = withSystem config.nixpkgs.hostPlatform.system ({ pkgs, ... }: pkgs {rocmSupport = true;});
+                  nixpkgs.pkgs = withSystem config.nixpkgs.hostPlatform.system (
+                    { pkgs, ... }: pkgs { rocmSupport = true; }
+                  );
                 }
               )
               lanzaboote.nixosModules.lanzaboote
@@ -152,23 +154,31 @@
         perSystem =
           { system, ... }:
           {
-            _module.args.pkgs = (config: import inputs.nixpkgs {
-              inherit system;
-              overlays = [
-                (final: prev: {
-                  gallery-dl = (
-                    prev.gallery-dl.overrideAttrs {
-                      version = "git";
-                      src = gallery-dl;
-                    }
-                  );
-                  patreon-dl = import ./pkgs/patreon-dl.nix { pkgs = prev; };
-                })
-              ];
-              config = config // {
-                allowUnfree = true;
-              };
-            });
+            _module.args.pkgs = (
+              config:
+              import inputs.nixpkgs {
+                inherit system;
+                overlays = [
+                  (final: prev: {
+                    gallery-dl = (
+                      prev.gallery-dl.overrideAttrs {
+                        version = "git";
+                        src = gallery-dl;
+                      }
+                    );
+                    patreon-dl = import ./pkgs/patreon-dl.nix { pkgs = prev; };
+                    proton-dw-bin = import ./pkgs/proton-dw-bin.nix {
+                      lib = prev.lib;
+                      stdenvNoCC = prev.stdenvNoCC;
+                      fetchzip = prev.fetchzip;
+                    };
+                  })
+                ];
+                config = config // {
+                  allowUnfree = true;
+                };
+              }
+            );
           };
       }
     );
