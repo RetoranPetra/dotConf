@@ -174,13 +174,13 @@
                     };
                     vintagestory =
                       let
-                        version = "1.22.0";
+                        version = "1.22.1";
                       in
                       prev.vintagestory.overrideAttrs {
                         version = version;
                         src = prev.fetchurl {
                           url = "https://cdn.vintagestory.at/gamefiles/stable/vs_client_linux-x64_${version}.tar.gz";
-                          hash = "sha256-c90Mb5hyL8StLFrKokAgER/u6l3jhhluP5ErgVs4geI=";
+                          hash = "sha256-LCX59pWRKDQEHXYw87bo3iX3hfj+CEU8Y4V2M4jNdpM=";
                         };
                         installPhase = ''
                           runHook preInstall
