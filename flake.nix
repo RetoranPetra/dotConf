@@ -98,7 +98,13 @@
                   # May end up with us rebuilding pkgs for every place we reference "pkgs",
                   # but this shouldn't matter as this flake should only build a system at a time.
                   nixpkgs.pkgs = withSystem config.nixpkgs.hostPlatform.system (
-                    { pkgs, ... }: pkgs { rocmSupport = true; }
+                    { pkgs, ... }: pkgs {
+                      config.rocmSupport = true;
+                      hostPlatform.gcc = {
+                        arch = "znver4";
+                        tune = "znver4";
+                      };
+                    }
                   );
                 }
               )
@@ -155,7 +161,7 @@
           { system, ... }:
           {
             _module.args.pkgs = (
-              config:
+              options:
               import inputs.nixpkgs {
                 inherit system;
                 overlays = [
@@ -180,9 +186,11 @@
                     };
                   })
                 ];
-                config = config // {
+                # There should definitely be a better way of making all of these options.
+                config = options.config // {
                   allowUnfree = true;
                 };
+                hostPlatform = options.hostPlatform;
               }
             );
           };
