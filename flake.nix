@@ -45,6 +45,33 @@
       preload-ng,
       ...
     }:
+    let
+      nixpkgsOptions = {
+        config.allowUnfree = true;
+        overlays = [
+          (final: prev: {
+            gallery-dl = (
+              prev.gallery-dl.overrideAttrs {
+                version = "git";
+                src = gallery-dl;
+              }
+            );
+            patreon-dl = import ./pkgs/patreon-dl.nix { pkgs = prev; };
+            proton-dw-bin = import ./pkgs/proton-dw-bin.nix {
+              lib = prev.lib;
+              stdenvNoCC = prev.stdenvNoCC;
+              fetchzip = prev.fetchzip;
+            };
+            vintagestory = import ./pkgs/vintagestory.nix {
+              lib = prev.lib;
+              vintagestory = prev.vintagestory;
+              fetchurl = prev.fetchurl;
+              dotnet-runtime_10 = prev.dotnet-runtime_10;
+            };
+          })
+        ];
+      };
+    in
     flake-parts.lib.mkFlake { inherit inputs; } (
       top@{
         config,
@@ -67,7 +94,7 @@
               (
                 { config, ... }:
                 {
-                  nixpkgs.pkgs = withSystem config.nixpkgs.hostPlatform.system ({ pkgs, ... }: pkgs);
+                  nixpkgs = nixpkgsOptions;
                 }
               )
               home-manager.nixosModules.home-manager
@@ -93,13 +120,15 @@
               (
                 { config, ... }:
                 {
-                  # We made pkgs into a function that takes in configuration and combines it with the configuration to create pkgs.
-                  # This lets us override parts of the config in an elegant fashion.
-                  # May end up with us rebuilding pkgs for every place we reference "pkgs",
-                  # but this shouldn't matter as this flake should only build a system at a time.
-                  nixpkgs.pkgs = withSystem config.nixpkgs.hostPlatform.system (
-                    { pkgs, ... }: pkgs { rocmSupport = true; }
-                  );
+                  /*
+                    nixpkgs.hostPlatform = {
+                      gcc.arch = "znver4";
+                      gcc.tune = "znver4";
+                    };
+                  */
+                  nixpkgs = nixpkgsOptions // {
+                      config.rocmSupport = true;
+                  };
                 }
               )
               lanzaboote.nixosModules.lanzaboote
@@ -126,7 +155,7 @@
               (
                 { config, ... }:
                 {
-                  nixpkgs.pkgs = withSystem config.nixpkgs.hostPlatform.system ({ pkgs, ... }: pkgs);
+                    nixpkgs = nixpkgsOptions;
                 }
               )
               ./hosts/flex5/nixos
@@ -154,37 +183,6 @@
         perSystem =
           { system, ... }:
           {
-            _module.args.pkgs = (
-              config:
-              import inputs.nixpkgs {
-                inherit system;
-                overlays = [
-                  (final: prev: {
-                    gallery-dl = (
-                      prev.gallery-dl.overrideAttrs {
-                        version = "git";
-                        src = gallery-dl;
-                      }
-                    );
-                    patreon-dl = import ./pkgs/patreon-dl.nix { pkgs = prev; };
-                    proton-dw-bin = import ./pkgs/proton-dw-bin.nix {
-                      lib = prev.lib;
-                      stdenvNoCC = prev.stdenvNoCC;
-                      fetchzip = prev.fetchzip;
-                    };
-                    vintagestory = import ./pkgs/vintagestory.nix {
-                      lib = prev.lib;
-                      vintagestory = prev.vintagestory;
-                      fetchurl = prev.fetchurl;
-                      dotnet-runtime_10 = prev.dotnet-runtime_10;
-                    };
-                  })
-                ];
-                config = config // {
-                  allowUnfree = true;
-                };
-              }
-            );
           };
       }
     );
