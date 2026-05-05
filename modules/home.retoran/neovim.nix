@@ -1,4 +1,4 @@
-{ nixvim, ... }:
+{ nixvim, pkgs, ... }:
 {
   # Relies on git
   programs.git.enable = true;
@@ -11,6 +11,7 @@
 
   programs.nixvim = {
     imports = [ ./../../modules/nvim/config ];
+    nixpkgs.pkgs = pkgs;
     enable = true;
   };
 }

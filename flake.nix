@@ -13,6 +13,7 @@
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
     };
     preload-ng = {
       url = "github:miguel-b-p/preload-ng";
@@ -88,7 +89,6 @@
             ];
           };
           nixosConfigurations.desktop-retoran = nixpkgs.lib.nixosSystem {
-            specialArgs.gallery-dl = gallery-dl;
             modules = [
               (
                 { config, ... }:
