@@ -86,11 +86,11 @@
     "gallery-dl": {
       "flake": false,
       "locked": {
-        "lastModified": 1777799678,
-        "narHash": "sha256-e6cspdmtmFlfG4yMTPzgsMZlKY0IZDgQHf1vuRC6eMw=",
+        "lastModified": 1778100178,
+        "narHash": "sha256-m1vGn1ZjgYRl/ig8T5OnhsmaomtoQGmr3HtJpMTvkEo=",
         "owner": "mikf",
         "repo": "gallery-dl",
-        "rev": "609345db079bb23c4bd7991edd7e266b1e6a3809",
+        "rev": "459f7f3c2efc51326c5175a1655c64362e10bd4f",
         "type": "github"
       },
       "original": {
@@ -129,11 +129,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1777988791,
-        "narHash": "sha256-DtbtSW5+Hls7z+D9BfsAXvFuivt5iZ0OzUXjQ8d8lB8=",
+        "lastModified": 1778144356,
+        "narHash": "sha256-dGM+QCstz/DyLB68+JK5GWyMx4QSqmOJEVgZmy63d/g=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "d987617879f613053f6fdf4491fe28ce0283d543",
+        "rev": "e4419d3123b780d5f4c0bceeace450424387638c",
         "type": "github"
       },
       "original": {
