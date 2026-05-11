@@ -132,7 +132,10 @@
               (
                 { config, ... }:
                 {
-                  nixpkgs.pkgs = withSystem config.nixpkgs.hostPlatform.system ({ pkgs, ... }: pkgs);
+                  nixpkgs.pkgs = withSystem config.nixpkgs.hostPlatform.system ({ pkgs, ... }: pkgs {
+                    config = {};
+                    hostPlatform = {};
+                  });
                 }
               )
               ./hosts/flex5/nixos
