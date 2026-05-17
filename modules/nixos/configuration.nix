@@ -80,6 +80,7 @@
     rclone
     rsync
     lrzip
+    p7zip
     traceroute
     xdg-user-dirs
     git

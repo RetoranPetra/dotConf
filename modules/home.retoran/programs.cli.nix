@@ -36,5 +36,6 @@
     rclone
     rsync
     lrzip
+    p7zip
   ];
 }
