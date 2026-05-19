@@ -77,7 +77,7 @@ with lib;
           "2606:4700:4700::1111#cloudflare-dns.com"
           "2001:4860:4860::8888#dns.google"];
         # Defaults
-        DNSSEC = true;
+        DNSSEC = false;
         Cache = true;
         CacheFromLocalHost = false;
         DNSStubListener = true;
