@@ -187,6 +187,14 @@
                       fetchurl = prev.fetchurl;
                       dotnet-runtime_10 = prev.dotnet-runtime_10;
                     };
+                    jetbrains = prev.jetbrains // {
+                      rider = prev.jetbrains.rider.overrideAttrs {
+                      postFixup = ''
+                        wrapProgram $out/rider/bin/rider \
+                          --add-flags "-Dawt.toolkit.name=WLToolkit"
+                      '';
+                      };
+                    };
                   })
                 ];
                 # There should definitely be a better way of making all of these options.
