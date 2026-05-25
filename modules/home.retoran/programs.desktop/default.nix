@@ -6,5 +6,6 @@
     ./vesktop
     ./wine.nix
     ./mpv.nix
+    ./jetbrains.nix
   ];
 }
