@@ -24,6 +24,8 @@
     # CAD
     librecad
     freecad
+
+    sqlitebrowser
   ];
   services.syncthing.enable = true;
 
