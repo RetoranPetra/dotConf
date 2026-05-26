@@ -12,7 +12,7 @@
   home.file.".local/share/applications/rider.desktop".source = (
     pkgs.stdenv.mkDerivation {
       name = "rider-default-desktop";
-      phases = ["buildPhase"];
+      dontUnpack = true;
       buildPhase = ''
         substitute ${pkgs.jetbrains.rider}/share/applications/rider.desktop $out \
           --replace-fail "Exec=rider" "Exec=${
