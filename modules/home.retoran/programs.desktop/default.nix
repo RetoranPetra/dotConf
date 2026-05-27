@@ -7,5 +7,6 @@
     ./wine.nix
     ./mpv.nix
     ./jetbrains.nix
+    ./vscode.nix
   ];
 }
