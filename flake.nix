@@ -98,7 +98,8 @@
                   # May end up with us rebuilding pkgs for every place we reference "pkgs",
                   # but this shouldn't matter as this flake should only build a system at a time.
                   nixpkgs.pkgs = withSystem config.nixpkgs.hostPlatform.system (
-                    { pkgs, ... }: pkgs {
+                    { pkgs, ... }:
+                    pkgs {
                       config.rocmSupport = true;
                       hostPlatform.gcc = {
                         arch = "znver4";
@@ -132,10 +133,13 @@
               (
                 { config, ... }:
                 {
-                  nixpkgs.pkgs = withSystem config.nixpkgs.hostPlatform.system ({ pkgs, ... }: pkgs {
-                    config = {};
-                    hostPlatform = {};
-                  });
+                  nixpkgs.pkgs = withSystem config.nixpkgs.hostPlatform.system (
+                    { pkgs, ... }:
+                    pkgs {
+                      config = { };
+                      hostPlatform = { };
+                    }
+                  );
                 }
               )
               ./hosts/flex5/nixos
@@ -189,12 +193,30 @@
                     };
                     jetbrains = prev.jetbrains // {
                       rider = prev.jetbrains.rider.overrideAttrs {
-                      postFixup = ''
-                        wrapProgram $out/rider/bin/rider \
-                          --add-flags "-Dawt.toolkit.name=WLToolkit"
-                      '';
+                        postFixup = ''
+                          wrapProgram $out/rider/bin/rider \
+                            --add-flags "-Dawt.toolkit.name=WLToolkit"
+                        '';
                       };
                     };
+                    linuxPackages_latest =
+                      let
+                        version = "3.12.3";
+                        kernel = prev.linuxPackages_latest.kernel;
+                      in
+                      prev.linuxPackages_latest.extend (
+                        lFinal: lPrev: {
+                          openrazer = prev.linuxPackages_latest.openrazer.overrideAttrs {
+                            version = "${version}+${kernel.version}";
+                            src = prev.fetchFromGitHub {
+                              owner = "openrazer";
+                              repo = "openrazer";
+                              tag = "v${version}";
+                              hash = "sha256-X1NPqbugBdxD5Nt9wIwQADV4CuydGLpgKhlNazVdrIY=";
+                            };
+                          };
+                        }
+                      );
                   })
                 ];
                 # There should definitely be a better way of making all of these options.
