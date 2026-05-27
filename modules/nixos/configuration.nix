@@ -65,6 +65,9 @@
     jack.enable = true;
   };
 
+  # Enable nix-ld for when we're unable to make things behave
+  programs.nix-ld.enable = true;
+
   # System fonts
   fonts.packages = with pkgs; [
     noto-fonts
