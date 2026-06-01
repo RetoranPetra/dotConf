@@ -94,10 +94,8 @@ with lib;
     };
 
     xdg.configFile."mako".source = ./mako;
-    # xdg.configFile."rofi".source = ./rofi;
 
-    xdg.configFile."uwsm/env".source =
-      config.lib.file.mkOutOfStoreSymlink "/etc/profiles/per-user/retoran/etc/profile.d/hm-session-vars.sh";
+    xdg.configFile."uwsm/env".source = config.lib.file.mkOutOfStoreSymlink "${config.home.profileDirectory}/etc/profile.d/hm-session-vars.sh";
     wayland.windowManager.hyprland = {
       package = null;
       #portalPackage = null;
