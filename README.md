@@ -1,5 +1,8 @@
-# Todo list
+# Retoran's OS flake
 
-- [ ] clean up confmv script and allow it to relink files back, as well as remove files that have had their symlinks removed.
-- [ ] use a seperate periodic copy service for system files in etc, as symlinks aren't recognised by some very low level things.
-- [ ] part of last point, add a command to copy changes in / back to dotConf
+Used for building systems with shared configurations across my devices.
+
+## TODO
+
+- [ ] Combine related home-manager and nixos modules into their own individual modules
+- [ ] Make an automated script for adding/changing keys in config files on system activation, instead of replacing the config completely. Useful for discord/chatterino configuration.
