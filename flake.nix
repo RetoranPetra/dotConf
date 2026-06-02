@@ -199,24 +199,6 @@
                         '';
                       };
                     };
-                    linuxPackages_latest =
-                      let
-                        version = "3.12.3";
-                        kernel = prev.linuxPackages_latest.kernel;
-                      in
-                      prev.linuxPackages_latest.extend (
-                        lFinal: lPrev: {
-                          openrazer = prev.linuxPackages_latest.openrazer.overrideAttrs {
-                            version = "${version}+${kernel.version}";
-                            src = prev.fetchFromGitHub {
-                              owner = "openrazer";
-                              repo = "openrazer";
-                              tag = "v${version}";
-                              hash = "sha256-X1NPqbugBdxD5Nt9wIwQADV4CuydGLpgKhlNazVdrIY=";
-                            };
-                          };
-                        }
-                      );
                   })
                 ];
                 # There should definitely be a better way of making all of these options.
