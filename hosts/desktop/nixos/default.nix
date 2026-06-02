@@ -2,6 +2,7 @@
 {
   imports = [
     ./../../../modules/nixos
+    ./../../../modules/nixos/configuration.d/obs-studio-virtualCamera.nix
     ./hardware-configuration.nix
     ./boot.nix
   ];

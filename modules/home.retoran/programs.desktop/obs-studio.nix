@@ -9,7 +9,5 @@
       obs-gstreamer
       obs-vkcapture
     ];
-    # Virtual camera support only works outside of home-manager, as it needs to set boot/kernel stuff.
-    #enableVirtualCamera = true;
   };
 }
