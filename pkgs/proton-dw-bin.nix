@@ -6,10 +6,10 @@
 # TODO: This should build from the latest release automatically at some point.
 stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "proton-dw-bin";
-  version = "11.0-1";
+  version = "11.0-3";
   src = fetchzip {
     url = "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-${finalAttrs.version}/dwproton-${finalAttrs.version}-x86_64.tar.xz";
-    hash = "sha256-G8VeHp0POZBHfxN78PCwwm6z7zVNMveAdwf/IMJQ/9Q=";
+    hash = "sha256-e/YzKvwe30KveLHRUsntKDwzdEbr7a3Wfkqe/pu93WE=";
   };
   dontUnpack = true;
   dontConfigure = true;
