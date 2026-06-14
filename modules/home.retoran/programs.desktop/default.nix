@@ -8,5 +8,6 @@
     ./mpv.nix
     ./jetbrains.nix
     ./vscode.nix
+    ./pipewire.nix
   ];
 }
