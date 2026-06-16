@@ -28,7 +28,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     gallery-dl = {
-      url = "github:mikf/gallery-dl/master";
+      url = "git+https://codeberg.org/mikf/gallery-dl.git";
       flake = false;
     };
     self.submodules = true;

@@ -86,18 +86,17 @@
     "gallery-dl": {
       "flake": false,
       "locked": {
-        "lastModified": 1781343369,
-        "narHash": "sha256-veyNjA3dPlHbfO9wdcZjHbyxHWt2w6B3Fh5UlSjhXLY=",
-        "owner": "mikf",
-        "repo": "gallery-dl",
-        "rev": "3efc66accb120203848a62378407060e9819ba19",
-        "type": "github"
+        "lastModified": 1781541344,
+        "narHash": "sha256-iQWee3sVrMO8xAp8mWY5XtLPBUv+jPLZwRfq3bSoHAw=",
+        "ref": "refs/heads/master",
+        "rev": "1b2200a93f838d0427e7ab266c1597c24d07a96b",
+        "revCount": 8406,
+        "type": "git",
+        "url": "https://codeberg.org/mikf/gallery-dl.git"
       },
       "original": {
-        "owner": "mikf",
-        "ref": "master",
-        "repo": "gallery-dl",
-        "type": "github"
+        "type": "git",
+        "url": "https://codeberg.org/mikf/gallery-dl.git"
       }
     },
     "gitignore": {
@@ -129,11 +128,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1781305496,
-        "narHash": "sha256-g8Vv4Qfc7n+lgov97REu3X6BeJtvYY0hlSUZR1GrGQQ=",
+        "lastModified": 1781615165,
+        "narHash": "sha256-CFF4fNNfr2GZSx1xJhBNBi7VMj8OtOqZGOV+fiBSbzw=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "c87a39aa979acc4848016d2220c6238390d84779",
+        "rev": "34dd288e65012954cf7170658e0e6a61255b0327",
         "type": "github"
       },
       "original": {
@@ -227,11 +226,11 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1781287460,
-        "narHash": "sha256-9hXtN4my7eBqHRVQ/t6FQZ4YqZ1KG6SsKSG4Hdtr+i0=",
+        "lastModified": 1781578530,
+        "narHash": "sha256-IMzmxLCId5hUa7n2wqn64D3JDUNri3YZcddN1qs4e64=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "f2029d9a26266eb67f46b0c79bd0a3713839a57a",
+        "rev": "0ddc79c6609612af3180238bd3cf1e732a21737e",
         "type": "github"
       },
       "original": {
