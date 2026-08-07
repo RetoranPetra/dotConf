@@ -100,6 +100,10 @@ with lib;
       package = null;
       #portalPackage = null;
       enable = true;
+
+      # Disable systemd integration from home manager to prevent conflict with UWSM.
+      systemd.enable = false;
+
       settings = lib.mkMerge [
         {
           # Global settings
