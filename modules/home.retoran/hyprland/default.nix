@@ -154,7 +154,7 @@ with lib;
             disable_splash_rendering = true;
           };
           # set false for debug.
-          debug.disable_logs = false;
+          debug.disable_logs = true;
           # 00_monitors
           "workspace" = [
             "1,monitor:${cfg.primaryMonitor}"
