@@ -42,20 +42,6 @@
   };
   gtk = {
     enable = true;
-    iconTheme = {
-      # This icon theme is actually misspelt, this is correct.
-      name = "Everforest-Dark";
-      package = pkgs.everforest-gtk-theme;
-    };
-    theme = {
-      /*
-        name = "Tokyonight-Dark";
-        package = pkgs.tokyonight-gtk-theme;
-      */
-      name = "Materia-dark-compact";
-      package = pkgs.materia-theme;
-    };
-    gtk4.theme = config.gtk.theme;
     font = {
       name = "Sans";
       size = 11;
