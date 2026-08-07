@@ -40,6 +40,7 @@
     package = pkgs.everforest-cursors;
     size = 32;
   };
+  /*
   gtk = {
     enable = true;
     font = {
@@ -54,6 +55,7 @@
     enable = true;
     platformTheme.name = "gtk";
   };
+  */
 
   home.packages = with pkgs; [
     # Need to decide if this actually belongs in theming.
