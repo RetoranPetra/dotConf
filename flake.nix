@@ -199,6 +199,11 @@
                         '';
                       };
                     };
+                    steamtinkerlaunch = import ./pkgs/steamtinkerlaunch.nix {
+                      steamtinkerlaunch = prev.steamtinkerlaunch;
+                      yad = prev.yad;
+                      fetchFromGitHub = prev.fetchFromGitHub;
+                    };
                   })
                 ];
                 # There should definitely be a better way of making all of these options.

@@ -23,9 +23,13 @@
     extraCompatPackages = with pkgs; [
       proton-ge-bin
       proton-dw-bin
+      steamtinkerlaunch
     ];
     protontricks.enable = true;
   };
+  environment.systemPackages = [
+    pkgs.steamtinkerlaunch
+  ];
   programs.gamescope.enable = true;
   services.pipewire = {
     enable = true;
