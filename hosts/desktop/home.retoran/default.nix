@@ -18,6 +18,7 @@
     ./../../../modules/home.retoran/gallery-dl
     ./../../../modules/home.retoran/programs.desktop/obs-studio.nix
     ./../../../modules/home.retoran/retroarch.nix
+    ./../../../modules/home.retoran/steam.nix
   ];
 
   # Use real paths for user directories
