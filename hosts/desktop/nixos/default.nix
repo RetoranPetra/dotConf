@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   imports = [
     ./../../../modules/nixos
@@ -10,4 +10,8 @@
   networking.hostName = "desktop-retoran";
   systemd.network.online.wifiRequired = false;
   systemd.network.online.ethernetRequired = true;
+  services.ollama = {
+    enable = true;
+    package = pkgs.ollama-rocm;
+  };
 }
