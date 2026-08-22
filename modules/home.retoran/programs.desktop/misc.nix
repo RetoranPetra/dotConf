@@ -26,6 +26,9 @@
     freecad
 
     sqlitebrowser
+
+    # Moonlight for remoting into windows for gaming
+    moonlight-qt
   ];
   services.syncthing.enable = true;
 
