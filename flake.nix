@@ -31,6 +31,17 @@
       url = "git+https://codeberg.org/mikf/gallery-dl.git";
       flake = false;
     };
+    llm-agents = {
+      url = "github:numtide/llm-agents.nix";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+        bun2nix.inputs = {
+          nixpkgs.follows = "nixpkgs";
+          flake-parts.follows = "flake-parts";
+        };
+      };
+    };
     self.submodules = true;
   };
   # @inputs allows access to inputs from inputs.INPUT as well as the direct mapping.
@@ -204,7 +215,7 @@
                       yad = prev.yad;
                       fetchFromGitHub = prev.fetchFromGitHub;
                     };
-                  })
+                  } // inputs.llm-agents.packages.${system})
                 ];
                 # There should definitely be a better way of making all of these options.
                 config = options.config // {
