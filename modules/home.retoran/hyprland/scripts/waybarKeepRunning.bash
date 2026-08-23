@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 command="waybar -c $HOME/.config/hypr/waybar/config.jsonc"
 while sleep 5; do
     processes=$(pgrep -f "$command")

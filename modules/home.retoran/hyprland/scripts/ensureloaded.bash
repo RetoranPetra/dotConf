@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 if [[ $(pgrep waybar) ]]; then
 	echo "found waybar"
 else

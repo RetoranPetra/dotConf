@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 primaryMonitor="$1"
 monitorFlag=1
 

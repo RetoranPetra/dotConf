@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 #All of this is cursed
 #file="/tmp/hyprWhichDisplay.txt"
 #hyprctl monitors > $file
