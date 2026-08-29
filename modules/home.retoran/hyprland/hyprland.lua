@@ -158,7 +158,6 @@ hl.on("hyprland.start", function ()
   --]]
 end)
 
-hl.on("config.reloaded", hyprGamemode)
 hl.on("hyprland.start", hyprGamemode)
 
 -- Window state binds
