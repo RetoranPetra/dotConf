@@ -61,7 +61,31 @@ local function uwsmWrap(toExec)
   return "uwsm-app -- " .. toExec
 end
 local function uwsmHlDispatch(toExec)
-  return hl.dsp.exec_raw(uwsmWrap(toExec))
+  return hl.dsp.exec_cmd(uwsmWrap(toExec))
+end
+
+local function hyprGamemode()
+  local game_mode = (hl.get_config("animations.enabled") == false)
+
+  if game_mode then
+    hl.exec_cmd("hyprctl reload")
+    return
+  end
+  hl.config({
+    general = {
+      gaps_in = 0,
+      gaps_out = 0,
+      border_size = 0,
+    },
+    animations = {
+      enabled = false
+    },
+    decoration = {
+      shadow = { enabled = false},
+      blur = {enabled = false},
+      rounding = 0,
+    },
+  })
 end
 
 -- Navigation bindings
@@ -99,7 +123,7 @@ hl.bind("PRINT", hl.dsp.exec_cmd(screenshotSegment))
 hl.bind("CTRL + PRINT", hl.dsp.exec_cmd(screenshotDisplay))
 
 -- TODO: Make hyprgamemode a lua function instead.
-hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("/etc/nixos/modules/home.retoran/hyprland/scripts/hyprGamemode.sh"))
+hl.bind(mainMod .. " + N", hyprGamemode)
 
 -- Media binds
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true })
@@ -124,7 +148,6 @@ hl.bind("XF86MonBrightnessDown",hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-")
 hl.on("hyprland.start", function ()
   hl.exec_cmd("/etc/nixos/modules/home.retoran/hyprland/scripts/forcePrimary.bash " .. primaryMonitor)
   hl.exec_cmd("xrandr --output " .. primaryMonitor .. " --primary")
-  hl.exec_cmd("/etc/nixos/modules/home.retoran/hyprland/scripts/hyprGamemode.sh")
 
 
   -- Startup apps
@@ -134,6 +157,8 @@ hl.on("hyprland.start", function ()
   uwsmHlDispatch("waybar -c" .. waybarConfig ..  "-s" .. waybarStyle)
 end)
 
+hl.on("config.reloaded", hyprGamemode)
+hl.on("hyprland.start", hyprGamemode)
 
 -- Window state binds
 hl.bind(mainMod .. " + SPACE", hl.dsp.window.float())
