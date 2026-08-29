@@ -1,9 +1,18 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   services.arrpc.enable = true;
   programs.vesktop = {
     # Enabling middle click scroll doesn't disable middle click paste because they hate me.
-    package = pkgs.vesktop.override { withMiddleClickScroll = true; };
+    package = (pkgs.vesktop.override { withMiddleClickScroll = true; }).overrideAttrs (
+      final: prev: {
+        postFixup =
+          # Need to strip trailing double \n in string to stop our --add-flags being interpreted as a new command.
+          (lib.replaceStrings [ "\n\n" ] [ "\n" ] (
+            lib.substring 0 (lib.stringLength prev.postFixup - 1) prev.postFixup
+          ))
+          + " \\\n  --add-flags '--user-agent windows'";
+      }
+    );
     settings = {
       discordBranch = "stable";
       minimizeToTray = true;
