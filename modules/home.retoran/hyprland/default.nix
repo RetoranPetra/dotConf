@@ -23,10 +23,10 @@ with lib;
   };
   imports = [
     ./../wayland.nix
+    ./waybar
   ];
   config = {
     home.packages = with pkgs; [
-      waybar
       hyprland
       mako
       grim
@@ -102,8 +102,6 @@ with lib;
       extraConfig = lib.strings.concatStrings [
         # ignoring hypr gamemode, need to remake in lua.
         """
-          local waybarConfig = \"${builtins.toString ./waybar/config.jsonc}\"
-          local waybarStyle = \"${builtins.toString ./waybar/style.css}\"
           local screenshotSegment = \"${builtins.toString ./scripts/screenshotSegment.sh}\"
           local screenshotDisplay = \"${builtins.toString ./scripts/screenshotDisplay.sh}\"
         """
