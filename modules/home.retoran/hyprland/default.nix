@@ -104,6 +104,18 @@ with lib;
       # Disable systemd integration from home manager to prevent conflict with UWSM.
       systemd.enable = false;
 
+      extraConfig = lib.strings.concatStrings [
+        # ignoring hypr gamemode, need to remake in lua.
+        """
+          local waybarConfig = \"${builtins.toString ./waybar/config.jsonc}\"
+          local waybarStyle = \"${builtins.toString ./waybar/style.css}\"
+          local screenshotSegment = \"${builtins.toString ./scripts/screenshotSegment.sh}\"
+          local screenshotDisplay = \"${builtins.toString ./scripts/screenshotDisplay.sh}\"
+        """
+        builtins.readFile ./hyprland.lua
+      ];
+
+      /*
       settings = lib.mkMerge [
         {
           # Global settings
@@ -245,6 +257,7 @@ with lib;
           ];
         })
       ];
+      */
     };
   };
 }

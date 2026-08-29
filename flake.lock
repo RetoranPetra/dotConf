@@ -117,11 +117,11 @@
     "gallery-dl": {
       "flake": false,
       "locked": {
-        "lastModified": 1787385951,
-        "narHash": "sha256-x+3+6azM1c+rjPm+O9j06xaLBeK21lIRPR+kPWyFUB8=",
+        "lastModified": 1787403391,
+        "narHash": "sha256-Zwza+lqw28BMqOhSktkF/IZys2HvXqKmlqQBijODlLQ=",
         "ref": "refs/heads/master",
-        "rev": "63669256341c119ae332d84e1048b440f8e8a28e",
-        "revCount": 8633,
+        "rev": "9e4451659dfaeed3d74e16f15608980262dd6744",
+        "revCount": 8634,
         "type": "git",
         "url": "https://codeberg.org/mikf/gallery-dl.git"
       },
@@ -186,11 +186,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1787372739,
-        "narHash": "sha256-0o/VXqH7ENNuDZ9YOL2JMUo0wkhZc6FUKLUwGOwGq1A=",
+        "lastModified": 1787462289,
+        "narHash": "sha256-JzRwvboh8r37Coj6UhtnDiL0LIdPyz3+0zknDqS1zi0=",
         "owner": "numtide",
         "repo": "llm-agents.nix",
-        "rev": "304ada966596829e870cacc580e6b8bf27186744",
+        "rev": "5fae6955fa522382e640b65876fb2f456059f4c2",
         "type": "github"
       },
       "original": {
@@ -222,11 +222,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1787135253,
-        "narHash": "sha256-M5/r2v++FjVhdsxXYMb4BDJ5YLAdCWFt3aZotcshocA=",
-        "rev": "ffb3c9b700e759be2ef13237c9d8f953b32a1e46",
+        "lastModified": 1787360063,
+        "narHash": "sha256-95aJfHyQTLWslCXFVNB0odgmVkpdmDezQwTg9mhqV1E=",
+        "rev": "2c423e03bbafcff28bfadc6781a4a8257f205cb5",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1058091.ffb3c9b700e7/nixexprs.tar.xz"
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1059570.2c423e03bbaf/nixexprs.tar.xz"
       },
       "original": {
         "id": "nixpkgs",
