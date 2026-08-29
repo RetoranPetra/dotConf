@@ -150,11 +150,12 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("xrandr --output " .. primaryMonitor .. " --primary")
 
 
-  -- Startup apps
+  -- Startup apps (this doesn't work with UWSM)
+  --[[
   uwsmHlDispatch("steam.desktop")
   uwsmHlDispatch("vesktop.desktop")
   hl.dsp.exec_cmd("firefox.desktop", {workspace = 1, follow = false})
-  uwsmHlDispatch("waybar -c" .. waybarConfig ..  "-s" .. waybarStyle)
+  --]]
 end)
 
 hl.on("config.reloaded", hyprGamemode)
