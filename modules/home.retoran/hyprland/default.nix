@@ -4,11 +4,6 @@
   pkgs,
   ...
 }:
-let
-  mod = a: b: a - (b * (a / b));
-  playerctlCmd = "playerctl --player=mpv,%any,chromium,firefox";
-  cfg = config.wayland.windowManager.hyprland;
-in
 with lib;
 {
   options = {
@@ -112,8 +107,9 @@ with lib;
           local screenshotSegment = \"${builtins.toString ./scripts/screenshotSegment.sh}\"
           local screenshotDisplay = \"${builtins.toString ./scripts/screenshotDisplay.sh}\"
         """
-        builtins.readFile ./hyprland.lua
+        (builtins.readFile ./hyprland.lua)
       ];
+      configType = "lua";
 
       /*
       settings = lib.mkMerge [
@@ -136,7 +132,7 @@ with lib;
             kb_layout = "gb";
             kb_options = "caps:escape";
             numlock_by_default = true;
-            follow_mouse = 1;
+            follow_mouse = 1;wayland.windowManager.hyprland.configType = "lua"
             sensitivity = 0;
             repeat_rate = 25;
           };

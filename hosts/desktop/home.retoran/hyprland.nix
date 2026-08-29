@@ -8,6 +8,7 @@
     workspaces.game = "5";
     workspaces.discord = "6";
     primaryMonitor = "DP-1";
+    /*
     jpOCR = true;
     settings = {
       "monitor" = [
@@ -22,6 +23,7 @@
       ];
       misc.vrr = 1;
     };
+    */
   };
   services.hyprpaper.settings.wallpaper = [
     {

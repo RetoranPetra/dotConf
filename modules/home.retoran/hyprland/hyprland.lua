@@ -95,8 +95,10 @@ hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("rofi -show window"))
 -- Execution binds
 hl.bind(mainMod .. " + E", uwsmHlDispatch("xdg-open ~"))
 hl.bind("CTRL + SHIFT + ESCAPE", uwsmHlDispatch("alacritty -- class floating -T btop -e btop"))
-hl.bind("PRINT", hl.dsp.exec_cmd("/etc/nixos/modules/home.retoran/hyprland/scripts/screenshotSegment.sh"))
-hl.bind("CTRL + PRINT", hl.dsp.exec_cmd("/etc/nixos/modules/home.retoran/hyprland/scripts/screenshotDisplay.sh"))
+hl.bind("PRINT", hl.dsp.exec_cmd(screenshotSegment))
+hl.bind("CTRL + PRINT", hl.dsp.exec_cmd(screenshotDisplay))
+
+-- TODO: Make hyprgamemode a lua function instead.
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("/etc/nixos/modules/home.retoran/hyprland/scripts/hyprGamemode.sh"))
 
 -- Media binds
@@ -129,7 +131,7 @@ hl.on("hyprland.start", function ()
   uwsmHlDispatch("steam.desktop")
   uwsmHlDispatch("vesktop.desktop")
   hl.dsp.exec_cmd("firefox.desktop", {workspace = 1, follow = false})
-  uwsmHlDispatch("waybar -c /nix/store/a8yirr1p970y74yzlcdg7jnp6i67migz-source/modules/home.retoran/hyprland/waybar/config.jsonc -s /nix/store/a8yirr1p970y74yzlcdg7jnp6i67migz-source/modules/home.retoran/hyprland/waybar/style.css")
+  uwsmHlDispatch("waybar -c" .. waybarConfig ..  "-s" .. waybarStyle)
 end)
 
 
