@@ -23,6 +23,7 @@ with lib;
   };
   imports = [
     ./../wayland.nix
+    ./hypridle
     ./waybar
   ];
   config = {
@@ -47,7 +48,6 @@ with lib;
       enable = true;
       settings.splash = false;
     };
-
     xdg.portal = {
       enable = true;
       extraPortals = with pkgs; [
