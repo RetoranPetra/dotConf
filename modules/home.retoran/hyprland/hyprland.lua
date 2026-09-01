@@ -164,10 +164,6 @@ hl.bind(mainMod .. " + SPACE", hl.dsp.window.float())
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen(1))
 
---[[
-bind=SUPER, A, exec, grim -g "$(slurp)" - | /nix/store/sihhjsdmf6vsfw8nl94dp61g30dm86dg-tesseract-5.5.3/bin/tesseract - - -l jpn+eng | sed 's/ //g' | wl-copy
---]]
-
 
 hl.monitor({
   output = "DP-1";

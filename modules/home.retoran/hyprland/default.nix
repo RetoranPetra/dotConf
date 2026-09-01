@@ -4,6 +4,9 @@
   pkgs,
   ...
 }:
+let
+  cfg = config.wayland.windowManager.hyprland;
+in
 with lib;
 {
   options = {
@@ -106,6 +109,7 @@ with lib;
           local screenshotDisplay = \"${builtins.toString ./scripts/screenshotDisplay.sh}\"
         """
         (builtins.readFile ./hyprland.lua)
+        (if cfg.jpOCR then "" else "hl.bind(mainMod .. \" + A\", hl.dsp.exec_cmd(\"grim -g \\\"$(slurp)\\\" - | ${pkgs.tesseract}/bin/tesseract - - -l jpn+eng | sed 's/ //g' | wl-copy\"))")
       ];
       configType = "lua";
 
