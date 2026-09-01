@@ -103,10 +103,9 @@ with lib;
       systemd.enable = false;
 
       extraConfig = lib.strings.concatStrings [
-        # ignoring hypr gamemode, need to remake in lua.
         """
-          local screenshotSegment = \"${builtins.toString ./scripts/screenshotSegment.sh}\"
-          local screenshotDisplay = \"${builtins.toString ./scripts/screenshotDisplay.sh}\"
+          local screenshotSegment = \"${toString ./scripts/screenshotSegment.sh}\"
+          local screenshotDisplay = \"${toString ./scripts/screenshotDisplay.sh}\"
         """
         (builtins.readFile ./hyprland.lua)
         (if cfg.jpOCR then "" else "hl.bind(mainMod .. \" + A\", hl.dsp.exec_cmd(\"grim -g \\\"$(slurp)\\\" - | ${pkgs.tesseract}/bin/tesseract - - -l jpn+eng | sed 's/ //g' | wl-copy\"))")

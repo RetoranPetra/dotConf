@@ -192,6 +192,8 @@ for i = 1, 5 do
   })
 end
 
+-- There are still some window rules that were never ever imported from the old format even before lua conversion.
+
 hl.window_rule({
   match = {
     class = "^thunar$"
