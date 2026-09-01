@@ -112,17 +112,16 @@ hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), {mouse = true})
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + Q", uwsmHlDispatch("alacritty"))
 hl.bind(mainMod .. " + SHIFT + M", hl.dsp.exec_cmd("sleep 1 && loginctl terminate-user ''"))
-hl.bind(mainMod .. " + SHIFT + Q", uwsmHlDispatch("alacritty --class floating")) -- Need to test or modify
+hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.exec_cmd(uwsmWrap("alacritty"), { float = true}))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("rofi -show drun -run-command \"" .. uwsmWrap("{cmd}") .. "\""))
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("rofi -show window"))
 
 -- Execution binds
 hl.bind(mainMod .. " + E", uwsmHlDispatch("xdg-open ~"))
-hl.bind("CTRL + SHIFT + ESCAPE", uwsmHlDispatch("alacritty -- class floating -T btop -e btop"))
+hl.bind("CTRL + SHIFT + ESCAPE", hl.dsp.exec_cmd(uwsmWrap("alacritty --class btop -T btop -e btop"), { float = true}))
 hl.bind("PRINT", hl.dsp.exec_cmd(screenshotSegment))
 hl.bind("CTRL + PRINT", hl.dsp.exec_cmd(screenshotDisplay))
 
--- TODO: Make hyprgamemode a lua function instead.
 hl.bind(mainMod .. " + N", hyprGamemode)
 
 -- Media binds
@@ -196,6 +195,7 @@ for i = 1, 5 do
     monitor = primaryMonitor,
   })
 end
+
 
 --[[
 windowrule=float on, match:class ^floating$
