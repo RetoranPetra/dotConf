@@ -196,20 +196,47 @@ for i = 1, 5 do
   })
 end
 
+hl.window_rule({
+  match = {
+    class = "^thunar$"
+  },
+  float = true;
+})
+hl.window_rule({
+  match = {
+    class = "^(w|W)aydroid.*"
+  },
+  size = { 720, 1280},
+  float = true
+})
 
---[[
-windowrule=float on, match:class ^floating$
-windowrule=float on, match:class ^thunar$
-windowrule=float on, size 720 1280, match:class ^(w|W)aydroid.*
-windowrule=size 720 1280, match:class ^(w|W)aydroid.*
-windowrule=float on, center on, size 1000 700, match:class ^org.kde.polkit-kde-authentication-agent-1$
-windowrule=float on, center on, size 1000 700, match:class ^krita$, match:title - Krita
-windowrule=float on, center on, size 1000 700, match:class ^xarchiver$
-windowrule=float on, size 1000 700, center on, match:title ^(Save As|Open Files)$
-windowrule=float on, size 1000 700, center on, match:class ^xdg-desktop-portal-gtk$
-windowrule=float on, size 1000 700, center on, match:class ^org.freedesktop.impl.portal.desktop.kde$
-windowrule=float on, center on, size 1000 700, match:class ^(zenity|yad)$
-windowrule=workspace 5, match:content game
-windowrule=workspace 5 silent, match:class ^steam$
-windowrule=workspace 6 silent, match:class ^(WebCord|VencordDesktop|vesktop)$
---]]
+centerFloating = {
+  { class = "^krita$", title = "- Krita" },
+  { class = "^xarchiver$"},
+  { title = "^(Save As|Open Files)$" },
+  { class = "^xdg-desktop-portal-gtk$" },
+  { class = "^org.freedesktop.impl.portal.desktop.kde$" },
+  { class = "^(zenity|yad)$" },
+}
+
+for _,v in ipairs(centerFloating) do
+  hl.window_rule({
+    match = v,
+    size = {1000, 700},
+    float = true,
+  })
+end
+
+hl.window_rule({
+  match = { content = "game" },
+  workspace = "5"
+})
+hl.window_rule({
+  match = {class = "^steam$"},
+  workspace = "5 silent"
+})
+hl.window_rule({
+  match = {class = "^(WebCord|VencordDesktop|vesktop)$"},
+  workspace = "6 silent"
+})
+
