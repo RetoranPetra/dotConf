@@ -52,5 +52,9 @@
 
   programs.zsh.enable = true;
 
+  # Need to re-register as well to allow binfmt
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+  wsl.interop.register = true;
+
   system.stateVersion = "25.05";
 }
