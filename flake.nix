@@ -71,17 +71,29 @@
         flake = {
           # WSL config
           nixosConfigurations.wsl = nixpkgs.lib.nixosSystem {
+            system = "x86_64-linux";
             modules = [
               # WSL module NEEDED for WSL
               nixos-wsl.nixosModules.wsl
-              ./hosts/wsl/configuration.nix
 
+              /*
               (
                 { config, ... }:
                 {
-                  nixpkgs.pkgs = withSystem config.nixpkgs.hostPlatform.system ({ pkgs, ... }: pkgs);
+                  nixpkgs.pkgs = withSystem config.nixpkgs.hostPlatform.system (
+                    { pkgs, ... }:
+                    pkgs {
+                      config = { };
+                      hostPlatform = { };
+                    }
+                  );
                 }
               )
+              */
+              {
+                nixpkgs.config.allowUnfree = true;
+              }
+              ./hosts/wsl/configuration.nix
               home-manager.nixosModules.home-manager
               {
                 home-manager.useUserPackages = true;

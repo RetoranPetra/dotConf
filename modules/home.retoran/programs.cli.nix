@@ -10,7 +10,7 @@
 
     # System utils
     pulsemixer
-    btop-rocm
+    btop
     strace
 
     # Networking
@@ -29,8 +29,8 @@
     ripgrep-all
 
     # Archivers
-    yt-dlp
-    patreon-dl
+    #yt-dlp
+    #patreon-dl
 
     # Files
     rclone
