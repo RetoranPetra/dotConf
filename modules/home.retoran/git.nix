@@ -27,5 +27,6 @@
   };
   home.packages = with pkgs; [
     gh
+    glab
   ];
 }
