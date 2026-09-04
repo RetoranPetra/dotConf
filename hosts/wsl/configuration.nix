@@ -31,6 +31,7 @@
     tmux
     ripgrep-all
     nixfmt
+    kmod
     # GCC SHOULDN'T be here, putting here for now until I can sort out nvim.
     gcc
   ];
