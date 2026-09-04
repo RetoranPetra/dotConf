@@ -11,6 +11,7 @@
       init.defaultBranch = "main";
       credential."https://github.com".helper = "!/usr/bin/env gh auth git-credential";
       credential."https://gist.github.com".helper = "!/usr/bin/env gh auth git-credential";
+      credential."https://gitlab.com".helper = "!${pkgs.glab}/bin/.glab-wrapped auth git-credential";
     };
 
     lfs.enable = true;
@@ -27,5 +28,6 @@
   };
   home.packages = with pkgs; [
     gh
+    glab
   ];
 }
