@@ -1,9 +1,14 @@
-{ ... }:
+{ pkgs, ... }:
 {
   imports = [
     ./../../../modules/home.retoran/hyprland
     ./../../../modules/home.retoran/fcitx5.nix
   ];
+
+  xdg.configFile."autostart/steam.desktop".source = "${pkgs.steam}/share/applications/steam.desktop";
+  xdg.configFile."autostart/firefox.desktop".source = "${pkgs.firefox}/share/applications/firefox.desktop";
+  xdg.configFile."autostart/vesktop.desktop".source = "${pkgs.vesktop}/share/applications/vesktop.desktop";
+
   wayland.windowManager.hyprland = {
     workspaces.game = "5";
     workspaces.discord = "6";
