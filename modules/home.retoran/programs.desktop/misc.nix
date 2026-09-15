@@ -23,7 +23,7 @@
 
     # CAD
     librecad
-    freecad
+    #freecad
 
     sqlitebrowser
 
