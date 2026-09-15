@@ -17,6 +17,8 @@
       OLLAMA_KV_CACHE_TYPE = "q8_0";
     };
   };
+  # Allow building aarch-64 binaries
+  boot.binfmt.emulatedSystems = [ "aarch64-linux"];
   environment.systemPackages = [
     pkgs.dsh
   ];
