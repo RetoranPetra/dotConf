@@ -25,11 +25,11 @@ with lib;
     wayland.windowManager.hyprland.jpOCR = lib.mkEnableOption "Japanese OCR";
   };
   imports = [
-    ./../wayland.nix
     ./hypridle
     ./waybar
   ];
   config = {
+    retoran.desktop.wayland = true;
     home.packages = with pkgs; [
       hyprland
       mako
