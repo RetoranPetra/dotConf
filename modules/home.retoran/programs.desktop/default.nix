@@ -9,5 +9,6 @@
     ./jetbrains.nix
     ./vscode.nix
     ./pipewire.nix
+    ./alacritty.nix
   ];
 }
