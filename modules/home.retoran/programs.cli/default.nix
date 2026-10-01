@@ -10,11 +10,14 @@ in
 {
   imports = [
     ./archivers
+    ./git.nix
   ];
   options.retoran.programs-cli = {
     enable = lib.mkDefault true;
+    git.enable = lib.mkDefault true;
   };
   config = lib.mkIf cfg.enable {
+    xdg.configFile."btop".source = ./../../root/home/retoran/.config/btop;
     home.packages = with pkgs; [
       # Nix tools
       nixfmt
