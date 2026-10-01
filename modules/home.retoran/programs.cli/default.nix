@@ -12,6 +12,7 @@ in
     ./archivers
     ./git.nix
     ./neovim.nix
+    ./localbin/
   ];
   options.retoran.programs-cli = {
     enable = lib.mkDefault true;
