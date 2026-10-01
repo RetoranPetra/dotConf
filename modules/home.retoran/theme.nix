@@ -40,7 +40,6 @@
     package = pkgs.everforest-cursors;
     size = 32;
   };
-  /*
   gtk = {
     enable = true;
     font = {
@@ -55,14 +54,12 @@
     enable = true;
     platformTheme.name = "gtk";
   };
-  */
 
   home.packages = with pkgs; [
     # Need to decide if this actually belongs in theming.
     # fcitx5-tokyonight
 
     # These are needed for GTK theme to be applied properly.
-    qt6Packages.qt6gtk2
     libsForQt5.qtstyleplugins
 
     # Font packages needed for our themes
