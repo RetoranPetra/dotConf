@@ -61,7 +61,31 @@ local function uwsmWrap(toExec)
   return "uwsm-app -- " .. toExec
 end
 local function uwsmHlDispatch(toExec)
-  return hl.dsp.exec_raw(uwsmWrap(toExec))
+  return hl.dsp.exec_cmd(uwsmWrap(toExec))
+end
+
+local function hyprGamemode()
+  local game_mode = (hl.get_config("animations.enabled") == false)
+
+  if game_mode then
+    hl.exec_cmd("hyprctl reload")
+    return
+  end
+  hl.config({
+    general = {
+      gaps_in = 0,
+      gaps_out = 0,
+      border_size = 0,
+    },
+    animations = {
+      enabled = false
+    },
+    decoration = {
+      shadow = { enabled = false},
+      blur = {enabled = false},
+      rounding = 0,
+    },
+  })
 end
 
 -- Navigation bindings
@@ -88,20 +112,21 @@ hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), {mouse = true})
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + Q", uwsmHlDispatch("alacritty"))
 hl.bind(mainMod .. " + SHIFT + M", hl.dsp.exec_cmd("sleep 1 && loginctl terminate-user ''"))
-hl.bind(mainMod .. " + SHIFT + Q", uwsmHlDispatch("alacritty --class floating")) -- Need to test or modify
+hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.exec_cmd(uwsmWrap("alacritty"), { float = true}))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("rofi -show drun -run-command \"" .. uwsmWrap("{cmd}") .. "\""))
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("rofi -show window"))
 
 -- Execution binds
 hl.bind(mainMod .. " + E", uwsmHlDispatch("xdg-open ~"))
-hl.bind("CTRL + SHIFT + ESCAPE", uwsmHlDispatch("alacritty -- class floating -T btop -e btop"))
-hl.bind("PRINT", hl.dsp.exec_cmd("/etc/nixos/modules/home.retoran/hyprland/scripts/screenshotSegment.sh"))
-hl.bind("CTRL + PRINT", hl.dsp.exec_cmd("/etc/nixos/modules/home.retoran/hyprland/scripts/screenshotDisplay.sh"))
-hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("/etc/nixos/modules/home.retoran/hyprland/scripts/hyprGamemode.sh"))
+hl.bind("CTRL + SHIFT + ESCAPE", hl.dsp.exec_cmd(uwsmWrap("alacritty --class btop -T btop -e btop"), { float = true}))
+hl.bind("PRINT", hl.dsp.exec_cmd(screenshotSegment))
+hl.bind("CTRL + PRINT", hl.dsp.exec_cmd(screenshotDisplay))
+
+hl.bind(mainMod .. " + N", hyprGamemode)
 
 -- Media binds
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true })
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),      { locked = true, repeating = true })
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 1%+"), { locked = true, repeating = true })
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-"),      { locked = true, repeating = true })
 hl.bind("XF86AudioMute",        hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),     { locked = true, repeating = true })
 hl.bind("XF86AudioMicMute",     hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),   { locked = true, repeating = true })
 
@@ -122,25 +147,22 @@ hl.bind("XF86MonBrightnessDown",hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-")
 hl.on("hyprland.start", function ()
   hl.exec_cmd("/etc/nixos/modules/home.retoran/hyprland/scripts/forcePrimary.bash " .. primaryMonitor)
   hl.exec_cmd("xrandr --output " .. primaryMonitor .. " --primary")
-  hl.exec_cmd("/etc/nixos/modules/home.retoran/hyprland/scripts/hyprGamemode.sh")
 
 
-  -- Startup apps
+  -- Startup apps (this doesn't work with UWSM)
+  --[[
   uwsmHlDispatch("steam.desktop")
   uwsmHlDispatch("vesktop.desktop")
   hl.dsp.exec_cmd("firefox.desktop", {workspace = 1, follow = false})
-  uwsmHlDispatch("waybar -c /nix/store/a8yirr1p970y74yzlcdg7jnp6i67migz-source/modules/home.retoran/hyprland/waybar/config.jsonc -s /nix/store/a8yirr1p970y74yzlcdg7jnp6i67migz-source/modules/home.retoran/hyprland/waybar/style.css")
+  --]]
 end)
 
+hl.on("hyprland.start", hyprGamemode)
 
 -- Window state binds
 hl.bind(mainMod .. " + SPACE", hl.dsp.window.float())
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen(1))
-
---[[
-bind=SUPER, A, exec, grim -g "$(slurp)" - | /nix/store/sihhjsdmf6vsfw8nl94dp61g30dm86dg-tesseract-5.5.3/bin/tesseract - - -l jpn+eng | sed 's/ //g' | wl-copy
---]]
 
 
 hl.monitor({
@@ -170,19 +192,49 @@ for i = 1, 5 do
   })
 end
 
---[[
-windowrule=float on, match:class ^floating$
-windowrule=float on, match:class ^thunar$
-windowrule=float on, size 720 1280, match:class ^(w|W)aydroid.*
-windowrule=size 720 1280, match:class ^(w|W)aydroid.*
-windowrule=float on, center on, size 1000 700, match:class ^org.kde.polkit-kde-authentication-agent-1$
-windowrule=float on, center on, size 1000 700, match:class ^krita$, match:title - Krita
-windowrule=float on, center on, size 1000 700, match:class ^xarchiver$
-windowrule=float on, size 1000 700, center on, match:title ^(Save As|Open Files)$
-windowrule=float on, size 1000 700, center on, match:class ^xdg-desktop-portal-gtk$
-windowrule=float on, size 1000 700, center on, match:class ^org.freedesktop.impl.portal.desktop.kde$
-windowrule=float on, center on, size 1000 700, match:class ^(zenity|yad)$
-windowrule=workspace 5, match:content game
-windowrule=workspace 5 silent, match:class ^steam$
-windowrule=workspace 6 silent, match:class ^(WebCord|VencordDesktop|vesktop)$
---]]
+-- There are still some window rules that were never ever imported from the old format even before lua conversion.
+
+hl.window_rule({
+  match = {
+    class = "^thunar$"
+  },
+  float = true;
+})
+hl.window_rule({
+  match = {
+    class = "^(w|W)aydroid.*"
+  },
+  size = { 720, 1280},
+  float = true
+})
+
+centerFloating = {
+  { class = "^krita$", title = "- Krita" },
+  { class = "^xarchiver$"},
+  { title = "^(Save As|Open Files)$" },
+  { class = "^xdg-desktop-portal-gtk$" },
+  { class = "^org.freedesktop.impl.portal.desktop.kde$" },
+  { class = "^(zenity|yad)$" },
+}
+
+for _,v in ipairs(centerFloating) do
+  hl.window_rule({
+    match = v,
+    size = {1000, 700},
+    float = true,
+  })
+end
+
+hl.window_rule({
+  match = { content = "game" },
+  workspace = "5"
+})
+hl.window_rule({
+  match = {class = "^steam$"},
+  workspace = "5 silent"
+})
+hl.window_rule({
+  match = {class = "^(WebCord|VencordDesktop|vesktop)$"},
+  workspace = "6 silent"
+})
+

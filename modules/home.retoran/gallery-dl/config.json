@@ -14,6 +14,7 @@
 			"filename": "{date} {id}{num:? //>02} {title[:200]}.{extension}",
 			"parent-directory": true,
 			"metadata-parent": "_reddit",
+			"client-id": "6N9uN0krSDE-ig",
 			"blacklist": [
 				"twitter",
 				"instagram"

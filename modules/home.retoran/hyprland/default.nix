@@ -5,8 +5,6 @@
   ...
 }:
 let
-  mod = a: b: a - (b * (a / b));
-  playerctlCmd = "playerctl --player=mpv,%any,chromium,firefox";
   cfg = config.wayland.windowManager.hyprland;
 in
 with lib;
@@ -28,10 +26,11 @@ with lib;
   };
   imports = [
     ./../wayland.nix
+    ./hypridle
+    ./waybar
   ];
   config = {
     home.packages = with pkgs; [
-      waybar
       hyprland
       mako
       grim
@@ -52,7 +51,6 @@ with lib;
       enable = true;
       settings.splash = false;
     };
-
     xdg.portal = {
       enable = true;
       extraPortals = with pkgs; [
@@ -104,6 +102,17 @@ with lib;
       # Disable systemd integration from home manager to prevent conflict with UWSM.
       systemd.enable = false;
 
+      extraConfig = lib.strings.concatStrings [
+        """
+          local screenshotSegment = \"${toString ./scripts/screenshotSegment.sh}\"
+          local screenshotDisplay = \"${toString ./scripts/screenshotDisplay.sh}\"
+        """
+        (builtins.readFile ./hyprland.lua)
+        (if cfg.jpOCR then "" else "hl.bind(mainMod .. \" + A\", hl.dsp.exec_cmd(\"grim -g \\\"$(slurp)\\\" - | ${pkgs.tesseract}/bin/tesseract - - -l jpn+eng | sed 's/ //g' | wl-copy\"))")
+      ];
+      configType = "lua";
+
+      /*
       settings = lib.mkMerge [
         {
           # Global settings
@@ -124,7 +133,7 @@ with lib;
             kb_layout = "gb";
             kb_options = "caps:escape";
             numlock_by_default = true;
-            follow_mouse = 1;
+            follow_mouse = 1;wayland.windowManager.hyprland.configType = "lua"
             sensitivity = 0;
             repeat_rate = 25;
           };
@@ -245,6 +254,7 @@ with lib;
           ];
         })
       ];
+      */
     };
   };
 }
