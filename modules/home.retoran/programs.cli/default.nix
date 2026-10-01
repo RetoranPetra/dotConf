@@ -18,7 +18,7 @@ in
     git.enable = lib.mkDefault true;
   };
   config = lib.mkIf cfg.enable {
-    xdg.configFile."btop".source = ./../../root/home/retoran/.config/btop;
+    xdg.configFile."btop".source = ./btop.conf;
     home.packages = with pkgs; [
       # Nix tools
       nixfmt
