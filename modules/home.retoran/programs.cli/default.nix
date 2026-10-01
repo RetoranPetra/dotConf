@@ -11,6 +11,7 @@ in
   imports = [
     ./archivers
     ./git.nix
+    ./neovim.nix
   ];
   options.retoran.programs-cli = {
     enable = lib.mkDefault true;
