@@ -215,6 +215,9 @@
                       yad = prev.yad;
                       fetchFromGitHub = prev.fetchFromGitHub;
                     };
+                    handlr-regex = prev.handlr-regex.overrideAttrs {
+                      patches = [ ./pkgs/handlr-regex/shared-mime-info-2.5.patch];
+                    };
                   } // inputs.llm-agents.packages.${system})
                 ];
                 # There should definitely be a better way of making all of these options.
