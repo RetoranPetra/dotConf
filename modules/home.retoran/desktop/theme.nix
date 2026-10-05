@@ -1,70 +1,81 @@
-{ pkgs, config, ... }:
 {
-  programs.alacritty = {
-    theme = "nightfly";
-    settings = {
-      colors = {
-        draw_bold_text_with_bright_colors = true;
-        primary = {
-          background = "#0D0F1C";
-          foreground = "#acb4c2";
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+let
+  cfg = config.retoran.desktop.theme;
+in
+{
+  options.retoran.desktop.theme.enable = lib.mkDefault true;
+  config = lib.mkIf cfg.enable {
+    programs.alacritty = {
+      theme = "nightfly";
+      settings = {
+        colors = {
+          draw_bold_text_with_bright_colors = true;
+          primary = {
+            background = "#0D0F1C";
+            foreground = "#acb4c2";
+          };
         };
+        cursor = {
+          blink_interval = 500;
+          blink_timeout = 0;
+          thickness = 0.15;
+          unfocused_hollow = false;
+          style = {
+            blinking = "on";
+            shape = "Underline";
+          };
+          vi_mode_style = {
+            blinking = "on";
+            shape = "Underline";
+          };
+        };
+        font = {
+          size = 12.0;
+          normal = {
+            family = "Iosevkaterm NF";
+            style = "Regular";
+          };
+        };
+        window.opacity = 0.95;
       };
-      cursor = {
-        blink_interval = 500;
-        blink_timeout = 0;
-        thickness = 0.15;
-        unfocused_hollow = false;
-        style = {
-          blinking = "on";
-          shape = "Underline";
-        };
-        vi_mode_style = {
-          blinking = "on";
-          shape = "Underline";
-        };
-      };
+    };
+    home.pointerCursor = {
+      gtk.enable = true;
+      name = "everforest-cursors-light";
+      package = pkgs.everforest-cursors;
+      size = 32;
+    };
+    gtk = {
+      enable = true;
       font = {
-        size = 12.0;
-        normal = {
-          family = "Iosevkaterm NF";
-          style = "Regular";
-        };
+        name = "Sans";
+        size = 11;
       };
-      window.opacity = 0.95;
+      gtk4.extraConfig = {
+        "gtk-application-prefer-dark-theme" = 1;
+      };
     };
-  };
-  home.pointerCursor = {
-    gtk.enable = true;
-    name = "everforest-cursors-light";
-    package = pkgs.everforest-cursors;
-    size = 32;
-  };
-  gtk = {
-    enable = true;
-    font = {
-      name = "Sans";
-      size = 11;
+    qt = {
+      enable = true;
+      platformTheme.name = "gtk";
     };
-    gtk4.extraConfig = {
-      "gtk-application-prefer-dark-theme" = 1;
-    };
+
+    home.packages = with pkgs; [
+      # Need to decide if this actually belongs in theming.
+      # fcitx5-tokyonight
+
+      # These are needed for GTK theme to be applied properly.
+      libsForQt5.qtstyleplugins
+
+      # Font packages needed for our themes
+      pkgs.nerd-fonts.iosevka-term
+      pkgs.font-awesome
+      pkgs.nerd-fonts.iosevka
+    ];
   };
-  qt = {
-    enable = true;
-    platformTheme.name = "gtk";
-  };
-
-  home.packages = with pkgs; [
-    # Need to decide if this actually belongs in theming.
-    # fcitx5-tokyonight
-
-    # These are needed for GTK theme to be applied properly.
-    libsForQt5.qtstyleplugins
-
-    # Font packages needed for our themes
-    pkgs.nerd-fonts.iosevka-term
-    pkgs.font-awesome
-    pkgs.nerd-fonts.iosevka
-  ];
 }
