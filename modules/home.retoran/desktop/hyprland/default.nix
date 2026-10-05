@@ -5,24 +5,24 @@
   ...
 }:
 let
-  cfg = config.wayland.windowManager.hyprland;
+  cfg = config.retoran.desktop.hyprland;
 in
 with lib;
 {
   options = {
-    wayland.windowManager.hyprland.primaryMonitor = mkOption {
+    retoran.desktop.hyprland.primaryMonitor = mkOption {
       type = types.str;
       default = "DP-1";
     };
-    wayland.windowManager.hyprland.workspaces.game = mkOption {
+    retoran.desktop.hyprland.workspaces.game = mkOption {
       type = types.str;
       default = "5";
     };
-    wayland.windowManager.hyprland.workspaces.discord = mkOption {
+    retoran.desktop.hyprland.workspaces.discord = mkOption {
       type = types.str;
       default = "6";
     };
-    wayland.windowManager.hyprland.jpOCR = lib.mkEnableOption "Japanese OCR";
+    retoran.desktop.hyprland.jpOCR = lib.mkEnableOption "Japanese OCR";
   };
   imports = [
     ./hypridle
