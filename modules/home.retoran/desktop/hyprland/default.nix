@@ -23,7 +23,7 @@ with lib;
       default = "6";
     };
     retoran.desktop.hyprland.jpOCR = lib.mkEnableOption "Japanese OCR";
-    retoran.desktop.hyprland.enable = lib.mkEnableOption {};
+    retoran.desktop.hyprland.enable = lib.mkEnableOption "";
   };
   imports = [
     ./hypridle
@@ -32,7 +32,7 @@ with lib;
   config = lib.mkIf cfg.enable {
     retoran.desktop.hyprland.waybar.enable = lib.mkDefault true;
     retoran.desktop.hyprland.idle.enable = lib.mkDefault true;
-    retoran.desktop.wayland = true;
+    retoran.desktop.wayland.enable = true;
     home.packages = with pkgs; [
       hyprland
       mako
