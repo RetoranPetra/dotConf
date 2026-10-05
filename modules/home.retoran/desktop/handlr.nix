@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 let
   handlr-regex-xdg-open = pkgs.writeTextFile {
     name = "handlr-regex-xdg-open";
@@ -11,6 +11,7 @@ let
   };
 in
 {
+  options.retoran.desktop.handlr.enable = lib.mkDefault true;
   home.packages = [
     pkgs.handlr-regex
     handlr-regex-xdg-open
