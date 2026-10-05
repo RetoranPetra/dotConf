@@ -8,7 +8,7 @@ let
   cfg = config.retoran.neovim;
 in
 {
-  options.retoran.neovim.enable = lib.mkDefault true;
+  options.retoran.neovim.enable = lib.mkEnableOption "";
   config = lib.mkIf cfg.enable {
     # Relies on git
     programs.git.enable = true;

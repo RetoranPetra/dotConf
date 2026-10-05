@@ -15,8 +15,8 @@ in
     ./localbin
   ];
   options.retoran.programs-cli = {
-    enable = lib.mkDefault true;
-    git.enable = lib.mkDefault true;
+    enable = lib.mkEnableOption "";
+    git.enable = lib.mkEnableOption "";
   };
   config = lib.mkIf cfg.enable {
     xdg.configFile."btop".source = ./btop.conf;

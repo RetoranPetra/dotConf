@@ -3,10 +3,7 @@
   ...
 }:
 {
-  options.retoran.desktop.enable = lib.mkOption {
-    default = true;
-    type = lib.types.bool;
-  };
+  options.retoran.desktop.enable = lib.mkEnableOption "";
   imports = [
     ./hyprland
     ./fcitx5.nix

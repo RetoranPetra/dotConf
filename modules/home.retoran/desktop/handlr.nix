@@ -16,7 +16,7 @@ let
   };
 in
 {
-  options.retoran.desktop.handlr.enable = lib.mkDefault true;
+  options.retoran.desktop.handlr.enable = lib.mkEnableOption "";
   config = lib.mkIf config.retoran.desktop.hanldr.enable {
     home.packages = [
       pkgs.handlr-regex

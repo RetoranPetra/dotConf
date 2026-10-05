@@ -9,9 +9,9 @@ let
 in
 {
   options.retoran.git = {
-    gitlab.enable = lib.mkDefault true;
-    github.enable = lib.mkDefault true;
-    enable = lib.mkDefault true;
+    gitlab.enable = lib.mkEnableOption "";
+    github.enable = lib.mkEnableOption "";
+    enable = lib.mkEnableOption "";
   };
   config = lib.mkIf cfg.enable (
     lib.mkMerge [

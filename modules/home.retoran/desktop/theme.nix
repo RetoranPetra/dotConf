@@ -8,7 +8,7 @@ let
   cfg = config.retoran.desktop.theme;
 in
 {
-  options.retoran.desktop.theme.enable = lib.mkDefault true;
+  options.retoran.desktop.theme.enable = lib.mkEnableOption "";
   config = lib.mkIf cfg.enable {
     programs.alacritty = {
       theme = "nightfly";

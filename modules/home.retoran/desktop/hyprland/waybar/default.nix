@@ -5,7 +5,7 @@
   ...
 }:
 {
-  options.retoran.desktop.hyprland.waybar.enable = lib.mkEnableOption {};
+  options.retoran.desktop.hyprland.waybar.enable = lib.mkEnableOption "";
   config = {
     home.packages = with pkgs; [
       waybar

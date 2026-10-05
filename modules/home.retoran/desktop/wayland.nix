@@ -1,6 +1,6 @@
 { lib, config, ... }:
 {
-  options.retoran.desktop.wayland.enable = lib.mkDefault true;
+  options.retoran.desktop.wayland.enable = lib.mkEnableOption "";
   config = lib.mkIf config.retoran.desktop.wayland.enable {
     # Environment variables for forcing wayland.
     # TODO: These should probably be moved to hyprland instead.

@@ -9,7 +9,7 @@ let
 in
 {
   options.retoran.desktop.fcitx5 = {
-    enable = lib.mkDefault true;
+    enable = lib.mkEnableOption "";
   };
   config = lib.mkIf cfg.enable {
     i18n.inputMethod = {
