@@ -5,6 +5,14 @@
   ...
 }:
 {
+  programs.nh = {
+    enable = true;
+    clean = {
+      enable = true;
+      extraArgs = "--optimise -K 3d -k 3";
+      dates = "48h";
+    };
+  };
 
   users.users.retoran = {
     isNormalUser = true;
