@@ -118,11 +118,11 @@
     "gallery-dl": {
       "flake": false,
       "locked": {
-        "lastModified": 1791279551,
-        "narHash": "sha256-PIs3k+ecSfHFPRhfLRh1mCqWD1lH+UHp2FKzAPjmnJA=",
+        "lastModified": 1791300441,
+        "narHash": "sha256-9uZYtFI3rSnFl07YoYNr4HpwuCH2TmBDCL8fg/xIOos=",
         "ref": "refs/heads/master",
-        "rev": "2b19272277b268c66d304dc86d00eb0999029684",
-        "revCount": 8845,
+        "rev": "05c3b6cc04888735315ca04e8db61f462553c4d4",
+        "revCount": 8847,
         "type": "git",
         "url": "https://codeberg.org/mikf/gallery-dl.git"
       },
@@ -138,11 +138,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791293500,
-        "narHash": "sha256-3hwJd2/vG/VYV1P/g7oDgdbNsWODhN5F//Od+hPMm2k=",
+        "lastModified": 1791306979,
+        "narHash": "sha256-KuLePuhwJM9NLt/gTLHzXaOoSZKGoB3m7NfXjiQ98HY=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "0e11b7bcba1d74ef8ea10bfdfb1e1a5811a21087",
+        "rev": "fae6e9e42c3b762ab47635cddcfaf6f52374a61b",
         "type": "github"
       },
       "original": {
@@ -187,11 +187,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1791290323,
-        "narHash": "sha256-TReQAY/j9qBy4p3ctKbMfeGBaG3AkeJXAyg/G7mygII=",
+        "lastModified": 1791352800,
+        "narHash": "sha256-3exhcZ9ebN8cVVP+RJe2omsc0l6Mb6ju/kmqCwJJQpo=",
         "owner": "numtide",
         "repo": "llm-agents.nix",
-        "rev": "dd4c5b6a2ab072a51b350562e02cb520038ac068",
+        "rev": "c9ef0fb47c91abf5c637218b69a018d3b37bb8d9",
         "type": "github"
       },
       "original": {
