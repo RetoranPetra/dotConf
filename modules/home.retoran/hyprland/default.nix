@@ -104,8 +104,8 @@ with lib;
 
       extraConfig = lib.strings.concatStrings [
         """
-          local screenshotSegment = \"${toString ./scripts/screenshotSegment.sh}\"
-          local screenshotDisplay = \"${toString ./scripts/screenshotDisplay.sh}\"
+          local screenshotSegment = \"${./scripts/screenshotSegment.sh}\"
+          local screenshotDisplay = \"${./scripts/screenshotDisplay.sh}\"
         """
         (builtins.readFile ./hyprland.lua)
         (if cfg.jpOCR then "" else "hl.bind(mainMod .. \" + A\", hl.dsp.exec_cmd(\"grim -g \\\"$(slurp)\\\" - | ${pkgs.tesseract}/bin/tesseract - - -l jpn+eng | sed 's/ //g' | wl-copy\"))")

@@ -11,7 +11,7 @@
     Service = {
       Type = "exec";
       ExecCondition = "/run/current-system/sw/lib/systemd/systemd-xdg-autostart-condition \"Hyprland\" \"\" ";
-      ExecStart = "${pkgs.waybar}/bin/waybar -c \"${toString ./config.jsonc}\" -s \"${toString ./style.css}\"";
+      ExecStart = "${pkgs.waybar}/bin/waybar -c \"${./config.jsonc}\" -s \"${./style.css}\"";
       ExecReload = "kill -SIGUSR2 $MAINPID";
       Restart = "on-failure";
       Slice = "app-graphical.slice";
