@@ -51,6 +51,8 @@
     shell = pkgs.zsh;
   };
 
+  nix.settings.trusted-users = [ "retoran" ];
+
   programs.zsh.enable = true;
 
   # Need to re-register as well to allow binfmt
