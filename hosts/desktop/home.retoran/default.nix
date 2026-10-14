@@ -34,5 +34,6 @@
   home.file.Source.source = config.lib.file.mkOutOfStoreSymlink "/mnt/raidn0/retoran/Source";
   home.packages = [
     pkgs.vintagestory
+    pkgs.deadlock-mod-manager
   ];
 }
