@@ -42,6 +42,10 @@
         };
       };
     };
+    nix-cachyos-kernel = {
+      url = "github:xddxdd/nix-cachyos-kernel";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     self.submodules = true;
   };
   # @inputs allows access to inputs from inputs.INPUT as well as the direct mapping.
@@ -226,6 +230,7 @@
                       '';
                     });
                   })
+                  inputs.nix-cachyos-kernel.overlays.default
                 ];
                 # There should definitely be a better way of making all of these options.
                 config = options.config // {
