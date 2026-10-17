@@ -19,7 +19,7 @@
     };
   };
   # Allow building aarch-64 binaries
-  boot.binfmt.emulatedSystems = [ "aarch64-linux"];
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
   environment.systemPackages = [
     pkgs.dsh
   ];

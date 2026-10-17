@@ -45,18 +45,18 @@
     iconTheme = {
       # This icon theme is actually misspelt, this is correct.
       /*
-      name = "Everforest-Dark";
-      package = pkgs.everforest-gtk-theme;
+        name = "Everforest-Dark";
+        package = pkgs.everforest-gtk-theme;
       */
-        name = "rose-pine";
+      name = "rose-pine";
       package = pkgs.rose-pine-icon-theme;
     };
     theme = {
-        name = "Tokyonight-Dark";
-        package = pkgs.tokyonight-gtk-theme;
+      name = "Tokyonight-Dark";
+      package = pkgs.tokyonight-gtk-theme;
       /*
-      name = "Materia-dark-compact";
-      package = pkgs.materia-theme;
+        name = "Materia-dark-compact";
+        package = pkgs.materia-theme;
       */
     };
     gtk4.theme = config.gtk.theme;

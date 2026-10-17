@@ -185,47 +185,50 @@
                 overlays = [
                   (final: prev: inputs.llm-agents.packages.${system})
                   # Merge previous with next recursively so we don't have to worry about package groupings.
-                  (final: prev: prev.lib.attrsets.recursiveUpdate prev {
-                    gallery-dl = (
-                      prev.gallery-dl.overrideAttrs {
-                        version = "git";
-                        src = gallery-dl;
-                      }
-                    );
-                    patreon-dl = import ./pkgs/patreon-dl.nix { pkgs = prev; };
-                    proton-dw-bin = import ./pkgs/proton-dw-bin.nix {
-                      lib = prev.lib;
-                      stdenvNoCC = prev.stdenvNoCC;
-                      fetchzip = prev.fetchzip;
-                    };
-                    vintagestory = import ./pkgs/vintagestory.nix {
-                      lib = prev.lib;
-                      vintagestory = prev.vintagestory;
-                      fetchurl = prev.fetchurl;
-                      dotnet-runtime_10 = prev.dotnet-runtime_10;
-                    };
-                    jetbrains.rider = prev.jetbrains.rider.overrideAttrs {
-                      postFixup = ''
-                        wrapProgram $out/rider/bin/rider \
-                          --add-flags "-Dawt.toolkit.name=WLToolkit"
-                      '';
-                    };
-                    steamtinkerlaunch = import ./pkgs/steamtinkerlaunch.nix {
-                      steamtinkerlaunch = prev.steamtinkerlaunch;
-                      yad = prev.yad;
-                      fetchFromGitHub = prev.fetchFromGitHub;
-                    };
-                    # From issue https://github.com/numtide/llm-agents.nix/issues/9994
-                    dsh = prev.dsh.overrideAttrs (old: {
-                      postInstall = (old.postInstall or "") + ''
-                            substituteInPlace \
-                              $out/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-app-boot/lib/index.js \
-                              --replace-fail \
-                            'createRequire(import.meta.url)("node-addon-require-builtin")' \
-                      '{ requireBuiltin: createRequire(import.meta.url) }'
-                      '';
-                    });
-                  })
+                  (
+                    final: prev:
+                    prev.lib.attrsets.recursiveUpdate prev {
+                      gallery-dl = (
+                        prev.gallery-dl.overrideAttrs {
+                          version = "git";
+                          src = gallery-dl;
+                        }
+                      );
+                      patreon-dl = import ./pkgs/patreon-dl.nix { pkgs = prev; };
+                      proton-dw-bin = import ./pkgs/proton-dw-bin.nix {
+                        lib = prev.lib;
+                        stdenvNoCC = prev.stdenvNoCC;
+                        fetchzip = prev.fetchzip;
+                      };
+                      vintagestory = import ./pkgs/vintagestory.nix {
+                        lib = prev.lib;
+                        vintagestory = prev.vintagestory;
+                        fetchurl = prev.fetchurl;
+                        dotnet-runtime_10 = prev.dotnet-runtime_10;
+                      };
+                      jetbrains.rider = prev.jetbrains.rider.overrideAttrs {
+                        postFixup = ''
+                          wrapProgram $out/rider/bin/rider \
+                            --add-flags "-Dawt.toolkit.name=WLToolkit"
+                        '';
+                      };
+                      steamtinkerlaunch = import ./pkgs/steamtinkerlaunch.nix {
+                        steamtinkerlaunch = prev.steamtinkerlaunch;
+                        yad = prev.yad;
+                        fetchFromGitHub = prev.fetchFromGitHub;
+                      };
+                      # From issue https://github.com/numtide/llm-agents.nix/issues/9994
+                      dsh = prev.dsh.overrideAttrs (old: {
+                        postInstall = (old.postInstall or "") + ''
+                                substituteInPlace \
+                                  $out/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-app-boot/lib/index.js \
+                                  --replace-fail \
+                                'createRequire(import.meta.url)("node-addon-require-builtin")' \
+                          '{ requireBuiltin: createRequire(import.meta.url) }'
+                        '';
+                      });
+                    }
+                  )
                 ];
                 # There should definitely be a better way of making all of these options.
                 config = options.config // {
