@@ -217,16 +217,6 @@
                         yad = prev.yad;
                         fetchFromGitHub = prev.fetchFromGitHub;
                       };
-                      # From issue https://github.com/numtide/llm-agents.nix/issues/9994
-                      dsh = prev.dsh.overrideAttrs (old: {
-                        postInstall = (old.postInstall or "") + ''
-                                substituteInPlace \
-                                  $out/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-app-boot/lib/index.js \
-                                  --replace-fail \
-                                'createRequire(import.meta.url)("node-addon-require-builtin")' \
-                          '{ requireBuiltin: createRequire(import.meta.url) }'
-                        '';
-                      });
                     }
                   )
                 ];
