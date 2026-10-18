@@ -68,6 +68,8 @@
       size = 64 * 1024;
     }
   ];
+  zramSwap.enable = true;
+  systemd.oomd.enable = true;
 
   hardware.amdgpu.opencl.enable = true;
 
