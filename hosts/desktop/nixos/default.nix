@@ -23,4 +23,20 @@
   environment.systemPackages = [
     pkgs.dsh
   ];
+
+  # Setup our steam gamescope
+  programs.steam.gamescopeSession = {
+    enable = true;
+    args = [
+      "-W 2560"
+      "-H 1440"
+      "-r 180"
+      "-ef"
+      "--adaptive-sync"
+      "-O DP-1"
+    ];
+    steamArgs = [
+      "-tenfoot"
+    ];
+  };
 }
