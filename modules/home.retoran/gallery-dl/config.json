@@ -14,7 +14,9 @@
 			"filename": "{date} {id}{num:? //>02} {title[:200]}.{extension}",
 			"parent-directory": true,
 			"metadata-parent": "_reddit",
-			"client-id": "6N9uN0krSDE-ig",
+			"client-id": "yH0aTnJEt6qUgGn835B4vg",
+			"user-agent": "org.quantumbadger.redreader/1.25.1",
+			"refresh-token": "",
 			"blacklist": [
 				"twitter",
 				"instagram"
