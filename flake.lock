@@ -118,11 +118,11 @@
     "gallery-dl": {
       "flake": false,
       "locked": {
-        "lastModified": 1792222636,
-        "narHash": "sha256-1IE4p1GtVnvr2dvkXX5XhY+kSrsDPNeAjNexLb/AVoc=",
+        "lastModified": 1792739179,
+        "narHash": "sha256-iOHHadqHzzPy77LiqJF/nSFhQfm8c1QtXo1k2h6uiBk=",
         "ref": "refs/heads/master",
-        "rev": "fae9305a1e6ca52957cb46a9ad451c3447de24c6",
-        "revCount": 8887,
+        "rev": "241a9c6ada705e59314ad9d7fbe7cb270dc26716",
+        "revCount": 8921,
         "type": "git",
         "url": "https://codeberg.org/mikf/gallery-dl.git"
       },
