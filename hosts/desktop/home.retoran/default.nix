@@ -35,5 +35,6 @@
   home.packages = [
     pkgs.vintagestory
     pkgs.deadlock-mod-manager
+    pkgs.freecad-wayland
   ];
 }
