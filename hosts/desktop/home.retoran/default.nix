@@ -36,5 +36,11 @@
     pkgs.vintagestory
     pkgs.deadlock-mod-manager
     pkgs.freecad-wayland
+
+    # For playing gog games.
+    pkgs.heroic
+    pkgs.gogdl
+    pkgs.comet-gog_heroic
+    #pkgs.comet-gog
   ];
 }
