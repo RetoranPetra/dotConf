@@ -44,6 +44,7 @@ with lib;
       playerctl
       xrandr
       notify-desktop
+      copyq
     ];
     services.hyprpolkitagent.enable = true;
     services.playerctld.enable = true;

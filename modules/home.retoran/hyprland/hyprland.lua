@@ -147,6 +147,7 @@ hl.bind("XF86MonBrightnessDown",hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-")
 hl.on("hyprland.start", function ()
   hl.exec_cmd("/etc/nixos/modules/home.retoran/hyprland/scripts/forcePrimary.bash " .. primaryMonitor)
   hl.exec_cmd("xrandr --output " .. primaryMonitor .. " --primary")
+  hl.exec_cmd("copyq --start-server")
 
 
   -- Startup apps (this doesn't work with UWSM)
