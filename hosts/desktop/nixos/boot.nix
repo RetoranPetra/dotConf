@@ -30,4 +30,5 @@ in
   boot.initrd.systemd = {
     tpm2.enable = true;
   };
+  services.bootvine.enable = true;
 }

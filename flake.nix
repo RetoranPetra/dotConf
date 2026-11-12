@@ -27,6 +27,10 @@
       url = "github:nix-community/lanzaboote";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    bootvine = {
+      url = "git+https://codeberg.org/wvhulle/bootvine";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     gallery-dl = {
       url = "git+https://codeberg.org/mikf/gallery-dl.git";
       flake = false;
@@ -55,6 +59,7 @@
       gallery-dl,
       lanzaboote,
       preload-ng,
+      bootvine,
       ...
     }:
     flake-parts.lib.mkFlake { inherit inputs; } (
@@ -120,6 +125,7 @@
                   );
                 }
               )
+              bootvine.nixosModules.default
               lanzaboote.nixosModules.lanzaboote
               ./hosts/desktop/nixos
               # Preload
