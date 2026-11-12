@@ -18,6 +18,18 @@
       OLLAMA_KV_CACHE_TYPE = "q8_0";
     };
   };
+  services.preload-ng = {
+    enable = true;
+    usePrecompiled = false;
+
+    settings = {
+      # Faster cycle times for NVMe responsiveness
+      cycle = 16;
+      # Track 1 MB min files
+      minSize = 1000000;
+      predictionAlgorithm = "Markov";
+    };
+  };
   # Allow building aarch-64 binaries
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
   environment.systemPackages = [
