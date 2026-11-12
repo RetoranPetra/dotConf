@@ -10,7 +10,7 @@
     clean = {
       enable = true;
       extraArgs = "--optimise -K 3d -k 3";
-      dates = "daily";
+      dates = "weekly";
     };
   };
 
