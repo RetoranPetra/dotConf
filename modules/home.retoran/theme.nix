@@ -35,6 +35,7 @@
     };
   };
   home.pointerCursor = {
+    enable = true;
     gtk.enable = true;
     name = "everforest-cursors-light";
     package = pkgs.everforest-cursors;
@@ -70,7 +71,7 @@
   };
   qt = {
     enable = true;
-    platformTheme.name = "gtk";
+    platformTheme.name = "gtk3";
   };
 
   home.packages = with pkgs; [

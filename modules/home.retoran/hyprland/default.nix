@@ -86,7 +86,7 @@ with lib;
       enable = true;
       package = pkgs.rofi;
       theme = "${pkgs.rofi}/share/rofi/themes/Arc-Dark.rasi";
-      modes = [
+      settings.modes = [
         "drun"
         "window"
       ];
