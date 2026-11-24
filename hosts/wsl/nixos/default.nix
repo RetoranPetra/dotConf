@@ -59,6 +59,7 @@
 
   # Need to re-register as well to allow binfmt
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+  boot.binfmt.preferStaticEmulators = true;
   wsl.interop.register = true;
   services.gvfs.enable = true;
 
