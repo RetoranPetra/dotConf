@@ -93,7 +93,7 @@
               {
                 nixpkgs.config.allowUnfree = true;
               }
-              ./hosts/wsl/configuration.nix
+              ./hosts/wsl/nixos
               home-manager.nixosModules.home-manager
               {
                 home-manager.useUserPackages = true;
@@ -101,11 +101,7 @@
                 home-manager.users.retoran = {
                   imports = [
                     nixvim.homeModules.nixvim
-                    ./modules/home.retoran/neovim.nix
-                    ./modules/home.retoran/zsh.nix
-                    ./modules/home.retoran/programs.cli.nix
-                    ./modules/home.retoran/state-version.nix
-                    ./modules/home.retoran/git.nix
+                    ./hosts/wsl/home.retoran
                   ];
                 };
               }
