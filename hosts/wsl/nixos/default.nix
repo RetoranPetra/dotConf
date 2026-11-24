@@ -54,6 +54,9 @@
 
   wsl.ssh-agent.enable = true;
 
+  # Enable nix-ld for easy use of uv
+  programs.nix-ld.enable = true;
+
   # Need to re-register as well to allow binfmt
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
   wsl.interop.register = true;
