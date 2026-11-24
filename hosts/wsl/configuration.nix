@@ -6,9 +6,6 @@
 }:
 {
   networking.hostName = "wsl";
-  security.pki.certificates = [
-    (builtins.readFile /mnt/c/WSLCerts/nixos-org-chain.pem)
-  ];
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
