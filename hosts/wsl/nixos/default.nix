@@ -52,6 +52,8 @@
 
   programs.zsh.enable = true;
 
+  wsl.ssh-agent.enable = true;
+
   # Need to re-register as well to allow binfmt
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
   wsl.interop.register = true;
