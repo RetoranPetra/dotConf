@@ -27,6 +27,10 @@
       url = "github:nix-community/lanzaboote";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    bootvine = {
+      url = "git+https://codeberg.org/wvhulle/bootvine";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     gallery-dl = {
       url = "git+https://codeberg.org/mikf/gallery-dl.git";
       flake = false;
@@ -55,6 +59,7 @@
       gallery-dl,
       lanzaboote,
       preload-ng,
+      bootvine,
       ...
     }:
     flake-parts.lib.mkFlake { inherit inputs; } (
@@ -128,6 +133,7 @@
                   );
                 }
               )
+              bootvine.nixosModules.default
               lanzaboote.nixosModules.lanzaboote
               ./hosts/desktop/nixos
               # Preload
@@ -191,39 +197,42 @@
               import inputs.nixpkgs {
                 inherit system;
                 overlays = [
-                  (final: prev: {
-                    gallery-dl = (
-                      prev.gallery-dl.overrideAttrs {
-                        version = "git";
-                        src = gallery-dl;
-                      }
-                    );
-                    patreon-dl = import ./pkgs/patreon-dl.nix { pkgs = prev; };
-                    proton-dw-bin = import ./pkgs/proton-dw-bin.nix {
-                      lib = prev.lib;
-                      stdenvNoCC = prev.stdenvNoCC;
-                      fetchzip = prev.fetchzip;
-                    };
-                    vintagestory = import ./pkgs/vintagestory.nix {
-                      lib = prev.lib;
-                      vintagestory = prev.vintagestory;
-                      fetchurl = prev.fetchurl;
-                      dotnet-runtime_10 = prev.dotnet-runtime_10;
-                    };
-                    jetbrains = prev.jetbrains // {
-                      rider = prev.jetbrains.rider.overrideAttrs {
+                  (final: prev: inputs.llm-agents.packages.${system})
+                  # Merge previous with next recursively so we don't have to worry about package groupings.
+                  (
+                    final: prev:
+                    prev.lib.attrsets.recursiveUpdate prev {
+                      gallery-dl = (
+                        prev.gallery-dl.overrideAttrs {
+                          version = "git";
+                          src = gallery-dl;
+                        }
+                      );
+                      patreon-dl = import ./pkgs/patreon-dl.nix { pkgs = prev; };
+                      proton-dw-bin = import ./pkgs/proton-dw-bin.nix {
+                        lib = prev.lib;
+                        stdenvNoCC = prev.stdenvNoCC;
+                        fetchzip = prev.fetchzip;
+                      };
+                      vintagestory = import ./pkgs/vintagestory.nix {
+                        lib = prev.lib;
+                        vintagestory = prev.vintagestory;
+                        fetchurl = prev.fetchurl;
+                        dotnet-runtime_10 = prev.dotnet-runtime_10;
+                      };
+                      jetbrains.rider = prev.jetbrains.rider.overrideAttrs {
                         postFixup = ''
                           wrapProgram $out/rider/bin/rider \
                             --add-flags "-Dawt.toolkit.name=WLToolkit"
                         '';
                       };
-                    };
-                    steamtinkerlaunch = import ./pkgs/steamtinkerlaunch.nix {
-                      steamtinkerlaunch = prev.steamtinkerlaunch;
-                      yad = prev.yad;
-                      fetchFromGitHub = prev.fetchFromGitHub;
-                    };
-                  } // inputs.llm-agents.packages.${system})
+                      steamtinkerlaunch = import ./pkgs/steamtinkerlaunch.nix {
+                        steamtinkerlaunch = prev.steamtinkerlaunch;
+                        yad = prev.yad;
+                        fetchFromGitHub = prev.fetchFromGitHub;
+                      };
+                    }
+                  )
                 ];
                 # There should definitely be a better way of making all of these options.
                 config = options.config // {

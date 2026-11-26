@@ -10,7 +10,7 @@
           (lib.replaceStrings [ "\n\n" ] [ "\n" ] (
             lib.substring 0 (lib.stringLength prev.postFixup - 1) prev.postFixup
           ))
-          + " \\\n  --add-flags '--user-agent windows'";
+          + " \\\n  --add-flags '--user-agent \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36\"'";
       }
     );
     settings = {

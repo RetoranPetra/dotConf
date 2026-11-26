@@ -5,7 +5,9 @@
   lib,
   ...
 }:
-let cfg = config.systemd.network; in
+let
+  cfg = config.systemd.network;
+in
 with lib;
 {
   options = {
@@ -69,13 +71,14 @@ with lib;
     services.resolved = {
       enable = true;
       settings.Resolve = {
-        Domains = ["~."];
+        Domains = [ "~." ];
         FallbackDns = [
           "8.8.8.8#dns.google"
           "1.1.1.1#cloudflare-dns.com"
           "2620:fe::9#dns.quad9.net"
           "2606:4700:4700::1111#cloudflare-dns.com"
-          "2001:4860:4860::8888#dns.google"];
+          "2001:4860:4860::8888#dns.google"
+        ];
         # Defaults
         DNSSEC = false;
         Cache = true;

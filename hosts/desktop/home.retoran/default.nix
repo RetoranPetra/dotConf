@@ -34,5 +34,13 @@
   home.file.Source.source = config.lib.file.mkOutOfStoreSymlink "/mnt/raidn0/retoran/Source";
   home.packages = [
     pkgs.vintagestory
+    pkgs.deadlock-mod-manager
+    pkgs.freecad-wayland
+
+    # For playing gog games.
+    pkgs.heroic
+    pkgs.gogdl
+    pkgs.comet-gog_heroic
+    #pkgs.comet-gog
   ];
 }

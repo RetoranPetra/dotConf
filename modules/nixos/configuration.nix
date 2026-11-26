@@ -62,8 +62,8 @@
     enable = true;
     pulse.enable = true;
     alsa.enable = true;
-    jack.enable = true;
   };
+  # Pipewire jack is depreciated, instead should use ''pipewire.jack', no idea what that means but the wrapper seems available in the pipewire CLI.
 
   # Enable nix-ld for when we're unable to make things behave
   programs.nix-ld.enable = true;

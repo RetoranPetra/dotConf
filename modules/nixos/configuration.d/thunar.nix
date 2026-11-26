@@ -22,17 +22,23 @@
       unrar
       zip
       unzip
-
-      tumbler
-      # Extra thumbnail packages
-      ffmpegthumbnailer
-      papers
-      freetype
-      icoextract
-      libgsf
-      gnome-epub-thumbnailer
-      totem
     ];
   };
+  environment.systemPackages = with pkgs; [
+    # Extra thumbnail packages
+    webp-pixbuf-loader
+    ffmpegthumbnailer
+    papers
+    freetype
+    icoextract
+    libgsf
+    gnome-epub-thumbnailer
+    totem
+    icoextract
+    f3d
+    freetype
+    totem
+  ];
+  services.tumbler.enable = true;
   programs.xfconf.enable = true;
 }

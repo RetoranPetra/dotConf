@@ -1,7 +1,7 @@
 {
   steamtinkerlaunch,
   yad,
-  fetchFromGitHub
+  fetchFromGitHub,
 }:
 # Despite the override, steamtinkerlaunch still doesn't seem to use yad 14.2.
 steamtinkerlaunch.override {

@@ -35,14 +35,32 @@
     };
   };
   home.pointerCursor = {
+    enable = true;
     gtk.enable = true;
     name = "everforest-cursors-light";
     package = pkgs.everforest-cursors;
     size = 32;
   };
-  /*
   gtk = {
     enable = true;
+    iconTheme = {
+      # This icon theme is actually misspelt, this is correct.
+      /*
+        name = "Everforest-Dark";
+        package = pkgs.everforest-gtk-theme;
+      */
+      name = "rose-pine";
+      package = pkgs.rose-pine-icon-theme;
+    };
+    theme = {
+      name = "Tokyonight-Dark";
+      package = pkgs.tokyonight-gtk-theme;
+      /*
+        name = "Materia-dark-compact";
+        package = pkgs.materia-theme;
+      */
+    };
+    gtk4.theme = config.gtk.theme;
     font = {
       name = "Sans";
       size = 11;
@@ -53,16 +71,14 @@
   };
   qt = {
     enable = true;
-    platformTheme.name = "gtk";
+    platformTheme.name = "gtk3";
   };
-  */
 
   home.packages = with pkgs; [
     # Need to decide if this actually belongs in theming.
     # fcitx5-tokyonight
 
     # These are needed for GTK theme to be applied properly.
-    qt6Packages.qt6gtk2
     libsForQt5.qtstyleplugins
 
     # Font packages needed for our themes
