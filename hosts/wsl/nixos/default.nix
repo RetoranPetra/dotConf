@@ -33,8 +33,6 @@
     gcc
   ];
 
-  virtualisation.docker.enable = true;
-
   wsl.enable = true;
   wsl.defaultUser = "retoran";
 
@@ -62,6 +60,24 @@
   boot.binfmt.preferStaticEmulators = true;
   wsl.interop.register = true;
   services.gvfs.enable = true;
+
+  services.gitlab-runner = {
+    enable = true;
+    services = {
+      dockerRunner = {
+        dockerImage = "alpine";
+        executor = "docker";
+        authenticationTokenConfigFile = "/etc/secrets/gitlab-runner-env";
+        dockerPrivileged = true;
+      };
+    };
+  };
+  virtualisation.docker = {
+    enable = true;
+    enableOnBoot = true;
+    autoPrune.enable = true;
+  };
+
 
   system.stateVersion = "25.05";
 }
