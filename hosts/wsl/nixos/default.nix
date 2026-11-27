@@ -69,6 +69,7 @@
         executor = "docker";
         authenticationTokenConfigFile = "/etc/secrets/gitlab-runner-env";
         dockerPrivileged = true;
+        dockerPullPolicy = "if-not-present";
       };
     };
   };
