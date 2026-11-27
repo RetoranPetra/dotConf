@@ -76,6 +76,9 @@
     enable = true;
     enableOnBoot = true;
     autoPrune.enable = true;
+    daemon.settings = {
+      "mtu" = 1400;
+    };
   };
 
 
